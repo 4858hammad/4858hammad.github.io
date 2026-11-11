@@ -1,7 +1,7 @@
 site:
   name: "Hammad Ali"
   tagline: "Senior Odoo Developer · Odoo Technical Lead"
-  description: "Senior Odoo developer with 3+ years of hands-on experience across Odoo 14–19, building production ERP modules, OWL interfaces, portals, payment and API integrations, migrations, reporting and DevOps."
+  description: "Senior Odoo developer with 3+ years of hands-on experience across Odoo 14–20, building production ERP modules, OWL interfaces, portals, payment and API integrations, migrations, reporting and DevOps."
   url: "https://4858hammad.github.io/hammad-ali.github.io"
   available_for_work: true
   cv: "assets/Hammad_Ali_Senior_Odoo_Developer_CV.pdf"
@@ -29,7 +29,7 @@ hire:
 
 stats:
   - label: "Odoo versions"
-    value: "14–19"
+    value: "14–20"
 
   - label: "Users in production"
     value: "250+"
@@ -125,7 +125,7 @@ experience:
 skills:
   - category: "Odoo / ERP"
     items:
-      - "Odoo 14–19"
+      - "Odoo 14–20"
       - "Community & Enterprise"
       - "Odoo ORM"
       - "Custom Modules"
