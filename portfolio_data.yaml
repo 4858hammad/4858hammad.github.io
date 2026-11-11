@@ -80,6 +80,11 @@ experience:
       - "Wrote migration/backfill logic for 54,000+ historical sales records and related invoice/payment mappings, processing data in controlled batches"
       - "Design bidirectional integrations with external testing/certification systems and multi-source CRM lead capture from website, GoHighLevel and forms"
       - "Handle Odoo.sh deployments, PostgreSQL/SQL work, access security, performance optimization, bug fixing and production troubleshooting"
+      - "Built an MCP-based Claude AI connector so management can ask plain-language, read-only questions about sales, receivables, attendance and payroll, within each user's own access rights"
+      - "Reworked payroll accuracy and salary reporting: payslip error status, correct leave and rest-day counting, dynamic deduction/allowance columns and location-grouped reports"
+      - "Delivered an IT helpdesk portal, multi-device biometric attendance with per-device PINs, and a CRM visit sync with a fuel-based cost model"
+      - "Shipped API-key REST integrations with Postman documentation and a staging environment for an external partner's chatbot"
+      - "Added HR structure features: employee grades on contracts and payslips, office locations with a dashboard, and CNIC records on the employee form"
 
   - company: "Aetos Technologies"
     role: "Odoo Team Lead"
@@ -447,6 +452,215 @@ projects:
       - "Implemented duplicate detection and source tracking"
       - "Automated salesperson/team assignment and lead stages"
       - "Connected lead acquisition with downstream proposal and testing operations"
+
+  - id: "tti-ai-connector"
+    title: "Claude AI Connector for Odoo"
+    category: "odoo"
+    featured: false
+    year: 2026
+    client: "TTI Testing Laboratories"
+    role: "Senior Odoo Developer"
+    odoo_version: "Odoo 18 Enterprise"
+    image: "assets/images/tti-ai-connector.svg"
+    short_desc: "Lets management ask Claude plain-language questions about sales, receivables, attendance and payroll"
+    metric: "Read-only"
+    metric_label: "Claude access, per-user rights"
+    full_desc: "Built and deployed an MCP server module that connects Claude to TTI's Odoo 18. Managers and administrators ask questions in plain language and get clear answers on the status of the system and the company, with charts on demand. It is read-only by default and every answer respects the asking user's own access rights."
+    tags:
+      - "Odoo 18"
+      - "MCP"
+      - "AI"
+      - "Security"
+    modules:
+      - "Settings"
+      - "Access Groups"
+      - "Reporting"
+    tech_stack:
+      - "Python"
+      - "Odoo ORM"
+      - "JavaScript"
+      - "PostgreSQL"
+      - "MCP"
+    highlights:
+      - "Read-only by default, with results limited to what each user is already allowed to see"
+      - "Dedicated AI Connector user group controlling who can see the menu and settings"
+      - "Model-description tool lists key and required fields first on models with many fields"
+      - "Covered by automated tests that run independently of the data in the database"
+
+  - id: "tti-payroll-reporting"
+    title: "Payroll Accuracy & Salary Reporting"
+    category: "odoo"
+    featured: false
+    year: 2026
+    client: "TTI Testing Laboratories"
+    role: "Senior Odoo Developer"
+    odoo_version: "Odoo 18 Enterprise"
+    image: "assets/images/tti-payroll-reporting.svg"
+    short_desc: "Payslip day-count fixes, error status, dynamic deduction columns and a grouped salary report"
+    metric: "Auto"
+    metric_label: "payroll checks and error status"
+    full_desc: "Reworked payroll calculation and reporting so a month that does not add up says so. Approved leave is counted correctly, rest days come from each contract's schedule, and the salary report groups by work location with deductions and allowances driven by the payslip rules instead of hard-coded columns."
+    tags:
+      - "Odoo 18"
+      - "Payroll"
+      - "Reporting"
+      - "Accounting"
+    modules:
+      - "Payroll"
+      - "Time Off"
+      - "Attendance"
+      - "Accounting"
+    tech_stack:
+      - "Python"
+      - "Odoo ORM"
+      - "JavaScript"
+      - "PostgreSQL"
+      - "QWeb"
+      - "XLSX"
+    highlights:
+      - "Error Status on payslips flags months whose figures do not add up"
+      - "Compute Sheet now gives the same day-count as a batch run, and approved leave is no longer silently unpaid"
+      - "Dynamic deduction columns matched by rule code, plus an Other Allowance column with a one-click setup"
+      - "Salary report grouped by work location and filterable by company, with approval signature lines"
+      - "Salary journal line names rebuilt from the payslip rule so re-running never duplicates them"
+
+  - id: "tti-helpdesk-portal"
+    title: "IT Helpdesk Portal"
+    category: "odoo"
+    featured: false
+    year: 2026
+    client: "TTI Testing Laboratories"
+    role: "Senior Odoo Developer"
+    odoo_version: "Odoo 18 Enterprise"
+    image: "assets/images/tti-helpdesk-portal.svg"
+    short_desc: "Portal ticketing for IT support with categories, attachments, team notifications and close/reopen"
+    metric: "Any user"
+    metric_label: "portal user can raise a ticket"
+    full_desc: "Built an employee helpdesk portal where any portal user can raise an IT ticket pinned to one company. Tickets carry a category, attachments and an expected resolution time, notify the support team by email and can be closed and reopened."
+    tags:
+      - "Odoo 18"
+      - "Portal"
+      - "Helpdesk"
+    modules:
+      - "Helpdesk"
+      - "Portal"
+      - "Employees"
+    tech_stack:
+      - "Python"
+      - "Odoo ORM"
+      - "JavaScript"
+      - "PostgreSQL"
+      - "QWeb"
+    highlights:
+      - "Ticket creation for any portal user, pinned to one company, with a team email notification"
+      - "Category, team picker, attachments and expected resolution time on the new-ticket form"
+      - "Submitter and CC list always copied on notifications"
+      - "Close and reopen flow with a redesigned portal view"
+
+  - id: "tti-biometric-attendance"
+    title: "Multi-Device Biometric Attendance"
+    category: "odoo"
+    featured: false
+    year: 2026
+    client: "TTI Testing Laboratories"
+    role: "Senior Odoo Developer"
+    odoo_version: "Odoo 18 Enterprise"
+    image: "assets/images/tti-biometric-attendance.svg"
+    short_desc: "ZK biometric devices with per-device PINs, device-level KPIs and user push/update/delete"
+    metric: "Multi-device"
+    metric_label: "per-device biometric PINs"
+    full_desc: "Extended the ZK biometric attendance integration so each employee can hold a different PIN per device, check-ins and check-outs record which device was used, and the attendance board shows per-device KPI cards and rosters. Sync windows were made configurable and punches are scoped by device."
+    tags:
+      - "Odoo 18"
+      - "Attendance"
+      - "Biometric"
+      - "HR"
+    modules:
+      - "Attendance"
+      - "Employees"
+    tech_stack:
+      - "Python"
+      - "Odoo ORM"
+      - "JavaScript"
+      - "PostgreSQL"
+      - "REST APIs"
+    highlights:
+      - "Per-device biometric PIN model with a tag widget on the employee form"
+      - "Check-in and check-out device tracking, with per-device KPI cards and a device filter showing the full roster"
+      - "Push, update and delete device users and view device info from Odoo"
+      - "Configurable back-fill window per device and serialized attendance generation"
+      - "Clear errors when the device server returns an unexpected reply"
+
+  - id: "tti-partner-api"
+    title: "Partner REST API & Chatbot Integration"
+    category: "odoo"
+    featured: false
+    year: 2026
+    client: "TTI Testing Laboratories"
+    role: "Senior Odoo Developer"
+    odoo_version: "Odoo 18 Enterprise"
+    image: "assets/images/tti-partner-api.svg"
+    short_desc: "API-key REST API for products and orders, plus a chatbot module exposing business data to a partner"
+    metric: "API key"
+    metric_label: "auth, Postman docs, staging"
+    full_desc: "Built secure integration APIs for third parties. A REST API exposes products and PPE sale orders, and a separate module exposes TTI business data to a partner's chatbot. Both authenticate with a static API key that runs as a chosen user, ship with Postman collections and documentation, and were deployed to a staging environment for the partner's testing."
+    tags:
+      - "Odoo 18"
+      - "REST API"
+      - "Integration"
+      - "Security"
+    modules:
+      - "Sales"
+      - "Contacts"
+      - "Settings"
+    tech_stack:
+      - "Python"
+      - "Odoo ORM"
+      - "JavaScript"
+      - "PostgreSQL"
+      - "REST APIs"
+      - "Postman"
+    highlights:
+      - "Static API-key authentication that runs as a chosen user, with a test-connection endpoint"
+      - "Products and PPE sale orders API with server-side aggregation and spec-conformance tests"
+      - "Activity log and prompt-activity views for every API call"
+      - "Postman collections and written API guides for the integration team"
+      - "Staging environment prepared for partner development and testing"
+
+  - id: "tti-crm-visit-api"
+    title: "CRM Visit Sync & Fuel Cost Model"
+    category: "odoo"
+    featured: false
+    year: 2026
+    client: "TTI Testing Laboratories"
+    role: "Senior Odoo Developer"
+    odoo_version: "Odoo 18 Enterprise"
+    image: "assets/images/tti-crm-visit-api.svg"
+    short_desc: "Bridge that receives visit data from the CRM, with vehicle rates and a liters-based cost model"
+    metric: "Liters"
+    metric_label: "fuel-based visit cost model"
+    full_desc: "Built a bridge that receives field-visit, employee and vehicle data from TTI's CRM into Odoo, with bulk upserts and a dated fuel-rate history. Visit cost is calculated from distance, vehicle average and the applicable fuel rate, with the calculation method tracked on each visit."
+    tags:
+      - "Odoo 18"
+      - "REST API"
+      - "CRM"
+      - "Integration"
+    modules:
+      - "CRM"
+      - "Employees"
+      - "Fleet"
+    tech_stack:
+      - "Python"
+      - "Odoo ORM"
+      - "JavaScript"
+      - "PostgreSQL"
+      - "REST APIs"
+      - "Postman"
+    highlights:
+      - "Batch upsert endpoints for visits, employees and vehicles"
+      - "Fuel-consumption cost model: liters = distance / average km, using the rate in force on the visit date"
+      - "Dated Fuel Rate History and a tracked 'Calculated Cost by' field"
+      - "README, Postman collection and automated tests"
 
   - id: "clearpath-orthodontics"
     title: "ClearPath Orthodontics ERP"
