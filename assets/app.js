@@ -254,6 +254,7 @@
         <div class="nav-links">
           <a href="index.html" class="${page === 'index.html' ? 'active' : ''}">Home</a>
           <a href="odoo.html" class="${page === 'odoo.html' ? 'active' : ''}">Odoo ERP</a>
+          <a href="apps.html" class="${page === 'apps.html' ? 'active' : ''}">Apps</a>
           <a href="android.html" class="${page === 'android.html' ? 'active' : ''}">Android</a>
           <a href="web.html" class="${page === 'web.html' ? 'active' : ''}">Web</a>
           <a href="experience.html" class="${page === 'experience.html' ? 'active' : ''}">Experience</a>
