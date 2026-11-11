@@ -232,6 +232,8 @@
       renderExperiencePage(data);
     } else if (pageName === 'project.html') {
       renderProjectDetailPage(data);
+    } else if (pageName === 'app.html') {
+      renderAppPage();
     } else if (pageName === 'contact.html') {
       renderContactPage(data);
     }
@@ -749,6 +751,54 @@
   }
 
   // Render Project Detail Page
+  // Single-app detail page (app.html?id=<slug>), data from assets/apps_data.json
+  async function renderAppPage() {
+    const id = new URLSearchParams(window.location.search).get('id');
+    let apps = [];
+    try {
+      apps = await (await fetch('assets/apps_data.json')).json();
+    } catch (e) {
+      console.error('Error loading apps data:', e);
+    }
+    const app = apps.find(x => x.id === id);
+    if (!app) {
+      window.location.href = 'apps.html';
+      return;
+    }
+    const set = (el, html) => { const n = document.getElementById(el); if (n) n.innerHTML = html; };
+
+    document.title = `${app.name} for Odoo | Hammad Ali (NeuralBytea)`;
+    setMeta('meta[name="description"]', 'content', app.lead || '');
+
+    set('app-banner', `<img src="https://neuralbytea.github.io/${esc(app.image)}" alt="${esc(app.name)} for Odoo">`);
+    set('app-title', esc(app.name));
+    set('app-sub', esc(app.lead));
+    set('app-tags', list(app.tags).map(t => `<span class="dtg">${esc(t)}</span>`).join(''));
+    set('app-about', esc(app.about));
+    set('app-features', list(app.features).map(f => `<li>${esc(f)}</li>`).join(''));
+
+    const storeBtns = list(app.versions).map(v =>
+      `<a href="${esc(v.url)}" class="btn-primary" target="_blank" rel="noopener" style="width:100%;text-align:center;margin-bottom:8px;">Odoo App Store · ${esc(v.odoo)} ↗</a>`
+    ).join('');
+    const block = (label, body) => `<div class="info-block"><div class="info-label">${label}</div>${body}</div>`;
+    const pills = arr => `<div class="mod-list">${list(arr).map(t => `<span class="mod-tag">${esc(t)}</span>`).join('')}</div>`;
+    set('app-side', `
+      <div class="info-block">
+        <div class="info-label">Price</div>
+        <div class="info-val">${esc(app.price)}${app.price_note ? ` <span class="muted">· ${esc(app.price_note)}</span>` : ''}</div>
+      </div>
+      <div class="info-block">
+        ${storeBtns}
+        <a href="https://neuralbytea.github.io/apps/${esc(app.id)}/" class="btn-outline" target="_blank" rel="noopener" style="width:100%;text-align:center;">NeuralBytea ↗</a>
+      </div>
+      ${block('Odoo versions', `<div class="info-val">${list(app.versions).map(v => esc(v.odoo.replace('Odoo ', ''))).join(' · ')}</div>`)}
+      ${block('Edition', `<div class="info-val muted">${esc(app.edition)}</div>`)}
+      ${block('Licence', `<div class="info-val muted">${esc(app.licence)}</div>`)}
+      ${list(app.works_with).length ? block('Works with', pills(app.works_with)) : ''}
+      ${list(app.tech).length ? block('Tech stack', pills(app.tech)) : ''}
+    `);
+  }
+
   function renderProjectDetailPage(data) {
     const urlParams = new URLSearchParams(window.location.search);
     const projId = urlParams.get('id');

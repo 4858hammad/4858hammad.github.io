@@ -1,0 +1,1688 @@
+[
+ {
+  "id": "nb_vendor_portal_pro",
+  "name": "Vendor Portal Pro",
+  "line": "portals",
+  "lead": "Vendor portal: onboarding, RFQ quoting, PO acknowledgment, vendor bills and payments.",
+  "about": "A full supplier self-service portal for Odoo Purchase. Vendors onboard themselves, quote on RFQs, acknowledge purchase orders, send advance shipping notices, upload compliance documents and track bills and payments, while buyers keep scorecards, disputes and price comparisons inside Odoo.",
+  "features": [
+   "Vendor Dashboard: Counters for requests to quote, orders to acknowledge, open bills and payments, a six month chart and recent activity, scoped to the signed-in supplier.",
+   "PO Acknowledgment: Accept with a promised date or reject with a reason, before an SLA deadline you set. Late acknowledgments are flagged and reminded by a scheduled action.",
+   "RFQ Quoting: Unit price, delivery date and remark per line, submitted in one step, with an email to the buyer. Optional auto-award on price or delivery within an RFQ group.",
+   "Bills and Payments: Submit a bill against an order, follow a four step status line, and see payments and the expected payment date.",
+   "Onboarding and Compliance: Self sign-up as a vendor or invitation, a company profile, and documents with expiry status and version history.",
+   "Alerts Banner: Orders awaiting acknowledgment, requests to quote, bills to be paid and expiring documents, computed on each page and dismissible per user.",
+   "Shipping Notices and Receipts: With Inventory installed: declare a shipment against an order and follow incoming receipts and backorders.",
+   "Price List Requests: Price updates, new products and removals as requests a buyer approves, one by one or from a CSV, plus availability and stock quantity per line.",
+   "Issues and Disputes: A shared thread per issue, and disputes with a reason code, an amount, a linked order or bill and a resolution deadline.",
+   "Vendor Scorecard: Win rate, response time, acknowledgment, delivery, invoice accuracy and price competitiveness with weights you set, and an Excel or CSV export.",
+   "Team Logins: A vendor admin invites colleagues and limits each login to areas such as bills and payments, or quotes only.",
+   "Control Tower: A back-office action queue and needs-attention list, a vendor leaderboard, portal health figures and a bill variance check against the order.",
+   "Price Comparison Matrix: Products by vendors with the lowest price marked, the spread, stale prices and a way to create or invite an RFQ.",
+   "Own Records Only: Twelve record rules limit every vendor to the records of their own company; portal writes go through the controllers."
+  ],
+  "image": "images/apps/nb_vendor_portal_pro.jpg",
+  "price": "$99",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_vendor_portal_pro/",
+    "info": "v1.8.8"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/nb_vendor_portal_pro/",
+    "info": "v1.8.7"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Purchase",
+   "Purchase Requisition",
+   "Accounting",
+   "Portal",
+   "Contacts"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "Purchase",
+   "Vendors"
+  ]
+ },
+ {
+  "id": "salesperson_portal",
+  "name": "Field Sales Booking",
+  "line": "portals",
+  "lead": "Field sales rep portal: reps book orders for customers from the portal, no user seat..",
+  "about": "Lets field sales reps book orders for their customers from the Odoo portal without consuming an internal user seat. Includes catalog and cart, credit checks, discounts and rewards, customer creation, invoices, support tickets and a commission engine with plans and rules.",
+  "features": [
+   "Field Sales Rep Group: Reps are portal users in the Field Sales Rep group. They never take an internal seat, and the group, not the interface, decides what they can read.",
+   "Customer Picker and Walk-ins: Search customers by name, email or phone, or create a walk-in prospect from a short list of fields.",
+   "Customer Order History: Orders, lifetime figures and payment behaviour in a dialog, for the orders the rep booked or for every order of the customer.",
+   "Customer Addresses and Edits: Add an invoice, delivery or other address, and correct a contact detail, with every change logged against the rep.",
+   "Customer Warning Badges: Overdue payments and open tickets show as statuses on the picker. They never block a booking.",
+   "Pricelist Product Catalog: Search, sort, page and filter by category, with prices from the customer's pricelist and a Show on Portal switch on each product.",
+   "Cart and Place as Quotation: Quantities, addresses, an order note, a requested delivery date and a mini cart on the catalog. The order goes to the back office as a quotation.",
+   "Customer Credit Check: Credit limit, balance and what this booking would use, with a choice to warn the rep or block the booking.",
+   "Promo Codes and Rewards: Promo codes, loyalty rewards and a Current Offers page. A rep price reduction is capped at the percentage you set.",
+   "Rep Commission Ledger: Rules, an accrual ledger with seven states, approval and payment in the back office, and a read-only page for the rep.",
+   "Quotation PDF: Preview or download the standard quotation report from the order page, with the customer decision recorded on the rep's behalf.",
+   "Support Tickets: Reps raise and follow tickets for a booking. With Customer Portal Pro installed the ticket is tracked there.",
+   "Own Orders Only: Record rules limit a rep to the orders and invoices that carry their own rep id. No rule is placed on the portal group.",
+   "Coexists With Other Portals: Its own pages under /my/booking, no core route redefined and no core portal helper overridden, checked by a test that ships with the module."
+  ],
+  "image": "images/apps/salesperson_portal.jpg",
+  "price": "$99",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/salesperson_portal/",
+    "info": "v2.5.4"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/salesperson_portal/",
+    "info": "v2.5.3"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Sales",
+   "Accounting",
+   "Portal",
+   "Mail"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "Sales",
+   "Commissions"
+  ]
+ },
+ {
+  "id": "nb_services_billing_pro",
+  "name": "Services Billing Pro",
+  "line": "portals",
+  "lead": "Employee rate cards, automatic margin per timesheet line, portal timer and order-based billing.",
+  "about": "Adds multi-tier rate cards (billing rate and cost rate per employee, customer, project and service type) to Odoo timesheets. Every timesheet line gets its margin automatically, employees log time from a portal timer, and non-billable work can be hidden or shown on the invoice at zero price.",
+  "features": [
+   "Employee Rate Cards: Billing and cost rate per employee, limited by customer, project, service type and dates. Hourly, daily or fixed, with its own currency.",
+   "Most Specific Card Wins: Eight scope ranks decide the match, from customer, project and service type down to the employee default. Ties go to the latest Valid From.",
+   "Margin on Every Line: Billing amount, cost amount, margin and margin percent computed on each timesheet line, with a rate status badge.",
+   "Non-billable Work: Mark time as billable, non-billable hidden or non-billable shown at 0. Cost is still tracked, so the cost of free work is visible.",
+   "Portal Time Tracker: Timer with pause and resume, manual entries and a weekly view at /my/timetracker for portal employees.",
+   "Sales Orders from Tasks: Create Sales Order on a task, with one line at the average price or one per person at their own rate.",
+   "Invoiced Lines Locked: Posting the invoice marks the timesheets as invoiced and locks them against edits.",
+   "Team Overview: Revenue, margin, hours, invoiced and ready to invoice, utilization and alerts for managers.",
+   "Margin Dashboard and Reports: Graph, pivot and list of margin, and two PDF reports.",
+   "Cost and Margin Stay Internal: Cost rate and margin fields are limited to the Billing Manager group and are never shown on the portal."
+  ],
+  "image": "images/apps/nb_services_billing_pro.jpg",
+  "price": "$99",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_services_billing_pro/",
+    "info": "v1.0.12"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/nb_services_billing_pro/",
+    "info": "v1.0.8"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Sales Timesheet",
+   "Projects",
+   "Invoicing",
+   "Portal"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "Timesheets",
+   "Services"
+  ]
+ },
+ {
+  "id": "nb_customer_portal_pro",
+  "name": "Customer Portal Pro",
+  "line": "portals",
+  "lead": "Customer portal: self-service ordering, order-to-cash dashboard, invoices, payments, tickets.",
+  "about": "Turns the Odoo customer portal into a self-service workspace: customers place orders, follow the order-to-cash flow on a dashboard, view invoices and payments, receive alerts and raise support tickets.",
+  "features": [
+   "Sign-up and Classification: A Company or Customer choice on the sign-up form, and a Customer or None classification on every contact.",
+   "Make Portal User: One button on the contact grants the portal login, for customers that have none yet.",
+   "Customer Dashboard: Quotations, orders, invoices, payments, a three month chart and recent activity in one page.",
+   "Alerts Banner: Overdue invoices, open balances and quotations waiting for review, dismissible, computed on each visit.",
+   "Catalog Without Website: Search, sort, page size, categories, optional products and an optional stock badge, with no Website app.",
+   "Cart and Place as Quotation: Quantities, addresses, an order note, a regular or urgent order type, and a quotation sent for review.",
+   "Urgent Orders and Handling Fee: A required-by date, an approver group and a fee by percentage, per unit, per line or flat amount.",
+   "Edit, Cancel and Reorder: Customers change or cancel their own open quotation and copy a past order into a new cart, within the limits you set.",
+   "Order to Cash Stepper: Order, Delivery, Invoice and Payment on the order and invoice pages, with links between the documents.",
+   "Payments History: Each payment with the invoices and orders it settled, read only and limited to the customer's own account.",
+   "Deliveries: Outgoing shipment status for the customer, shown only when Inventory is installed.",
+   "Support Tickets: Raise a ticket from an order, an invoice or a payment, reply in the chatter, close or reopen. Staff work them from a Customer Portal menu.",
+   "Date Filters: A From and To filter on the portal lists, on a date field the customer picks from a fixed list.",
+   "Own Account Only: Record rules limit a portal customer to the payments, tickets and orders of their own company account. Portal writes go through controllers that derive the partner on the server.",
+   "24 Settings: Onboarding mode, which pages show, order permissions, price display, delivery date and the urgent surcharge, all on one Settings page."
+  ],
+  "image": "images/apps/nb_customer_portal_pro.jpg",
+  "price": "$99",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_customer_portal_pro/",
+    "info": "v1.3.8"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/nb_customer_portal_pro/",
+    "info": "v1.3.7"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Sales",
+   "Accounting",
+   "Contacts",
+   "Portal"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "Sales",
+   "Customers"
+  ]
+ },
+ {
+  "id": "nb_mcp_server",
+  "name": "Claude Connector for Odoo",
+  "line": "ai",
+  "lead": "Claude and Odoo server link: on premises Claude connector, MCP, read only, each user's own rights.",
+  "about": "Claude connector for Odoo. This Claude MCP server lets Claude answer from your own Odoo data: sales, invoices, contacts and any custom model. It is an on premises Claude connector as much as a cloud one, and a community Claude Odoo connector too: it runs inside Odoo Community and Enterprise with no extra server, and each person connects with their own Odoo login. An administrator switches the connector on and gives people the AI Connector User role. A user adds the connector address to claude.ai, signs in on an Odoo page and clicks Allow. From then on Claude can look up models and fields, search, count and total records, read one record and open saved filters, always with that user's access rights and record rules.",
+  "features": [
+   "Works for Any Model: Search, count and total records of any model the user may read, including custom models and fields.",
+   "Sign In With Odoo: claude.ai connectors sign users in on an Odoo page. Access tokens last one hour and renew on their own; a connection nobody uses ends after 30 days.",
+   "Personal Keys: A key made only for the connector, shown once, valid for 1 to 365 days. It cannot be used for the Odoo API.",
+   "User Rights Always Apply: Access rights, record rules and field groups of the user apply to every answer.",
+   "Read Only by Default: Writing needs a setting and each write tool switched on. A failed change leaves nothing behind.",
+   "Tool Control Panel: Switch single tools on or off, and see how often each was used.",
+   "Blocked Data: Users, API keys, system settings and mail servers are always blocked. Add more models to block, or allow only some.",
+   "Activity Log and Limits: Every call is logged. Set the most records per answer and the calls per minute for each user.",
+   "Topics and Prompts: Instructions, tool sets and ready-made prompts for chosen groups, shown to the user in claude.ai.",
+   "Date and Context Help: The AI is told today's date, the user and the company, with ready ranges for last month, last quarter and last year.",
+   "Saved Filters and Links: The AI can use the saved filters people already have, and gives a link that opens each record in Odoo.",
+   "Behind a Proxy: Works behind a reverse proxy when Odoo runs in proxy mode. Set a Public Address if Odoo cannot see its own."
+  ],
+  "image": "images/apps/nb_mcp_server.jpg",
+  "price": "$31",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/nb_mcp_server/",
+    "info": "v1.0.3"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_mcp_server/",
+    "info": "v1.0.4"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/nb_mcp_server/",
+    "info": "v1.0.3"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Settings"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "MCP",
+   "Claude"
+  ]
+ },
+ {
+  "id": "nb_school_management_system",
+  "name": "School Management System",
+  "line": "edu",
+  "lead": "School management system for Odoo: students, admissions, family fees, parent portal, teachers.",
+  "about": "School management system for Odoo. One install gives a school its student records, admissions, fee invoices, parent portal, teachers, timetable and dashboards, all on the standard Odoo Invoicing, Employees and Contacts apps.",
+  "features": [
+   "Student Information System: Students, families, guardians, classes, sections, academic years and roll numbers, with yearly enrollment and bulk enrollment wizards.",
+   "School Admission Management: Enquiry, documents, entrance test, offers with an expiry, seat limits and a waiting list, then enrollment.",
+   "School Fee Management: Monthly fee slips, one invoice per family, sibling reductions, concessions and late fees on standard Odoo invoices.",
+   "School Parent Portal: Parents see each child's class, fee statement and invoices, and upload admission documents online.",
+   "School Teacher Management: Teacher profiles on employees, subject allocation, class teachers and weekly workload limits.",
+   "School Timetable: Daily periods, class and teacher timetables with clash checks and one-click generation.",
+   "School Dashboard: Four spreadsheet dashboards for the principal: admissions, fees, staff and student batches.",
+   "Role-Based Access: School Staff, Registrar, Principal, Teacher, Fee Clerk, Fee Manager and Admission Officer, plus the parent as a portal user. Each sees only their own part.",
+   "One Settings Page: Every module adds its block to Settings -> School: enrollment, admissions, teachers, fees, late fees and sample data.",
+   "Sample School Data: One button creates a sample school with years, grades, sections, about 240 students, teachers and a timetable, for training and tests.",
+   "Adds Nothing of Its Own: The module has no model, view or data. It only installs the seven modules, so every menu, role and report is the one of the module that provides it."
+  ],
+  "image": "images/apps/nb_school_management_system.jpg",
+  "price": "Free",
+  "price_note": "open licence",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/nb_school_management_system/",
+    "info": "v1.0.2"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_school_management_system/",
+    "info": "v1.0.2"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Student Information System",
+   "School Teacher Management",
+   "School Fee Management",
+   "School Admission Management",
+   "School Parent Portal",
+   "School Timetable",
+   "School Dashboard"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "School",
+   "Suite"
+  ]
+ },
+ {
+  "id": "nb_school_core",
+  "name": "Student Information System",
+  "line": "edu",
+  "lead": "Student records, families, guardians, classes, sections, academic years and enrollment roll numbers.",
+  "about": "School management for Odoo. Student records, families and guardians, classes and sections, academic years and terms, and yearly enrollment with roll numbers, for schools, academies and training institutes that run on Odoo Community or Enterprise.",
+  "features": [
+   "Student Records with a Status Workflow: One permanent record per student: applicant, active, suspended, transferred, withdrawn, graduated or alumni, with join and leave dates and an admission number that never changes.",
+   "Families and Guardians as the Billing Unit: A family groups its guardians and children. Guardians and students are child contacts of the family contact, ready for invoices and portal logins in the other school modules.",
+   "Academic Years and Terms: Create a year with its terms and open it. Only one year is open at a time, and enrollments of a closed year are locked until you reopen it.",
+   "Grades, Sections and Capacity: Programs, grades with a promotion path (next grade, final grade), campuses and sections with a room, a shift and seats. The capacity policy blocks, warns or does not check.",
+   "Subjects and Curriculum: A subject list and a curriculum per grade with periods per week, marks and optional electives that are chosen per student.",
+   "Yearly Enrollment with Roll Numbers: One active enrollment per student and year. Roll numbers are given automatically (next free number) or by hand, are unique inside a section and are freed when an enrollment closes.",
+   "Bulk Enrollment Wizards: Bulk Enroll places a list of students into the sections of a grade, filling one after another or spreading evenly. Assign Roll Numbers sorts by name, admission number, or girls or boys first.",
+   "Change of Section with History: Move a student to another section during the year. The first enrollment is closed, the new one points back to it, and the roll number can be kept when it is free.",
+   "Possible Duplicate Warning: A warning on the student form when another student of the company has the same name and date of birth.",
+   "Roles and Multi-Company: School Staff (read only), Registrar and Principal, each including the one before. Record rules keep the students, families, sections and years of each company apart.",
+   "Apps Menu Access Group: The module hands the Apps menu to the Odoo Administrator and to a new Apps Menu Access group, so ordinary school users no longer see it. Add the group to anyone who should.",
+   "Sample School Data: One button creates 3 academic years, 12 grades, 72 sections and about 240 students in 144 families, for training and tests. It only runs on an empty school."
+  ],
+  "image": "images/apps/nb_school_core.jpg",
+  "price": "$29",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/nb_school_core/",
+    "info": "v1.0.3"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_school_core/",
+    "info": "v1.0.3"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Contacts",
+   "Discuss",
+   "Contacts",
+   "Install Request"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "School",
+   "Students"
+  ]
+ },
+ {
+  "id": "nb_school_admission",
+  "name": "School Admission Management",
+  "line": "edu",
+  "lead": "Admission pipeline: enquiry, documents, entrance test, offers with expiry, seat limits, waiting list.",
+  "about": "School admission management for Odoo. Follow every family from the first inquiry to an enrolled student: application, document checklist, entrance test, offer, waiting list, admission fee and admission into a section.",
+  "features": [
+   "Admission Pipeline: Inquiry, applied, test, offered, accepted and admitted, plus waiting list, rejected and withdrawn, on a kanban board and in lists.",
+   "Document Checklist: Mandatory and optional documents, for every grade or only some. Each is pending, received, verified or promised by a date, and an offer waits for the mandatory ones.",
+   "Entrance Test and Interview: Tick the entrance test on a grade and set its pass mark (40 percent by default). A score below the mark, or an interview that is not recommended, blocks the offer.",
+   "Seats and Waiting List: Seats are the section capacity minus enrolled students and open offers. When none is left the offer becomes a waiting list place, ordered by test result and then by date. The Waiting List menu groups the waiting applicants by class and year.",
+   "Offer Validity and Expiry: An offer is valid for 7 days by default. A daily scheduled action withdraws an expired offer and the officer gets a to-do to offer the seat to the first applicant waiting.",
+   "Family Match and Duplicate Warning: The form finds an existing family by the guardian's email or the last 7 digits of the phone, and warns about a student with the same name and date of birth.",
+   "Admission Fee Invoice: When the family accepts, the family, guardian and student are created and the once-only admission fee of the grade structure is invoiced with School Fee Management.",
+   "Admit Only After Payment: By default an unpaid admission fee stops the admission. Only the Principal or a Fee Manager can admit first. A setting turns the rule off.",
+   "Admit into a Section: The Registrar enrolls the accepted applicant in a section, and the form suggests the section with the most free seats.",
+   "Closing Reasons: Reject or withdraw with a reason from a list of 9 reasons that the Principal can edit, and reopen the application later.",
+   "Admission Officer Role: A front-desk role runs the pipeline up to the accepted stage and cannot admit, edit students or see the fee records. The Registrar includes it."
+  ],
+  "image": "images/apps/nb_school_admission.jpg",
+  "price": "$25",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/nb_school_admission/",
+    "info": "v1.0.2"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_school_admission/",
+    "info": "v1.0.2"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Student Information System",
+   "School Fee Management"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "School",
+   "Admissions"
+  ]
+ },
+ {
+  "id": "nb_school_fees",
+  "name": "School Fee Management",
+  "line": "edu",
+  "lead": "Monthly school fee slips, one invoice per family, concessions and late fees on Odoo Invoicing.",
+  "about": "School fee management for Odoo. Generate the month's fee slips at month end, add one-off charges or deductions, invoice each family once, apply late fees on the slip and follow payments, defaulters and concessions, all on standard Odoo invoices.",
+  "features": [
+   "Month-by-Month Fee Slips: Generate the slips due in a chosen month, like a payroll run, so leavers and corrections never create advance bills. Running it twice never duplicates a charge. A setting can create the whole year at enrollment instead.",
+   "Extra Fee Lines and Deductions: Add a one-off charge (a trip, books) or a negative deduction for all selected students for one month, with its own due date.",
+   "One Invoice per Family: The slips of all children of a family are merged into one invoice per month. A draft invoice of the same month is completed, and you choose the earliest or the latest due date.",
+   "Create Invoice from a Fee Slip: A button on the slip invoices it together with its late fee, joining the family's invoice of that month.",
+   "Late Fee on the Slip: Press Apply Late Fee on an overdue slip: the late fee becomes an extra line on its unpaid invoice, or a new slip when the invoice already has a payment or is locked by an accountant's review.",
+   "Apply Late Fees to Overdue Invoices: A second route in the Generate menu: add a late fee to every overdue invoice that is older than the grace days (10 by default), as a fixed amount or a percentage of the unpaid balance.",
+   "Concessions and Sibling Reductions: Percentage or fixed concessions with approval and validity dates, and sibling tiers by child number (10, 15 and 20 percent for the 2nd, 3rd and 4th child by default). Shown as separate negative invoice lines.",
+   "Fee Heads and Fee Structures: Fee heads with a frequency (once, yearly, every term, monthly), optional taxes and an income account, and a fee structure per grade and year that you confirm and copy to another year.",
+   "Mid-Period Joiners: Choose per fee head what a student who joins in the middle of a month, term or year pays: the full period, pro-rata by days, or nothing until the next period.",
+   "Cancel and Waive with a Reason: A fee that is not invoiced yet can be cancelled or waived. The reason is required and kept for audit.",
+   "Leavers Are Not Billed in Advance: When a student is withdrawn or transferred, the fee slips that start after the leaving date and are not invoiced yet are cancelled.",
+   "Fee Payments, Invoices and Defaulters Menus: A School Fees app with Overview, Generate, Fee Records, Invoices, Payments, Analysis and Configuration. Payments are standard Odoo payments.",
+   "Respects the Accountant's Review Lock: With the Odoo Enterprise Accountant app installed, a posted fee invoice that an accountant has marked as reviewed is not reopened by Apply Late Fee for a user who cannot review entries. The late fee goes to a new slip for the next invoice.",
+   "Roles that Separate Duties: The Fee Clerk collects and views. The Fee Manager sets up, approves concessions, applies late fees, waives and cancels. A Principal includes the Fee Manager.",
+   "Real Odoo Invoices: Fees are standard customer invoices to the family contact, tax-exempt unless you set taxes on the fee head, so reports and accounting need no extra step."
+  ],
+  "image": "images/apps/nb_school_fees.jpg",
+  "price": "$39",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/nb_school_fees/",
+    "info": "v1.0.3"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_school_fees/",
+    "info": "v1.0.2"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Student Information System",
+   "Invoicing"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "School",
+   "Fees"
+  ]
+ },
+ {
+  "id": "nb_school_portal",
+  "name": "School Parent Portal",
+  "line": "edu",
+  "lead": "Parents see each child's class, fee statement and invoices, and upload admission documents online.",
+  "about": "Parent portal for Odoo schools. Each guardian signs in with a personal login and sees only their own family: children and class, fee statement with payment status, invoices with Pay Now, and the admission checklist with document upload.",
+  "features": [
+   "One Login per Guardian for the Whole Family: A personal login covers every child of the family. Each parent or guardian has their own login.",
+   "Children Overview: Class, section, roll number, status, a fees-paid bar and the amount to pay for each child.",
+   "Fee Statement with Payment Status: Six statuses (not invoiced yet, due, overdue, partly paid, paid, waived), filters, sorting and a row that shows how the amount is made.",
+   "Link to the Standard Invoice Page: Each invoiced fee row links to the standard Odoo portal invoice, where the parent downloads the PDF. The Pay Now button of Odoo appears there once a payment provider is enabled in your database (checked with the Demo provider in test mode).",
+   "Admission Application Tracker: A step tracker, a next-step message, the offer validity, and the admission fee with a link to its invoice.",
+   "Admission Document Upload: PDF, JPG, PNG, WEBP, DOC or DOCX, 8 MB per file by default (a system parameter), up to 5 files per document, or a promise date to bring it later.",
+   "Real File Check: The first bytes of every file must match its type, so a renamed file is refused. A document the office has verified is locked.",
+   "Invite from the Back Office: A Portal Access button on every guardian invites, resends or revokes the login through the standard Odoo portal invitation. The guardian needs an email address.",
+   "Private by Design: Every page is checked against the guardian's family. Another family's pages answer not found, portal users cannot read school data through the web client, and internal notes and test scores are not shown.",
+   "School Cards on the Portal Home: My Children and Admission Applications appear on the standard portal home page, next to Your Invoices and the other standard cards.",
+   "Office Sees the Uploads: Uploaded files appear on the application documents, a note is added to the application, and the Registrar still verifies each document."
+  ],
+  "image": "images/apps/nb_school_portal.jpg",
+  "price": "$39",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/nb_school_portal/",
+    "info": "v1.0.2"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_school_portal/",
+    "info": "v1.0.2"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Portal",
+   "Student Information System",
+   "School Fee Management",
+   "School Admission Management"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "School",
+   "Portals"
+  ]
+ },
+ {
+  "id": "nb_school_hr",
+  "name": "School Teacher Management",
+  "line": "edu",
+  "lead": "Teacher profiles on HR employees, subject allocation, class teachers and weekly workload limits.",
+  "about": "Teacher management for Odoo schools. Teachers are normal Odoo employees, so attendance, time off and payroll keep working from the HR apps, while the school adds teaching assignments, class teachers, subjects a teacher can teach and weekly workload limits.",
+  "features": [
+   "Teacher Profile on the Odoo Employee: Tick Teacher on an employee and fill the teacher code, employment type, qualification, specialization, years of experience and the subjects the teacher can teach.",
+   "Teaching Assignments: Teacher, subject, section and periods per week for the year. The subject must belong to the curriculum of the grade, and periods start from the curriculum value.",
+   "Class Teacher per Section: One class teacher per section, and one section per teacher and year. Sections show a Teachers button and the number of subjects that still have no teacher.",
+   "Weekly Workload Limits: A maximum of periods per week on each teacher (30 by default). An assignment that takes a teacher over the limit is blocked, logged as a warning or not checked, as you choose.",
+   "Daily Period Limit Kept for the Timetable: A maximum of periods per day (7 by default) is stored on the teacher and never above the weekly limit. The weekly limit is the one checked on assignments.",
+   "Qualified Subjects Check: When a teacher has a Can Teach list, an assignment for a subject outside the list is refused. Leave the list empty to allow any subject.",
+   "Automatic Teacher Role: Ticking Teacher gives the linked login the Teacher role, and unticking or unlinking the login removes it.",
+   "Teachers See Only Their Classes: Record rules limit sections, students, enrollments, grades, subjects, families and guardians to the classes a teacher leads or teaches. A Teacher-only user also sees only teacher colleagues and the contacts of their own students.",
+   "Teacher Directory Without HR Access: School staff and teachers open the Teachers list and profiles from the School menu, with no HR rights. HR officers keep the full employee record.",
+   "Teacher Workload Report: A pivot of periods per week by teacher and subject for the current year, with a list view.",
+   "Sample Teachers: One button adds 28 teachers and 4 other staff to the sample school, with class teachers, subject assignments within each weekly limit and demo logins."
+  ],
+  "image": "images/apps/nb_school_hr.jpg",
+  "price": "$15",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/nb_school_hr/",
+    "info": "v1.0.2"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_school_hr/",
+    "info": "v1.0.2"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Student Information System",
+   "Employees"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "School",
+   "Teachers"
+  ]
+ },
+ {
+  "id": "nb_school_timetable",
+  "name": "School Timetable",
+  "line": "edu",
+  "lead": "Weekly class and teacher timetable with daily periods, clash checks and one-click generation.",
+  "about": "Timetable for Odoo schools. Define the daily periods once, then place every subject of every class by its periods per week. The class timetable and the teacher timetable come from the same lessons, so a teacher can never be in two classes at once.",
+  "features": [
+   "Daily Periods and Breaks: Define the school day once with start and end times. Recess and lunch are breaks that never take a lesson.",
+   "Weekly Timetable per Class: One lesson per section, day and period, with the classroom, shown as a weekly grid on the section.",
+   "Teacher Timetable: Each teacher's week on the teacher profile, with the class they teach in every period.",
+   "Clash Protection: A teacher cannot be in two classes in the same period, and cannot go over the daily period limit set on the teacher profile. A section has one lesson per period.",
+   "One-Click Generation: Places every subject by its periods per week, spread over the days (5 school days by default, 1 to 7), keeps or clears the lessons already placed, and lists what does not fit.",
+   "Periods Still to Place: Each section counts the lessons of its teaching assignments that are not on the timetable yet.",
+   "Printable Timetables: Class Timetable and Teacher Timetable as PDF reports on an A4 landscape paper format.",
+   "Teacher Load Pivot: A pivot of the lessons per teacher and weekday, with the list and form views of every lesson.",
+   "Teachers See Only Their Lessons: A teacher sees the lessons they teach and those of the class they lead and cannot edit them. School Staff read the whole timetable.",
+   "Registrar Edits the Lessons: The Registrar and the Principal add, move and delete lessons by hand. Only the Principal edits the periods.",
+   "Built on Teaching Assignments: Lessons come from the teaching assignments of School Teacher Management, so a subject without a teacher has no lesson and the periods per week are the ones assigned.",
+   "Sample Timetable: With the sample school loaded, the same button also adds a bell schedule of 8 periods and 2 breaks and generates the timetable of every section."
+  ],
+  "image": "images/apps/nb_school_timetable.jpg",
+  "price": "$25",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/nb_school_timetable/",
+    "info": "v1.0.1"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_school_timetable/",
+    "info": "v1.0.1"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "School Teacher Management"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "School",
+   "Timetable"
+  ]
+ },
+ {
+  "id": "nb_school_dashboard",
+  "name": "School Dashboard",
+  "line": "edu",
+  "lead": "Principal dashboards for admissions, fee collection, staff and students. Free with the school suite.",
+  "about": "School dashboard for Odoo. Four ready-made dashboards show admissions, fee collection, staff and students, built on the standard Odoo Dashboards app and the data of the school modules.",
+  "features": [
+   "Admissions Dashboard: Applications, in pipeline, admitted and rejected or withdrawn, by stage, grade, month and source.",
+   "Fees Dashboard: Gross fees, concessions, net fees and not yet invoiced, by month due, fee head, grade and status.",
+   "Staff Dashboard: Staff and teaching assignments, periods per week, by department, job position, teacher and grade.",
+   "Student Batches Dashboard: Enrolled students, sections, seat capacity and closed enrollments, by grade, section and gender.",
+   "Standard Odoo Dashboards: The four boards are standard spreadsheet dashboards in a School group of the Dashboards app, so the date filter, the favourite star and the Share button work as they do for every dashboard.",
+   "Period, Year and Grade Filters: Global filters at the top of each board: period and academic year and grade for admissions and fees, academic year and grade for staff and students.",
+   "Live Data: The figures read the records of the school modules when you open the board, with no export or copy.",
+   "Principal, Registrar and Administrator Only: Only these three see the School dashboards. Teachers, staff and fee clerks do not.",
+   "Read-Only Boards on Community: On Odoo Community the boards are for reading: filter, mark as favourite and share them. Changing a chart or a pivot needs the spreadsheet editor that Odoo Enterprise adds, which we did not test with these boards.",
+   "No Enterprise App Needed: It uses the Dashboards app that ships with Odoo Community. The Enterprise Documents and Spreadsheet apps are not required."
+  ],
+  "image": "images/apps/nb_school_dashboard.jpg",
+  "price": "Free",
+  "price_note": "open licence",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/nb_school_dashboard/",
+    "info": "v1.0.1"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_school_dashboard/",
+    "info": "v1.0.1"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Dashboards",
+   "Student Information System",
+   "School Admission Management",
+   "School Fee Management",
+   "School Teacher Management"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "School",
+   "Dashboards"
+  ]
+ },
+ {
+  "id": "nb_course_core",
+  "name": "Course Management",
+  "line": "edu",
+  "lead": "Short courses and training batches with seats, trainers, learners and an automatic waiting list.",
+  "about": "Course management for Odoo. Run short courses next to your classes: a course catalog, batches with dates, trainers and seats, learners with the family that pays, and an automatic waiting list that fills a seat when someone drops out.",
+  "features": [
+   "Course Catalog: Courses with a code, a category, a level (all levels, beginner, intermediate, advanced), a mode (on site, online, blended), the teaching hours, a fee, the seats per batch, a minimum to run and prerequisites.",
+   "Batches with Dates and Schedule: A batch is one run of a course: start and end date, a free-text schedule such as Mon, Wed 18:00-20:00, a venue or meeting link, and an automatic reference.",
+   "Seats, Minimum and Fee from the Course: A new batch takes the seats, the minimum to run and the fee from its course. Each can be changed on the batch.",
+   "Trainers and One Coordinator: Trainers are the school's teachers (employees flagged as teachers in School Teacher Management), so one HR record serves classes and courses. One user coordinates the batch.",
+   "Automatic Waiting List: Enrolling in a full batch puts the learner on the waiting list with a position. When a seat frees up, or you raise the seats, the longest-waiting learner is enrolled and a note is added.",
+   "Rolling Intake: A learner can join a batch that is already running while it has a free seat.",
+   "Batch Life Cycle: Planned, open for enrollment, running, completed or cancelled. Starting needs the minimum number of enrolled learners. Completing marks the enrolled learners completed and cancels the ones still waiting.",
+   "Learners Are Students of Your School: A learner is a student record of the Student Information System, so classes and courses share one person. A learner who pays for themselves gets a family of their own when you create them from the enrollment form.",
+   "A Family or a Company Pays: The Billed To field of an enrollment holds the learner's family by default. Choose another family, for example a company that pays for several learners. The Payers menu lists them.",
+   "Outcome and Drop Reason: Mark an enrollment completed with an outcome (passed or did not pass), or drop a learner and note the drop reason on the enrollment.",
+   "Roles that Follow the Assignment: Course Staff read only, Batch Coordinator sees only the batches assigned to them, Course Coordinator plans and enrolls for all, Course Manager also manages the catalog. A teacher sees only the batches they train.",
+   "Waiting List, Analysis and Calendar Menus: A Waiting List menu grouped by batch, an Enrollment Analysis pivot and graph, a batch calendar, and Learners and Payers lists."
+  ],
+  "image": "images/apps/nb_course_core.jpg",
+  "price": "$25",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/nb_course_core/",
+    "info": "v1.0.2"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_course_core/",
+    "info": "v1.0.1"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Student Information System",
+   "School Teacher Management"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "Courses",
+   "Training"
+  ]
+ },
+ {
+  "id": "nb_course_admission",
+  "name": "Course Enrollment and Admission",
+  "line": "edu",
+  "lead": "Applications for course batches with seat limits, waiting list, offers and enrollment on admit.",
+  "about": "Course admission for Odoo. Take applications for short-course batches in the same pipeline as your class admissions: document checklist, offer, batch seats, waiting list and, when admitted, enrollment in the batch and its fee slips.",
+  "features": [
+   "Applications for Course Batches: An application has a type, class or course, and a course application names the batch. A course application needs a batch before it can be saved.",
+   "Batch Seats Reserved by Offers: Seats available are the batch seats minus the enrolled learners and the open offers (offered or accepted applications).",
+   "Waiting List per Batch: When no seat is free the application goes to the waiting list, ordered by date. A released seat creates a to-do for the officer on the first one waiting. The Waiting List menu groups class applications by class and year and course applications by batch.",
+   "Offer Expiry: An offer has a valid-until date. The daily job of School Admission Management withdraws an expired offer and the seat is free again.",
+   "Enrollment on Admit: The student and family are created when the family accepts. Admitting a course application then enrolls the learner in the batch. If the batch has no free seat the admit is refused.",
+   "Fee Slips from the Installment Plan: Enrolling the learner creates the fee slips of the batch's installment plan through Course Fee Installments.",
+   "Same Checklist, Same Family Matching: The document checklist, family matching and officer follow-up are the school's own. Mandatory documents must be verified before an offer.",
+   "Coordinator May Admit Course Applicants: A Course Coordinator can admit course applications. Admitting a class application stays with the registrar.",
+   "Course and Class Filters: Course Applications and Class Applications filters and a batch search field on the applications.",
+   "New Course Application Menu: A New Course Application entry under Applications opens the form with the type set to Course.",
+   "Works Alone or Together: Without this module class admissions are unchanged. With it you can run classes, courses or both in one pipeline."
+  ],
+  "image": "images/apps/nb_course_admission.jpg",
+  "price": "$15",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/nb_course_admission/",
+    "info": "v1.0.3"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_course_admission/",
+    "info": "v1.0.3"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "School Admission Management",
+   "Course Fee Installments"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "Courses",
+   "Admissions"
+  ]
+ },
+ {
+  "id": "nb_elearning_video",
+  "name": "eLearning Video Upload",
+  "line": "edu",
+  "lead": "Upload video file for local video lessons in Odoo eLearning: MP4 and WebM, video player, no download.",
+  "about": "Course video upload for Odoo eLearning. Odoo eLearning plays lesson videos from YouTube, Vimeo and Google Drive links only. eLearning Video Upload adds a video you upload from your computer to a Video lesson: it is checked, stored in Odoo and streamed privately to the people who may open the lesson, on the lesson page and in the fullscreen player, with no download button. Made for training centres, schools, academies and course creators that keep their course videos in Odoo.",
+  "features": [
+   "eLearning Video Upload: Add an MP4 or WebM file to a Video lesson from your computer, instead of a YouTube, Vimeo or Google Drive link.",
+   "Course Video Upload: Any lesson of any course can carry its own video file. Links to YouTube, Vimeo and Google Drive keep working as before.",
+   "Private Video Streaming: Only people who may open the lesson can stream its video: enrolled attendees, previewable lessons and the course team. Everyone else gets a not found page.",
+   "Upload Progress Bar: The lesson form shows the percentage and the megabytes sent, with a Cancel button. Size and format are checked in the browser before anything is sent.",
+   "No Download Button: The player hides the download and remote playback buttons and picture-in-picture, and blocks the right-click menu. This stops casual saving; it is not copy protection.",
+   "Checks the File Type: The type is read from the first bytes of the file (MP4, WebM and Ogg signatures), never from the file name. A text file renamed to .mp4 is refused.",
+   "Size Limit and Formats: An Administrator sets the largest file size (100 MB by default) and which of MP4, WebM and Ogg may be uploaded (MP4 and WebM are on by default).",
+   "Seeking in Long Videos: The video is streamed in parts (range requests), so learners can jump to any point instead of waiting for a full download.",
+   "Duration Filled In: The length of an MP4 is read from the file and set as the lesson duration when the duration is empty.",
+   "Fullscreen Completion: In the fullscreen player an attendee's lesson is marked complete when the last 30 seconds begin (lessons without a quiz question), and the next lesson opens when the video ends.",
+   "Published Lesson Check: A published video lesson needs a video link or an uploaded file, and a lesson cannot have both. Odoo refuses to publish an empty video lesson.",
+   "Replace or Remove: The lesson form shows Replace video and a remove button next to the file name."
+  ],
+  "image": "images/apps/nb_elearning_video.jpg",
+  "price": "$20",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/nb_elearning_video/",
+    "info": "v1.0.3"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_elearning_video/",
+    "info": "v1.0.3"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "eLearning"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "eLearning",
+   "Video"
+  ]
+ },
+ {
+  "id": "nb_course_fees",
+  "name": "Course Fee Installments",
+  "line": "edu",
+  "lead": "Installment plans and fee slips for course enrollments, billed to the family or the paying company.",
+  "about": "Course fee installments for Odoo. Split a course fee into a deposit and equal parts, create fee slips when a learner is enrolled, invoice the family or company that pays, and use the same late fees, concessions and payments as class fees.",
+  "features": [
+   "Installment Plans: Percentages of the fee, each counted from enrollment, batch start or batch end plus or minus days. The percentages must add up to 100. A deposit and equal parts are easy to set up. Three plans are included.",
+   "Fee Slips on Enrollment: Confirming an enrollment, or taking a seat from the waiting list, creates its slips. Running Create Fee Slips again never duplicates a slip.",
+   "Exact Totals and Sensible Dates: The last installment takes the rounding remainder so the slips add up to the fee, and a due date is never before the day the learner enrolled.",
+   "Billed To Family or Company: Slips follow the Billed To field of the enrollment. A company that pays for several learners gets its slips on its own invoice.",
+   "Real Odoo Invoices: Slips become standard customer invoices through the school fee engine, so payments and accounting work as usual.",
+   "Late Fees, Concessions and Payments: Course slips use the same fee desk as class fees: Apply Late Fee, Create Invoice, concessions and payment status. Fee Heads: a Course Fee head is added.",
+   "No Fee Access Needed to Enroll: The slips are created as a system step, so a coordinator who enrolls learners never sees fee data. The Fee Slips tab and the paid and total figures need the Fee Clerk role.",
+   "Cancel on Drop: Slips that are not invoiced yet are cancelled when a learner is dropped or cancelled or the batch is cancelled. Invoiced slips are kept.",
+   "Slips Stay with the Enrollment: An enrollment that has fee slips cannot be deleted. Cancel or drop it instead, so the fee records stay complete.",
+   "Course and Class Filters: The slip search has Course Fees and Class Fees filters and a Course Batch grouping."
+  ],
+  "image": "images/apps/nb_course_fees.jpg",
+  "price": "$15",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/nb_course_fees/",
+    "info": "v1.0.2"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_course_fees/",
+    "info": "v1.0.1"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Course Management",
+   "School Fee Management"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "Courses",
+   "Fees"
+  ]
+ },
+ {
+  "id": "nb_employee_self_service",
+  "name": "Employee Self Service",
+  "line": "portals",
+  "lead": "Internal self-service portal: profile, time off, attendance, expenses and payslips.",
+  "about": "A single self-service workspace on the standard Odoo /my pages where your internal users handle their own HR admin instead of emailing HR. It installs on any Odoo database and lights up payslips and timesheets automatically when those apps are present.",
+  "features": [
+   "My Profile: editable private info, avatar, ID-card scans, resume and skills",
+   "My Time Off: balances, request form, and a filterable manager approval inbox",
+   "My Attendances: check in and out, a full-month timeline and manager-approved corrections",
+   "My Overtime: extra hours by month, comp-off balance and requests",
+   "My Expenses: reports, quick log form and totals",
+   "Payslips with in-page PDF preview (Enterprise) and timesheets, when those apps are installed",
+   "One-click user creation from the employee form"
+  ],
+  "image": "images/apps/nb_employee_self_service.jpg",
+  "price": "$119",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_employee_self_service/",
+    "info": "v2.0.6"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/nb_employee_self_service/",
+    "info": "v2.0.5"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Employees",
+   "Time Off",
+   "Portal",
+   "Mail"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "HR & Payroll"
+  ]
+ },
+ {
+  "id": "portal_ext",
+  "name": "Portal Sidebar Pro",
+  "line": "portals",
+  "lead": "Collapsible sidebar, live dashboard tiles and card-styled My Account for the Odoo customer portal.",
+  "about": "A collapsible, auto-built sidebar for the Odoo portal /my area, a redesigned home dashboard and cleaner My Details and Security pages. Pairs with the NeuralBytea portals.",
+  "features": [
+   "Collapsible Sidebar: A side menu with an entry for every portal page, built from the cards on the portal home, so apps you install later appear on their own.",
+   "Mobile Friendly: On small screens the sidebar opens over the page with an overlay and closes with a tap.",
+   "Remembers Its State: Collapsed or open, the choice is kept in the browser for the next visit.",
+   "Greeting Banner: A good morning, afternoon or evening message with the user name, the date, a live clock and a tag that says Portal User or Internal User.",
+   "Dashboard Cards: Every portal document type is a card with its icon, a record count, a short description and a link to its list.",
+   "Profile Panel: The contact card of the user and an Edit information link sit beside the dashboard.",
+   "My Account Cards: Account details and security pages in a card layout, with all core fields and sections kept.",
+   "Works With Your Portal Apps: Cards added by other modules, such as invoices, orders, tickets or the employee portal, show up in the sidebar by themselves.",
+   "No Python, No Models: Only views and assets, so it adds no database tables and keeps your portal code untouched.",
+   "Odoo Online Ready: A data and assets module without Python files, available for Odoo Online, Odoo.sh and On Premise."
+  ],
+  "image": "images/apps/portal_ext.jpg",
+  "price": "$49",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/portal_ext/",
+    "info": "v1.0.9"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/portal_ext/",
+    "info": "v1.0.8"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Portal"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "Frontend"
+  ]
+ },
+ {
+  "id": "payment_Mastercard",
+  "name": "Mastercard MPGS Payment",
+  "line": "payments",
+  "lead": "Mastercard MPGS Hosted Checkout for invoice payments with auto posting and reconciliation.",
+  "about": "Payment provider for the Mastercard Payment Gateway Services (MPGS) Hosted Checkout with 3-D Secure. Payments are posted automatically and reconciled with invoices.",
+  "features": [
+   "Mastercard Hosted Checkout: Opens the Mastercard hosted page with an INITIATE_CHECKOUT session for a PURCHASE, so the customer pays on the Mastercard site.",
+   "3-D Secure on the Hosted Page: Authentication and card entry are handled by Mastercard. Your Odoo server never sees the card number.",
+   "Result Checked on the Server: After the return, Odoo asks the gateway for the order and confirms the transaction only when the order result is SUCCESS.",
+   "Amount and Currency Checked: The order is created in the currency and for the amount of the Odoo transaction. If the gateway reports another amount or currency, the transaction goes to error.",
+   "Payment Posted and Reconciled: When the transaction is confirmed, Odoo creates and posts the customer payment and reconciles it with the invoice.",
+   "Portal Pay Now: Customers pay from the invoice in the portal with the standard Odoo payment dialog and the Card method.",
+   "Simple Credentials: Host, merchant ID, user name and API password per provider, and the State field for test mode and production.",
+   "Multi-company: The provider is found by company on the return, so each company can use its own merchant account.",
+   "Branded Result Pages: A success page and an error page with a clear message and buttons to the invoices and the home page.",
+   "Automated Tests: 10 test methods run the whole flow against a mock gateway over HTTP: session, success, failure, wrong amount."
+  ],
+  "image": "images/apps/payment_Mastercard.jpg",
+  "price": "$49",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/payment_Mastercard/",
+    "info": "v1.0.6"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/payment_Mastercard/",
+    "info": "v1.0.5"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Payment Providers",
+   "Invoicing"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "Accounting"
+  ]
+ },
+ {
+  "id": "employee_loan_management_enterprise",
+  "name": "Employee Loan Pro",
+  "line": "hr",
+  "lead": "Employee loans and salary advances with automatic payroll deduction and analytics.",
+  "about": "Manages employee loans and salary advances end to end: loan types, installment schedules, rescheduling, accounting configuration and automatic deduction on the payslip, with an analytics dashboard.",
+  "features": [
+   "Loan Types With One-Click Setup: Four buttons create the account configuration, the deduction salary rule, a menu and a number sequence for a loan type.",
+   "Automatic Payroll Deduction: Due installments are added to the payslip as an input of the loan type when it is computed, and the loan's salary rule deducts them.",
+   "Paid When the Salary Entry Posts: An installment is marked paid once the salary journal entry of its payslip is posted or paid.",
+   "Journal Entry on Approval: Approving a loan posts a journal entry from the loan type's journal and accounts.",
+   "Installments Made for You: Equal monthly installments from the first payment date, and a wizard to recompute the unpaid ones.",
+   "Loan Dashboard: Disbursed, recovered, outstanding, recovery rate, active loans and overdue installments, with day, month and year charts.",
+   "Filters That Stay: Date, company, department, employee, loan type and state filters are kept when you open a record and come back.",
+   "Employee Portal: Employees see only their own loans, progress and installments from the website portal.",
+   "Access Rules: Employees see only their own loans. HR, payroll officers and loan approvers see all of them.",
+   "Multi-Company Aware: Loans, accounts and the dashboard follow the companies selected in the company switcher."
+  ],
+  "image": "images/apps/employee_loan_management_enterprise.jpg",
+  "price": "$49",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/employee_loan_management_enterprise/",
+    "info": "v1.0.12"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/employee_loan_management_enterprise/",
+    "info": "v1.0.10"
+   },
+   {
+    "odoo": "Odoo 17",
+    "url": "https://apps.odoo.com/apps/modules/17.0/employee_loan_management_enterprise/",
+    "info": "v1.0.0"
+   }
+  ],
+  "edition": "Enterprise (needs Payroll)",
+  "licence": "OPL-1 (Odoo 18, 19)LGPL-3 (Odoo 17)",
+  "works_with": [
+   "Payroll",
+   "Accounting",
+   "Employees"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "Accounting"
+  ]
+ },
+ {
+  "id": "hr_attendance_board",
+  "name": "Attendance Leave Gantt",
+  "line": "hr",
+  "lead": "Attendance and leave Gantt with late arrivals, remote and hybrid work, click-to-edit and KPIs.",
+  "about": "A colour-coded Gantt board of attendance and leave that separates office, remote and hybrid days, with click-to-edit, remote-work periods on contracts and on-site versus remote KPIs.",
+  "features": [
+   "Attendance and Leave Gantt: Attendance, approved leave and public holidays on one grid for every employee, with day, week and month views.",
+   "Click to Edit: Open the attendance or the leave behind any cell in a dialog on the same page, with the user's own access rights.",
+   "Late Arrivals: Lateness counts only after a grace window and is frozen on each check-in, so a later schedule change never rewrites history.",
+   "Upcoming Days Are Not Absences: A working day that has not happened yet, or today before the end of the shift, is shown as upcoming and never counted as absent.",
+   "Leave in Every Form: Full days, half days and custom hours; a morning and an afternoon half-day make a full day off; requests waiting for approval show a dashed box that opens the request.",
+   "Remote and Hybrid Work: Remote periods, a hybrid working schedule or the Remote Work location plan decide whether a day is on-site or remote.",
+   "Standard Odoo Filters: Company, department, employee and leave type dropdowns, a date range and a status filter.",
+   "KPIs and Trends: Present, absent, late, late comers and missing check-outs for on-site and remote staff, with a trend chart.",
+   "Insights and Leaderboards: Attendance and on-time rates, arrival times, weekday and department comparison, time off by type, and rankings of absences and late arrivals.",
+   "Excel Export: Download the filtered grid with a column for every attendance summary value.",
+   "Recompute Lateness: A list action for Attendance Shift Managers re-derives shift and lateness after a schedule or grace change."
+  ],
+  "image": "images/apps/hr_attendance_board.jpg",
+  "price": "$24.99",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/hr_attendance_board/",
+    "info": "v2.1.0"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/hr_attendance_board/",
+    "info": "v2.1.0"
+   },
+   {
+    "odoo": "Odoo 17",
+    "url": "https://apps.odoo.com/apps/modules/17.0/hr_attendance_board/",
+    "info": "v2.0.0"
+   }
+  ],
+  "edition": "Enterprise (needs Contracts)",
+  "licence": "OPL-1 (Odoo 18, 19)LGPL-3 (Odoo 17)",
+  "works_with": [
+   "Attendances",
+   "Time Off",
+   "Employees",
+   "Contracts"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "Dashboards"
+  ]
+ },
+ {
+  "id": "nb_payroll_dashboard",
+  "name": "Payroll Dashboard Pro",
+  "line": "dash",
+  "lead": "Payroll dashboard with month and batch comparison, salary rule totals and Excel PDF report.",
+  "about": "A zero-configuration payroll dashboard built with Owl, plus a wizard that exports salary reports to Excel and PDF.",
+  "features": [
+   "Month vs Month Comparison: Compare two months: salary rule totals, difference and percentage, headcount and worked days.",
+   "Batch vs Batch Comparison: Compare any two payslip batches, such as a regular run and an off-cycle run.",
+   "Joiners and Leavers: Employees present in only one of the two periods are marked New or Left, with their full amount as the difference.",
+   "Largest Changes First: Sort the employee table by the largest increase or decrease, show the changes only, and filter by department or name.",
+   "Columns From Your Payroll: Every column comes from your own salary rules and worked-day entries, so it fits any structure or localization.",
+   "Batch Dashboard: Headcount, total worked days and a total for each salary rule, with a worked days view and a salary view.",
+   "Employee Ledger: Open an employee for the worked days breakdown, the full salary ledger and links to the payslip and journal entry.",
+   "Excel and PDF Report: Salary report for a month, a payslip batch or custom dates, grouped by company, department and employee, with one Excel sheet per company.",
+   "Excel Export of the Comparison: Download the comparison with totals on one sheet and every employee on another.",
+   "Multi-Company Aware: Batches, months and totals follow the companies selected in the company switcher."
+  ],
+  "image": "images/apps/nb_payroll_dashboard.jpg",
+  "price": "$29",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_payroll_dashboard/",
+    "info": "v1.1.0"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/nb_payroll_dashboard/",
+    "info": "v1.1.0"
+   }
+  ],
+  "edition": "Enterprise (needs Payroll)",
+  "licence": "OPL-1",
+  "works_with": [
+   "Payroll",
+   "Accounting"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "HR & Payroll"
+  ]
+ },
+ {
+  "id": "sale_payment_dashboard",
+  "name": "Sales Analytics Dashboard",
+  "line": "dash",
+  "lead": "Sales analytics dashboard with customer churn, retention and invoice payment collection tracking.",
+  "about": "Owl dashboards that link sale orders, invoices and payments: live KPIs, recovery tracking, customer revenue ranking, product category mix and 12-month trends.",
+  "features": [
+   "Sales Analytics Dashboard: Win rate, average order value, buying behaviour, top products and revenue by customer, country and category.",
+   "Customer Churn and Retention: New, returning, shared, at-risk, inactive and lost customers with a month-by-month retention trend.",
+   "Invoice and Payment Collection: Draft, posted, paid, partial, unpaid and overdue invoices, with recovery rate and outstanding balance.",
+   "Clickable Cards and Rows: Open the exact orders, invoices or payments behind a figure in a standard list view. Drill-downs are paginated on the server.",
+   "12-Month Trend: Invoiced amounts, payments and sales on one chart, with an axis that adapts to the selected period.",
+   "Filter Bar: Company, date, customer, salesperson, product, country and category. Each board remembers your choices in the browser.",
+   "Multi-Company Aware: Figures follow the companies selected in the company switcher, with a company filter to narrow to one.",
+   "Fast on Large Databases: A loading skeleton shows at once and sections fill in as they finish. Heavy figures use SQL aggregation in batches.",
+   "Recalculate on Demand: Each board is a snapshot of the moment it loaded. Press Recalculate to pull in newer records.",
+   "User Rights Apply: Figures are read with the access rights of the signed-in user. The module only reads data and changes nothing."
+  ],
+  "image": "images/apps/sale_payment_dashboard.jpg",
+  "price": "$49",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/sale_payment_dashboard/",
+    "info": "v1.2.6"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/sale_payment_dashboard/",
+    "info": "v1.2.4"
+   },
+   {
+    "odoo": "Odoo 17",
+    "url": "https://apps.odoo.com/apps/modules/17.0/sale_payment_dashboard/",
+    "info": "v1.0.1"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Sales",
+   "Accounting"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "Sales",
+   "Accounting"
+  ]
+ },
+ {
+  "id": "nb_smart_list_search_pro",
+  "name": "Smart List Search Pro",
+  "line": "ui",
+  "lead": "Column wise search, filter row and AI filter for list view search, saved filters, sticky filter.",
+  "about": "Adds sticky column filters to Odoo list views and an AI search that ranks and groups records. Supports multiple AI model providers with per-company credentials and saved search profiles.",
+  "features": [
+   "Column Filter Row: A filter cell under every column header of a list view, shown with the funnel button. It sits on top of the standard search bar and its facets.",
+   "Type-Aware Operators: Text, number, date, selection, relation and yes or no columns each get their own operators, plus is set and is not set.",
+   "Up to 6 Conditions per Column: Several values or ranges in one column, joined with AND or OR for that column, and a global AND or OR between columns.",
+   "Sub-Field Drill-Down: On relation columns, pick a field of the related record, such as Customer > Country, and filter on it. One level deep.",
+   "Group by Column: A Group by badge on each column groups the filtered rows with their totals, using the normal Odoo grouping.",
+   "Saved Search Profiles: Save filters, AND or OR and grouping under a name per list model. Rename, update, delete, and tick Shared to let colleagues load it.",
+   "Remembered Filters: The last filters of each list are remembered in your browser and restored next time; switch Remember off to stop. They also survive opening a record and coming back.",
+   "Pin or Scroll: Keep the filter row pinned under the header while the list scrolls, or let it scroll away. The choice is kept per list.",
+   "Column Visibility: Show or hide the columns of a list from a checklist and reset to the default. The choice is kept in your browser, per list.",
+   "Export XLSX, CSV, PDF: Export the filtered records and the visible columns. PDF opens a printable page and lists up to 1000 rows; a warning shows above 10,000 matches.",
+   "Keyboard Shortcuts: Enter applies the filters, Esc clears them, and Ctrl+Shift+F jumps into the first filter cell.",
+   "AI Natural-Language Search: Describe what you want. The AI answers with a filter, or with a grouping ranked by count or by value, and you see it in words before applying.",
+   "Add, Remove or Merge: Choose whether the AI result is added on top of the search bar, replaces it, or is merged into one chip. Auto-apply skips the preview.",
+   "Six AI Sources: OpenAI, Anthropic (Claude), Google Gemini, NVIDIA NIM, OpenCode Zen and a local Ollama server, each with a catalogue of 20 models that administrators can extend.",
+   "Encrypted Keys, Server Only: API keys are encrypted before they are stored and only decrypted on the server for a request. The form shows a masked value.",
+   "AI Search User Group: Only members of the AI Search User group see the AI button and may run prompts, at most 10 requests a minute each. Administrators are members.",
+   "Clear Data Policy: AI search sends your request and a description of the model's fields to the provider you chose. The records of the list are not sent."
+  ],
+  "image": "images/apps/nb_smart_list_search_pro.jpg",
+  "price": "$59",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/nb_smart_list_search_pro/",
+    "info": "v1.0.6"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_smart_list_search_pro/",
+    "info": "v1.0.6"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/nb_smart_list_search_pro/",
+    "info": "v1.0.5"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Web",
+   "Mail"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "AI"
+  ]
+ },
+ {
+  "id": "mail_ext",
+  "name": "Chatter Workspace Pro",
+  "line": "ui",
+  "lead": "Hide, resize chatter with per-user memory; admin layout rules; preview toggle.",
+  "about": "Lets users hide and resize the chatter with their choice remembered per user, while admins set layout rules per model and company.",
+  "features": [
+   "Chatter Toggle Button: A button in the chatter topbar hides and shows the whole chatter panel on any record.",
+   "Attachment Preview Toggle: A separate button next to the pop-out button hides only the attachment preview and keeps the message thread.",
+   "Full-Width Form: The form sheet takes the freed space on wide forms while the chatter or the preview is hidden. On Odoo 19 and 20 the side column collapses so the form uses the whole row.",
+   "Restore Button With Unread Badge: A round button stays in the corner while the chatter is hidden, with the number of new messages (99+ above 99).",
+   "Keyboard Shortcuts: Alt+C toggles the chatter and Alt+P toggles the attachment preview.",
+   "Resizable Chatter Panel: Drag the chatter's left edge, from 320 to 900 px. It needs the side chatter on a wide screen, and the width is saved per user unless a rule pins it.",
+   "Remembered Per User: Your last choice is saved on your user: one default for the chatter and one for the preview. It applies on your other devices too.",
+   "Admin Layout Rules: Force the chatter visible, hidden or invisible, the preview state and a width for chosen models, for everybody or for one user.",
+   "Company Default Position: A company-wide default chatter position (Visible, Hidden or Invisible) on the company form.",
+   "Five-Level Precedence: A user and model rule beats a company and model rule, then your own choice, then the company default, then the module default (visible).",
+   "Collapsible Long Messages: Message bodies taller than about 320 px are clamped in the chatter with Show more and Show less. Discuss is not changed.",
+   "Optional Card Styling: A rounded card chatter panel and rounded message avatars. Each user can switch it off in Preferences.",
+   "Spanish, French and Arabic: Button tooltips and Preferences labels are translated, and the restore button flips to the left in right-to-left layouts.",
+   "Compatibility Guard: If another module already defines the same toggle methods on the chatter, only those are skipped and a warning is logged in the browser console.",
+   "Safe Access Rights: Every internal user can read layout rules so their own layout can be resolved. Only administrators create or change them."
+  ],
+  "image": "images/apps/mail_ext.jpg",
+  "price": "$29",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/mail_ext/",
+    "info": "v2.1.6"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/mail_ext/",
+    "info": "v2.1.7"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/mail_ext/",
+    "info": "v2.1.5"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Discuss"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": []
+ },
+ {
+  "id": "pane_split_view",
+  "name": "Split View Pro",
+  "line": "ui",
+  "lead": "Master-detail split pane for every Odoo list view - preview and edit side by side.",
+  "about": "A master-detail split pane for Odoo list views so you can preview and edit records beside the list.",
+  "features": [
+   "Split Pane Toggle Button: A permanent button next to the view switcher opens and closes the pane on every action that has a list view.",
+   "Real, Editable Form in the Pane: The pane embeds the genuine form view with its statusbar, buttons, tabs and action menu. Changes are saved like on the full form.",
+   "List-Wide Pager: The pager in the pane form runs over the records loaded in the list, for example 1 / 15, so you page through without leaving the list.",
+   "Highlighted Row: The row you clicked is highlighted in the list. The highlight marks the clicked record and does not follow the pager.",
+   "Drag-to-Resize Divider: Drag the divider to give the list or the form more room, down to 280 px for each side.",
+   "Double-Click Reset: Double-click the divider to go back to an even 50/50 split.",
+   "Chatter Below the Form: The chatter is stacked under the form in the pane, so the whole record reads top to bottom in one scroll.",
+   "Open Form: The Open Form button maximizes the previewed record to the full-screen form view.",
+   "Grouped Lists and Search Panels: Works on grouped lists and on lists with a search panel sidebar. The panel keeps its place at the left.",
+   "Saves Before You Move On: If you edited a row in an editable list and click another row, the first row is saved before the new record opens.",
+   "Pane Mode Across Views: Pane mode stays on when you switch the list to a kanban and back. From a non-list view, the pane button jumps to the list and opens the pane.",
+   "Nothing Extra to Read or Write: It adds no model, group, access rule or menu, and it only previews records the user can already open.",
+   "Original List Untouched: With the pane off, the list view looks and behaves as before. A reload starts with the pane closed because the state is kept in memory only."
+  ],
+  "image": "images/apps/pane_split_view.jpg",
+  "price": "$24.99",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/pane_split_view/",
+    "info": "v1.0.6"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/pane_split_view/",
+    "info": "v1.0.6"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/pane_split_view/",
+    "info": "v1.0.5"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Web"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": []
+ },
+ {
+  "id": "web_home_menu",
+  "name": "Home Menu Enterprise UI",
+  "line": "ui",
+  "lead": "Home menu for Community: full-screen app grid with clock, opened from the navbar apps button.",
+  "about": "Brings an Enterprise-style home menu to Odoo Community.",
+  "features": [
+   "Full-Screen Home Menu: The apps button in the navbar opens a full-screen page, and a back button returns to the page you came from.",
+   "App Grid: Every app the signed-in user can open, shown as an icon and a name; a click opens the app.",
+   "Live Clock and Date: A clock with seconds that updates every second, from your browser's time, and today's date in capital letters.",
+   "Back Button: While the home menu is open the apps button turns into a back button that restores your previous page.",
+   "Quiet Navbar While Open: The app name and the navbar menus are hidden on the home menu page; the messaging and activity icons and the user menu stay.",
+   "Navy Navbar on Every Page: The navbar is drawn in dark navy with light text on every page, not only on the home menu.",
+   "Responsive Grid: The icons are laid out with an automatic grid that fits the width of the window.",
+   "Hover Feedback: The icon under the pointer lifts and gets a shadow.",
+   "Home Menu Action: A client action called Home Menu opens the same page. Odoo 19 has no Home Action field on its user forms, so the navbar button is how users open it.",
+   "No Settings, No Data: No settings screen, no groups, no models and no menu entry. Nothing is stored in the database.",
+   "Two Dependencies: Only base and web are needed. No Enterprise app and no third-party library.",
+   "Clean Uninstall: Uninstalling brings back the standard apps button and the standard navbar colours and removes the Home Menu action."
+  ],
+  "image": "images/apps/web_home_menu.jpg",
+  "price": "$20",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/web_home_menu/",
+    "info": "v1.0.7"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/web_home_menu/",
+    "info": "v1.0.7"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/web_home_menu/",
+    "info": "v1.0.7"
+   }
+  ],
+  "edition": "Community",
+  "licence": "OPL-1",
+  "works_with": [
+   "Web"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "Community"
+  ]
+ },
+ {
+  "id": "web_appbar",
+  "name": "Sidebar Menu",
+  "line": "ui",
+  "lead": "Responsive sidebar menu and app sidebar navigation for Odoo: icon rail, left sidebar, mobile menu.",
+  "about": "A collapsible sidebar and appbar navigation with a modern design. Works with Web UI Extensions.",
+  "features": [
+   "Left Sidebar Menu: One vertical list of the apps the signed-in user can open, each with its icon and name. A user never sees an app they have no right to open.",
+   "Collapsible Sidebar and Icon Rail: A button switches between a 220 px sidebar and a 86 px icon rail on desktop. The choice is remembered for each user in the browser, so it is still there after a reload.",
+   "Highlighted Current App: The open app is highlighted in the sidebar with an accent bar, and follows you when you change app from anywhere.",
+   "Current App in the Navbar: The navbar shows the icon and name of the open app next to its menus.",
+   "Apps Button Replaced: Odoo's standard apps button in the navbar is hidden because the sidebar lists the apps.",
+   "Phone Slide-in Menu: Under 768 pixels the sidebar becomes an off-canvas menu opened from a navbar button, with a dimmed page behind it. Picking an app closes it.",
+   "Dark Navbar: A dark navy navbar to match the dark sidebar.",
+   "Hides on Full-Screen Screens: The sidebar is not shown in the website editor, in a full-screen view or on the Enterprise-style home menu screen, so those screens keep the whole window.",
+   "Smooth Transitions: Short width, hover and opacity transitions when collapsing the sidebar, hovering an app and opening the phone menu.",
+   "No Settings, No Data: There is no settings screen, no menu entry, no user group and nothing stored in the database."
+  ],
+  "image": "images/apps/web_appbar.jpg",
+  "price": "$15",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/web_appbar/",
+    "info": "v1.0.10"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/web_appbar/",
+    "info": "v1.0.11"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/web_appbar/",
+    "info": "v1.0.10"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Web",
+   "Web UI Extensions"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "Theme"
+  ]
+ },
+ {
+  "id": "web_ext",
+  "name": "Web UI Extensions",
+  "line": "ui",
+  "lead": "Web UI extensions: rounded search bar, kanban, list and form styling and a dark navy theme.",
+  "about": "Shared UI enhancements for the Odoo web client. Required by Sidebar App Navigation.",
+  "features": [
+   "Dark Navy Primary Colour: Primary buttons, primary badges, primary text, primary backgrounds and the active status bar step use one dark navy (colour code 1A1A2E), with a slightly lighter hover.",
+   "Dark Navy Navbar: The top bar uses the same navy and is 56 px high instead of the stock 46 px.",
+   "Rounded Search Bar: The search field and its filter dropdown button get 20 px rounded outer corners, through two small template tweaks.",
+   "Pill Status Bar Buttons: Buttons in the form status bar, such as Send, Confirm and Cancel, get fully rounded 1.2rem corners.",
+   "Rounded Kanban Cards: Kanban cards get 0.55rem rounded corners in every kanban view. Empty placeholder cards are left alone.",
+   "Framed List View: A list opened as the main view gets a 12 px margin, a thin grey border and 1rem rounded corners. Lists inside forms are not framed.",
+   "Rounded Form Sheet: The white form sheet gets 1rem rounded corners.",
+   "Nothing to Configure: No menu, no setting, no access rule and no data. The colours and radii are fixed in the module's styling files.",
+   "Clean Uninstall: Everything is styling, so uninstalling the module from Apps brings the stock look back and leaves nothing in your database."
+  ],
+  "image": "images/apps/web_ext.jpg",
+  "price": "$5",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/web_ext/",
+    "info": "v1.0.7"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/web_ext/",
+    "info": "v1.0.7"
+   },
+   {
+    "odoo": "Odoo 18",
+    "url": "https://apps.odoo.com/apps/modules/18.0/web_ext/",
+    "info": "v1.0.6"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Web"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "Theme"
+  ]
+ },
+ {
+  "id": "nb_ai_chatbot",
+  "name": "AI Chat Community",
+  "line": "ai",
+  "lead": "AI chatbot for Odoo: ChatGPT, Claude, Gemini query your data and create records on confirm.",
+  "about": "A floating AI chat bubble on every screen of Odoo Community and Enterprise. Connect your own AI model with your own API key, then chat with your Odoo data. The assistant always runs with the access rights of the signed-in user.",
+  "features": [
+   "Chat on Every Screen: A floating Ask AI button and chat panel for every internal user. You can make the panel bigger, minimise it or close it.",
+   "8 Providers, Your Own Key: OpenAI, Anthropic (Claude), Google Gemini, Groq, NVIDIA NIM, OpenCode Zen, Ollama on your own server, or any OpenAI-compatible API with a base URL. The provider bills you; the module adds no AI fee.",
+   "Model Lists: About 43 suggested model names are built in, and the Fetch button loads the live list from the provider with your key. You can also type any model id.",
+   "Search, Count and Total: The assistant finds the model, reads its fields, then searches records (up to 50 rows) or counts and totals them grouped by a field.",
+   "Verify in Odoo: Under an answer, links open the exact records behind it with the same filter, so you can check the numbers.",
+   "Confirm Before Anything Changes: To create or update a record the assistant only proposes it. You see a summary and press Confirm or Cancel, and the server runs only a change it proposed itself (a signed, one-hour proposal). There is no delete tool.",
+   "Your Access Rights Apply: Every lookup and every confirmed change runs as the logged-in user, so access rights and record rules apply.",
+   "Switch Agents Mid-Chat: Change the AI agent in the middle of a conversation. The new agent gets the conversation so far and continues.",
+   "Saved Chats in Discuss: Save a chat and it becomes a private conversation in Discuss. New messages are added automatically, and you can reopen it in the panel later.",
+   "Shared Agents: Tick Shared on an agent and other internal users can chat with it from their chat button. They never see the key.",
+   "Test Connection: One click sends a short message to the provider and shows the answer and how long it took.",
+   "Extra Instructions: Add your own instructions to an agent, for example to answer in French. They are added to the built-in ones."
+  ],
+  "image": "images/apps/nb_ai_chatbot.jpg",
+  "price": "$19",
+  "price_note": "one-time",
+  "versions": [
+   {
+    "odoo": "Odoo 20",
+    "url": "https://apps.odoo.com/apps/modules/20.0/nb_ai_chatbot/",
+    "info": "v1.0.6"
+   },
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/nb_ai_chatbot/",
+    "info": "v1.0.6"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "OPL-1",
+  "works_with": [
+   "Discuss",
+   "Web"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "OWL / JavaScript"
+  ],
+  "tags": [
+   "Backend UI"
+  ]
+ },
+ {
+  "id": "payment_ngenius",
+  "name": "N-Genius Payment Provider",
+  "line": "payments",
+  "lead": "N-Genius card payments in Odoo: hosted checkout, webhooks, sandbox and full refunds.",
+  "about": "Accept online payments in Odoo with N-Genius Online by Network International. Customers pay on a secure hosted checkout, payment status updates automatically, and you can refund in full from Odoo. Requires an active N-Genius merchant account.",
+  "features": [
+   "Secure hosted checkout experience",
+   "Sandbox and production environments",
+   "Automatic payment status updates in Odoo",
+   "Full refund support from Odoo"
+  ],
+  "image": "images/apps/payment_ngenius.jpg",
+  "price": "Free",
+  "price_note": "open licence",
+  "versions": [
+   {
+    "odoo": "Odoo 19",
+    "url": "https://apps.odoo.com/apps/modules/19.0/payment_ngenius/",
+    "info": "v1.1.2"
+   }
+  ],
+  "edition": "Community & Enterprise",
+  "licence": "LGPL-3",
+  "works_with": [
+   "Payment Providers",
+   "Invoicing"
+  ],
+  "tech": [
+   "Python",
+   "Odoo ORM",
+   "QWeb"
+  ],
+  "tags": [
+   "Accounting"
+  ]
+ }
+]
