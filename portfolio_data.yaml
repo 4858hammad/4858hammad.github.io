@@ -41,6 +41,19 @@ stats:
     value: "3 Dev + 1 Functional"
 
 experience:
+  - company: "Big Binary Tech"
+    role: "Odoo Techno-Functional Consultant"
+    period: "Aug 2026 - Present"
+    meta: "Techno-functional · Current, alongside TTI"
+    summary: "Bridge business requirements and technical delivery on Odoo: project ownership, requirement analysis, implementation and scalable solution design."
+    highlights:
+      - "Own end-to-end Odoo project delivery as both functional and technical lead: scoping, planning, task breakdown, milestones, progress tracking and stakeholder communication"
+      - "Run requirement gathering and gap analysis with clients, turn business processes into functional specifications, and decide what to configure versus customize"
+      - "Design and implement Odoo solutions across modules, covering configuration, custom development, data setup and integrations"
+      - "Architect for scalability and maintainability: clean module structure, performance-aware queries, access security and upgrade-safe customizations"
+      - "Handle technical oversight including code review, deployment support, troubleshooting and production issue resolution"
+      - "Support user training, UAT, go-live and post-implementation support, acting as the single point of contact between the client and the development team"
+
   - company: "TTI Testing Laboratories"
     role: "Senior Odoo Developer"
     period: "May 2026 - Present"
