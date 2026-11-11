@@ -179,6 +179,8 @@
       banner.style.cssText = 'background:#fdecec; color:#8a1c1c; text-align:center; padding:12px; font-size:13px;';
       banner.textContent = 'Some content could not be loaded. Email hammadali4858@gmail.com or call +92 320 248 5828.';
       document.body.prepend(banner);
+      // Keep the menu usable even when the YAML could not be loaded.
+      renderNavigation({ site: { name: 'Hammad Ali', available_for_work: true } });
       return;
     }
 
