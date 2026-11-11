@@ -777,6 +777,15 @@
     set('app-about', esc(app.about));
     set('app-features', list(app.features).map(f => `<li>${esc(f)}</li>`).join(''));
 
+    if (app.tti) {
+      const col = (title, items) => `<div class="tti-col"><div class="info-label">${title}</div><ul class="feat-list">${list(items).map(i => `<li>${esc(i)}</li>`).join('')}</ul></div>`;
+      const wrap = document.getElementById('app-features');
+      if (wrap) wrap.insertAdjacentHTML('afterend', `
+        <div class="sec-lbl">Also built for TTI Testing Laboratories</div>
+        <div class="detail-text">The same core also runs at TTI Testing Laboratories as <a href="project.html?id=${esc(app.tti.project)}">${esc(app.tti.title)}</a>. The two editions differ as follows.</div>
+        <div class="tti-compare">${col('TTI edition', app.tti.tti)}${col('NeuralBytea edition', app.tti.nb)}</div>`);
+    }
+
     const storeBtns = list(app.versions).map(v =>
       `<a href="${esc(v.url)}" class="btn-primary" target="_blank" rel="noopener" style="width:100%;text-align:center;margin-bottom:8px;">Odoo App Store · ${esc(v.odoo)} ↗</a>`
     ).join('');
@@ -873,6 +882,13 @@
         // Fallback label if highlights missing
         highlightsList.innerHTML = `<li>Successfully completed all requirements of the project.</li><li>Maintained high quality of service and standards.</li>`;
       }
+    }
+
+    if (project.nb_app) {
+      const hl = document.getElementById('highlights-list');
+      if (hl) hl.insertAdjacentHTML('afterend', `
+        <div class="sec-lbl">Also available as a NeuralBytea app</div>
+        <div class="detail-text">A marketplace edition of this module is published as <a href="app.html?id=${esc(project.nb_app.id)}">${esc(project.nb_app.name)}</a>, with a comparison of the two editions.</div>`);
     }
 
     // Sidebar Blocks
