@@ -2417,3 +2417,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
 /* TTI vs NeuralBytea edition comparison on app pages */
 .tti-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 12px; }
 @media (max-width: 760px) { .tti-compare { grid-template-columns: 1fr; } }
+
+/* Stats strip with six tiles (index) */
+.stats-row.stats-six { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 600px) { .stats-row.stats-six { grid-template-columns: repeat(2, 1fr); } }

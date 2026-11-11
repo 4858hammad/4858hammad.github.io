@@ -232,8 +232,6 @@
       renderExperiencePage(data);
     } else if (pageName === 'project.html') {
       renderProjectDetailPage(data);
-    } else if (pageName === 'app.html') {
-      renderAppPage();
     } else if (pageName === 'contact.html') {
       renderContactPage(data);
     }
@@ -285,11 +283,8 @@
     const heroAvatar = document.getElementById('exp-avatar');
 
     if (heroName) heroName.textContent = data.site.name;
-    if (heroSummary) {
-      const latestExp = data.experience[0];
-      const latestLine = latestExp ? `${latestExp.role} at ${latestExp.company}` : data.site.tagline;
-      heroSummary.textContent = `${data.site.tagline} · ${latestLine}`;
-    }
+    // exp-summary is static HTML (job title); do not overwrite it.
+    void heroSummary;
     if (heroLocation) {
       heroLocation.textContent = `${data.contact.location} · ${data.contact.remote ? 'Remote OK' : 'On-site only'}`;
     }
@@ -299,7 +294,7 @@
     if (heroAvatar) heroAvatar.textContent = data.site.name.split(' ').map(p => p[0]).join('').slice(0, 2);
 
     const expWrap = document.getElementById('experience-list');
-    if (expWrap) {
+    if (expWrap && !expWrap.children.length) {
       expWrap.innerHTML = data.experience.map(exp => `
         <div class="exp-item">
           <div class="exp-header">
@@ -402,7 +397,7 @@
   function renderHire(data) {
     const h = data.hire;
     document.querySelectorAll('.hire-mount').forEach(mount => {
-      if (!h) return;
+      if (!h || mount.children.length) return;
       mount.innerHTML = `
         <div class="hire-grid">
           <div class="hire-card reveal">
@@ -444,7 +439,7 @@
 
     // 2. Stats
     const statsContainer = document.getElementById('stats-container');
-    if (statsContainer) {
+    if (statsContainer && !statsContainer.children.length) {
       statsContainer.innerHTML = data.stats.map(stat => {
         const value = String(stat.value);
         // Only pure "250+" / "54k+" style values animate; anything else is shown as-is.
@@ -484,7 +479,7 @@
 
     // 4. Featured Projects list
     const featuredGrid = document.getElementById('featured-grid');
-    if (featuredGrid) {
+    if (featuredGrid && !featuredGrid.children.length) {
       const featuredProjects = sortProjectsNewestFirst(
         data.projects.filter(p => p.featured === true)
       ).slice(0, 6);
@@ -510,7 +505,7 @@
 
     // 5. Career timeline (from `experience` in the YAML)
     const timeline = document.getElementById('timeline-container');
-    if (timeline) {
+    if (timeline && !timeline.children.length) {
       timeline.innerHTML = data.experience.filter(e => !/intern/i.test(e.role)).map(exp => `
         <div class="tl-item reveal">
           <div class="tl-top">
@@ -751,63 +746,6 @@
   }
 
   // Render Project Detail Page
-  // Single-app detail page (app.html?id=<slug>), data from assets/apps_data.json
-  async function renderAppPage() {
-    const id = new URLSearchParams(window.location.search).get('id');
-    let apps = [];
-    try {
-      apps = await (await fetch('assets/apps_data.json')).json();
-    } catch (e) {
-      console.error('Error loading apps data:', e);
-    }
-    const app = apps.find(x => x.id === id);
-    if (!app) {
-      window.location.href = 'apps.html';
-      return;
-    }
-    const set = (el, html) => { const n = document.getElementById(el); if (n) n.innerHTML = html; };
-
-    document.title = `${app.name} for Odoo | Hammad Ali (NeuralBytea)`;
-    setMeta('meta[name="description"]', 'content', app.lead || '');
-
-    set('app-banner', `<img src="https://neuralbytea.github.io/${esc(app.image)}" alt="${esc(app.name)} for Odoo">`);
-    set('app-title', esc(app.name));
-    set('app-sub', esc(app.lead));
-    set('app-tags', list(app.tags).map(t => `<span class="dtg">${esc(t)}</span>`).join(''));
-    set('app-about', esc(app.about));
-    set('app-features', list(app.features).map(f => `<li>${esc(f)}</li>`).join(''));
-
-    if (app.tti) {
-      const col = (title, items) => `<div class="tti-col"><div class="info-label">${title}</div><ul class="feat-list">${list(items).map(i => `<li>${esc(i)}</li>`).join('')}</ul></div>`;
-      const wrap = document.getElementById('app-features');
-      if (wrap) wrap.insertAdjacentHTML('afterend', `
-        <div class="sec-lbl">Also built for TTI Testing Laboratories</div>
-        <div class="detail-text">The same core also runs at TTI Testing Laboratories as <a href="project.html?id=${esc(app.tti.project)}">${esc(app.tti.title)}</a>. The two editions differ as follows.</div>
-        <div class="tti-compare">${col('TTI edition', app.tti.tti)}${col('NeuralBytea edition', app.tti.nb)}</div>`);
-    }
-
-    const storeBtns = list(app.versions).map(v =>
-      `<a href="${esc(v.url)}" class="btn-primary" target="_blank" rel="noopener" style="width:100%;text-align:center;margin-bottom:8px;">Odoo App Store · ${esc(v.odoo)} ↗</a>`
-    ).join('');
-    const block = (label, body) => `<div class="info-block"><div class="info-label">${label}</div>${body}</div>`;
-    const pills = arr => `<div class="mod-list">${list(arr).map(t => `<span class="mod-tag">${esc(t)}</span>`).join('')}</div>`;
-    set('app-side', `
-      <div class="info-block">
-        <div class="info-label">Price</div>
-        <div class="info-val">${esc(app.price)}${app.price_note ? ` <span class="muted">· ${esc(app.price_note)}</span>` : ''}</div>
-      </div>
-      <div class="info-block">
-        ${storeBtns}
-        <a href="https://neuralbytea.github.io/apps/${esc(app.id)}/" class="btn-outline" target="_blank" rel="noopener" style="width:100%;text-align:center;">NeuralBytea ↗</a>
-      </div>
-      ${block('Odoo versions', `<div class="info-val">${list(app.versions).map(v => esc(v.odoo.replace('Odoo ', ''))).join(' · ')}</div>`)}
-      ${block('Edition', `<div class="info-val muted">${esc(app.edition)}</div>`)}
-      ${block('Licence', `<div class="info-val muted">${esc(app.licence)}</div>`)}
-      ${list(app.works_with).length ? block('Works with', pills(app.works_with)) : ''}
-      ${list(app.tech).length ? block('Tech stack', pills(app.tech)) : ''}
-    `);
-  }
-
   function renderProjectDetailPage(data) {
     const urlParams = new URLSearchParams(window.location.search);
     const projId = urlParams.get('id');
@@ -888,7 +826,7 @@
       const hl = document.getElementById('highlights-list');
       if (hl) hl.insertAdjacentHTML('afterend', `
         <div class="sec-lbl">Also available as a NeuralBytea app</div>
-        <div class="detail-text">A marketplace edition of this module is published as <a href="app.html?id=${esc(project.nb_app.id)}">${esc(project.nb_app.name)}</a>, with a comparison of the two editions.</div>`);
+        <div class="detail-text">A marketplace edition of this module is published as <a href="https://neuralbytea.github.io/apps/${esc(project.nb_app.id)}/" target="_blank" rel="noopener">${esc(project.nb_app.name)}</a>.</div>`);
     }
 
     // Sidebar Blocks

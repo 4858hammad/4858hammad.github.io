@@ -74,9 +74,7 @@ Then, open the printed local URL (usually [http://localhost:3000](http://localho
 **Live URL:** <https://4858hammad.github.io/>
 
 The repo is `4858hammad/4858hammad.github.io`. Its name matches the account name,
-so GitHub Pages serves it as the user site at the root URL above (it was
-previously served under the `/hammad-ali.github.io/` path before the repo was
-renamed).
+so GitHub Pages serves it as the user site at the root URL above.
 
 Verified 23 July 2026:
 
