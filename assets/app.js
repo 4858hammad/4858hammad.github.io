@@ -3,7 +3,7 @@
   // Canonical origin for this site. Verified live 2026-07-23. Change this ONE
   // line (and the <link rel="canonical"> / og:url tags in the HTML heads) if you
   // buy a domain or rename the repo to 4858hammad.github.io.
-  const SITE_BASE = 'https://4858hammad.github.io/hammad-ali.github.io';
+  const SITE_BASE = 'https://4858hammad.github.io';
 
   // Everything below is interpolated into innerHTML. Escape it so an apostrophe
   // or ampersand in the YAML cannot break the markup.

@@ -18,7 +18,7 @@ that section silently empties.
 ## 📂 Site Structure
 
 ```text
-hammad-ali.github.io/
+4858hammad.github.io/
 ├── index.html          # Home page (+ JSON-LD Person schema, noscript fallback)
 ├── odoo.html           # Odoo ERP projects listing (10 client projects)
 ├── android.html        # Android projects listing
@@ -71,17 +71,18 @@ Then, open the printed local URL (usually [http://localhost:3000](http://localho
 
 ## 🚀 Deployment & site URL
 
-**Live URL:** <https://4858hammad.github.io/hammad-ali.github.io/>
+**Live URL:** <https://4858hammad.github.io/>
 
-The repo is `4858hammad/hammad-ali.github.io`. Because the repo name does not
-match the account name, GitHub Pages serves this as a *project* page at the
-doubled URL above — not at `hammad-ali.github.io`.
+The repo is `4858hammad/4858hammad.github.io`. Its name matches the account name,
+so GitHub Pages serves it as the user site at the root URL above (it was
+previously served under the `/hammad-ali.github.io/` path before the repo was
+renamed).
 
 Verified 23 July 2026:
 
 | URL | Status |
 |---|---|
-| `https://4858hammad.github.io/hammad-ali.github.io/` | ✅ 200 — live |
+| `https://4858hammad.github.io/` | ✅ 200 — live |
 | `https://hammad-ali-odoo.github.io` | ❌ 404 — does not exist |
 | `https://github.com/hammad-ali-odoo` | ❌ 404 — does not exist |
 | `https://github.com/4858hammad` | ✅ 200 |
@@ -90,8 +91,6 @@ Verified 23 July 2026:
 
 - **Buy a domain** (~$12/yr). Add a `CNAME` file at the repo root containing just
   the bare domain, set it under Settings → Pages, and tick **Enforce HTTPS**.
-- **Or rename the repo** to exactly `4858hammad.github.io` → serves at
-  `https://4858hammad.github.io/`.
 
 ### ⚠️ If you change the URL, update it in all of these
 
@@ -109,9 +108,9 @@ they do not update themselves:
 A one-line `sed` across the repo handles it:
 
 ```bash
-grep -rl 'https://4858hammad.github.io/hammad-ali.github.io' . \
+grep -rl 'https://4858hammad.github.io' . \
   --exclude-dir=.git \
-  | xargs sed -i 's|https://4858hammad.github.io/hammad-ali.github.io|https://YOUR-NEW-URL|g'
+  | xargs sed -i 's|https://4858hammad.github.io|https://YOUR-NEW-URL|g'
 ```
 
 ---

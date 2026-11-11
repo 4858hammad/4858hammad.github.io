@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://4858hammad.github.io/hammad-ali.github.io/sitemap.xml
+Sitemap: https://4858hammad.github.io/sitemap.xml
