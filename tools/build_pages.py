@@ -64,8 +64,9 @@ def lastmod(path: Path) -> str:
 def nav_html(active: str, prefix: str = "") -> str:
     """Static header/nav. `prefix` makes links work from /projects/<id>/ pages."""
     initials = "".join(p[0] for p in NAME.split())[:2]
+    cur = ' class="active" aria-current="page"'
     links = "".join(
-        f'<a href="{prefix}{f}"{" class=\"active\" aria-current=\"page\"" if f == active else ""}>{e(label)}</a>'
+        f'<a href="{prefix}{f}"{cur if f == active else ""}>{e(label)}</a>'
         for f, label, _ in PAGES if label)
     avail = DATA["site"].get("available_for_work", True)
     return (f'<header class="site-header"><nav class="nav" aria-label="Main">'
