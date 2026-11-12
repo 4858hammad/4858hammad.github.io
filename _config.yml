@@ -3,7 +3,6 @@
 exclude:
   - README.md
   - build_ats_cv.py
-  - build_covers.py
   - tools/
   - assets/images/README.md
   - assets/cv_source.html

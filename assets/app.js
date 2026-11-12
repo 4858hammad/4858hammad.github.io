@@ -155,7 +155,7 @@
 
     // Screenshot when the file exists, metric cover when it does not.
     return `
-      <img src="${esc(project.image)}" alt="${esc(project.title)} — ${esc(project.category)} project screenshot" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <img src="${esc(project.image)}" alt="${esc(project.title)} — ${/\.png$/i.test(project.image) ? 'solution diagram' : 'project illustration'}" width="1200" height="400" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
       <div style="display:none; width:100%; height:100%;">${fallbackHtml}</div>
     `;
   }

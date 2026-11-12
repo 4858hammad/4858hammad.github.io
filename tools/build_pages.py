@@ -30,6 +30,8 @@ DATA = yaml.safe_load((ROOT / "portfolio_data.yaml").read_text(encoding="utf-8")
 SITE = DATA["site"]["url"].rstrip("/")            # https://4858hammad.github.io
 NAME = DATA["site"]["name"]
 OG_IMAGE = f"{SITE}/assets/images/og-cover.png"
+_VIS = ROOT / "tools" / "visuals.yaml"
+VISUALS = yaml.safe_load(_VIS.read_text(encoding="utf-8")) if _VIS.exists() else {}
 FONTS = ("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800"
          "&family=Syne:wght@400..800&display=swap")
 
@@ -100,12 +102,22 @@ def project_page(p: dict, prev_p: dict | None, next_p: dict | None) -> str:
     desc = p.get("short_desc", "")
     url = project_url(p)
     img = f"/{p['image']}" if p.get("image") else ""
+    # per-project link preview (tools/build_visuals.py) when it exists, else the site cover
+    og_file = ROOT / "assets" / "images" / "og" / f"{p['id']}.png"
+    og_image = f"{SITE}/assets/images/og/{p['id']}.png" if og_file.exists() else OG_IMAGE
+    flow = VISUALS.get(p["id"], {}).get("flow") or []
+    alt = (f"Solution diagram of {p['title']}: " + " → ".join(s["label"] for s in flow)) if flow \
+        else f"{p['title']} — project illustration"
     tags = "".join(f'<span class="dtg">{e(t)}</span>' for t in p.get("tags") or [])
     highlights = "".join(f"<li>{e(h)}</li>" for h in p.get("highlights") or [])
     modules = "".join(f'<span class="mod-tag">{e(m)}</span>' for m in p.get("modules") or [])
     stack = "".join(f'<span class="mod-tag">{e(t)}</span>' for t in p.get("tech_stack") or [])
-    banner = (f'<img src="{e(img)}" alt="{e(p["title"])} — illustrated project banner" width="1200" height="400">'
-              if img else "")
+    banner = f'<img src="{e(img)}" alt="{e(alt)}" width="1200" height="400">' if img else ""
+    shots = "".join(
+        f'<figure class="shot"><a href="/{e(sh["src"])}"><img src="/{e(sh["src"])}" alt="{e(sh.get("caption") or p["title"])}" '
+        f'loading="lazy"></a>{"<figcaption>" + e(sh["caption"]) + "</figcaption>" if sh.get("caption") else ""}</figure>'
+        for sh in p.get("screenshots") or [])
+    shots = f'<h2 class="sec-lbl">Screens</h2><div class="shots">{shots}</div>' if shots else ""
     nb = ""
     if p.get("nb_app"):
         nb = (f'<h2 class="sec-lbl">Also available as a NeuralBytea app</h2><p class="detail-text">A marketplace edition '
@@ -147,13 +159,13 @@ def project_page(p: dict, prev_p: dict | None, next_p: dict | None) -> str:
   <meta property="og:title" content="{e(title)}">
   <meta property="og:description" content="{e(desc)}">
   <meta property="og:url" content="{url}">
-  <meta property="og:image" content="{OG_IMAGE}">
+  <meta property="og:image" content="{og_image}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{e(title)}">
   <meta name="twitter:description" content="{e(desc)}">
-  <meta name="twitter:image" content="{OG_IMAGE}">
+  <meta name="twitter:image" content="{og_image}">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -178,6 +190,7 @@ def project_page(p: dict, prev_p: dict | None, next_p: dict | None) -> str:
             <h2 class="sec-lbl">About this project</h2>
             <p class="detail-text">{e(p.get("full_desc") or desc)}</p>
             {"<h2 class='sec-lbl'>Key features / deliverables</h2><ul class='feat-list'>" + highlights + "</ul>" if highlights else ""}
+            {shots}
             {nb}
           </div>
         </div>

@@ -2435,3 +2435,9 @@ a.pcard, a.acard, a.exp-project-card, a.cat-card, a.proj-card { display: flex; c
 a.exp-project-card, a.cat-card { display: block; }
 .cat-card .cat-info, a.cat-card { text-decoration: none; }
 .nf-btn.disabled { pointer-events: none; }
+
+/* ---- Real screenshots on case-study pages (portfolio_data.yaml `screenshots:`) ---- */
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 10px; }
+.shot { margin: 0; border: 1px solid var(--glass-border, #2D3748); border-radius: 10px; overflow: hidden; background: #0B1226; }
+.shot img { display: block; width: 100%; height: auto; }
+.shot figcaption { padding: 8px 12px; font-size: 12px; color: var(--color-text-secondary); }

@@ -192,11 +192,11 @@ If you do not specify an image or if the image file listed in `portfolio_data.ya
 
 ### Blocking (highest impact first)
 
-1. **Project screenshots are missing.** `assets/images/` contains only
-   `og-cover.png`. Every project falls back to a gradient placeholder, so
-   visitors see a developer portfolio with no screenshots. See
-   [`assets/images/README.md`](assets/images/README.md) for the exact filenames
-   and shot list.
+1. **Real screenshots are still missing.** Every Odoo project now has a
+   generated solution diagram (`tools/build_visuals.py`), but no real screens.
+   Add 1–3 demo-data screenshots to the featured projects with the
+   `screenshots:` field. Rules and steps are in
+   [`assets/images/README.md`](assets/images/README.md).
 2. **Nine `# TO CONFIRM` markers in `portfolio_data.yaml`.** Several projects
    have employers or years that conflict with the employment dates in the same
    file. Search the YAML for `TO CONFIRM`.

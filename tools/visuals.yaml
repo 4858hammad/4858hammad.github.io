@@ -1,0 +1,223 @@
+# Solution diagrams for the project banners and link-preview images.
+# Rendered by tools/build_visuals.py into:
+#   assets/images/projects/<id>.png      (1200x400 banner, saved at 2x)
+#   assets/images/og/<id>.png            (1200x630 social preview)
+#
+# Every label here comes from that project's entry in portfolio_data.yaml.
+# Keep it that way: a diagram is a claim, so only draw what you actually built.
+#
+# flow:   4-6 steps, left to right. kind = user | ext | odoo | out
+#           user = a person, ext = a system outside Odoo,
+#           odoo = something you built inside Odoo, out = the result
+#         `items` turns a step into a small stack (e.g. three lead sources).
+# links:  one per gap between steps: "->" (one way) or "<->" (two way),
+#         optional `label` shown on the arrow. Omit for plain "->".
+# facts:  2-3 short proof points, shown on the link-preview image.
+
+tti-employee-portal:
+  flow:
+    - {kind: user, label: "Employee", sub: "portal login"}
+    - {kind: odoo, label: "Self-service portal", sub: "QWeb + JS"}
+    - {kind: odoo, label: "ACLs & record rules", sub: "own records only"}
+    - {kind: out, label: "HR data", items: ["Attendance & leave", "Timesheets & tasks", "Payslips & loans"]}
+  facts: ["250+ employees", "4 branches", "Odoo 18 Enterprise"]
+
+tti-attendance-dashboard:
+  flow:
+    - {kind: odoo, label: "HR data", items: ["Attendance", "Time Off", "Calendars & shifts"]}
+    - {kind: odoo, label: "Python endpoint", sub: "timezone & holiday aware"}
+    - {kind: odoo, label: "OWL board", sub: "Gantt grid · KPIs · charts"}
+    - {kind: out, label: "Excel export", sub: "drill-down & edit"}
+  links:
+    - {label: "1 RPC"}
+    - {}
+    - {}
+  facts: ["One RPC per load", "250+ employees", "Present · late · leave KPIs"]
+
+field-sales-person:
+  flow:
+    - {kind: user, label: "Visit & meeting", sub: "field rep, portal"}
+    - {kind: odoo, label: "CRM lead"}
+    - {kind: odoo, label: "Sale order"}
+    - {kind: odoo, label: "Invoice"}
+    - {kind: out, label: "Payment", sub: "collections & targets"}
+  facts: ["~15–20 reps · 5–7 managers", "Territory-aware visibility", "54,000+ records backfilled"]
+
+tti-loan-management:
+  flow:
+    - {kind: user, label: "Loan request", sub: "configurable types"}
+    - {kind: odoo, label: "Approval"}
+    - {kind: odoo, label: "Disbursement", sub: "journal entry"}
+    - {kind: odoo, label: "Payslip deduction", sub: "installments"}
+    - {kind: out, label: "Portal tracking", sub: "paid · overdue · upcoming"}
+  facts: ["Automatic payroll recovery", "OWL recovery dashboard", "Odoo 18 Enterprise"]
+
+tti-certification-integration:
+  flow:
+    - {kind: ext, label: "Certification platform", sub: "parcel intake · proposals"}
+    - {kind: odoo, label: "Sales order", sub: "after customer approval"}
+    - {kind: odoo, label: "Lab testing"}
+    - {kind: out, label: "Test report", sub: "back to certification"}
+  links:
+    - {type: "<->", label: "REST"}
+    - {}
+    - {}
+  facts: ["Two-way REST integration", "Proposal → order → report", "Odoo 18"]
+
+tti-crm-lead-integration:
+  flow:
+    - {kind: ext, label: "Lead sources", items: ["Website", "GoHighLevel", "Web forms"]}
+    - {kind: odoo, label: "Inbound API", sub: "Basic Auth"}
+    - {kind: odoo, label: "Dedupe & source", sub: "duplicate detection"}
+    - {kind: odoo, label: "Auto-assign", sub: "salesperson / team"}
+    - {kind: out, label: "CRM stages", sub: "to proposal & testing"}
+  facts: ["3 lead sources unified", "No duplicate leads", "Odoo 18"]
+
+tti-ai-connector:
+  flow:
+    - {kind: user, label: "Manager", sub: "plain-language question"}
+    - {kind: ext, label: "Claude"}
+    - {kind: odoo, label: "MCP server", sub: "Odoo module"}
+    - {kind: odoo, label: "Odoo data", sub: "as the asking user"}
+  links:
+    - {}
+    - {type: "<->", label: "MCP"}
+    - {type: "<->", label: "read-only"}
+  facts: ["Read-only by default", "Respects each user's rights", "Automated tests"]
+
+tti-payroll-reporting:
+  flow:
+    - {kind: odoo, label: "Inputs", items: ["Approved leave", "Contract schedule", "Payslip rules"]}
+    - {kind: odoo, label: "Compute sheet", sub: "same as batch run"}
+    - {kind: odoo, label: "Error Status", sub: "flags bad months"}
+    - {kind: out, label: "Salary report", sub: "by work location · XLSX"}
+  facts: ["Approved leave paid correctly", "Rule-driven columns", "Odoo 18 Enterprise"]
+
+tti-helpdesk-portal:
+  flow:
+    - {kind: user, label: "Any portal user"}
+    - {kind: odoo, label: "New ticket", sub: "category · files · ETA"}
+    - {kind: odoo, label: "Company-pinned", sub: "team picker"}
+    - {kind: odoo, label: "Team email", sub: "submitter + CC"}
+    - {kind: out, label: "Close / reopen"}
+  facts: ["Any portal user can file", "Email notifications", "Odoo 18 Enterprise"]
+
+tti-biometric-attendance:
+  flow:
+    - {kind: ext, label: "ZK devices", sub: "per-device PINs"}
+    - {kind: odoo, label: "Device sync", sub: "configurable back-fill"}
+    - {kind: odoo, label: "Attendance", sub: "device recorded"}
+    - {kind: out, label: "Board", sub: "per-device KPIs & roster"}
+  links:
+    - {type: "<->", label: "push users"}
+    - {}
+    - {}
+  facts: ["Multiple devices per employee", "Push · update · delete users", "Odoo 18 Enterprise"]
+
+tti-partner-api:
+  flow:
+    - {kind: ext, label: "Partner chatbot", sub: "& integrators"}
+    - {kind: odoo, label: "API key auth", sub: "runs as chosen user"}
+    - {kind: odoo, label: "REST endpoints", items: ["Products", "PPE sale orders", "Business data"]}
+    - {kind: out, label: "Activity log", sub: "every call recorded"}
+  links:
+    - {type: "<->", label: "REST"}
+    - {}
+    - {}
+  facts: ["Postman collections & guides", "Staging for partner tests", "Spec-conformance tests"]
+
+tti-crm-visit-api:
+  flow:
+    - {kind: ext, label: "TTI CRM"}
+    - {kind: odoo, label: "Batch upsert API", items: ["Visits", "Employees", "Vehicles"]}
+    - {kind: odoo, label: "Fuel rate history", sub: "rate on visit date"}
+    - {kind: out, label: "Visit cost", sub: "km ÷ km/L × rate"}
+  facts: ["Liters = distance ÷ average", "Dated fuel rates", "Postman + automated tests"]
+
+clearpath-orthodontics:
+  flow:
+    - {kind: user, label: "Doctor portal", sub: "~200 clinics"}
+    - {kind: odoo, label: "Advance payment"}
+    - {kind: odoo, label: "Manufacturing", sub: "BOMs · MOs · stages"}
+    - {kind: out, label: "Inventory", sub: "consumption & moves"}
+  facts: ["~250 orders a day", "~200 doctor/clinic users", "Odoo 18"]
+
+mastercard-payment:
+  flow:
+    - {kind: user, label: "Customer pays", sub: "Odoo invoice"}
+    - {kind: odoo, label: "Transaction", sub: "payment.transaction"}
+    - {kind: ext, label: "Hosted Checkout", sub: "Mastercard"}
+    - {kind: odoo, label: "Callback", sub: "verify with gateway"}
+    - {kind: out, label: "Paid & reconciled"}
+  facts: ["~200 payments a day", "Callback verification", "Odoo 17 / 18"]
+
+sage-integration:
+  flow:
+    - {kind: ext, label: "Sage"}
+    - {kind: odoo, label: "Flask sync service", sub: "scheduled · logged"}
+    - {kind: odoo, label: "Odoo Accounting", items: ["Companies & customers", "Invoices", "Payments"]}
+  links:
+    - {type: "<->"}
+    - {type: "<->"}
+  facts: ["Partial payments reconciled", "Unattended scheduled runs", "Odoo 18"]
+
+axis-marketing:
+  flow:
+    - {kind: ext, label: "Meta leads", sub: "campaign sync"}
+    - {kind: odoo, label: "CRM"}
+    - {kind: odoo, label: "Contract", sub: "license"}
+    - {kind: odoo, label: "Renewal", sub: "notifications"}
+    - {kind: out, label: "Portals", sub: "customer & employee"}
+  facts: ["Odoo 19", "Led 2 junior developers", "Meta API integration"]
+
+pavo-oms:
+  flow:
+    - {kind: user, label: "Mobile app", sub: "React Native · barcode cart"}
+    - {kind: odoo, label: "Odoo 17 bridge", sub: "orders land here first"}
+    - {kind: ext, label: "Pavo OMS"}
+  links:
+    - {}
+    - {type: "<->", label: "sync on recovery"}
+  facts: ["Keeps selling during OMS outages", "IONOS · Nginx · CI/CD", "Android & iOS"]
+
+pgi-erp-customization:
+  flow:
+    - {kind: ext, label: "GitHub", sub: "Actions CI/CD"}
+    - {kind: odoo, label: "Ubuntu server", sub: "Nginx · SSL · systemd"}
+    - {kind: odoo, label: "Odoo 18", sub: "PostgreSQL · backups"}
+    - {kind: out, label: "Sales & Purchase", sub: "reps · access · reports"}
+  facts: ["End-to-end ownership", "CI/CD with GitHub Actions", "Odoo 18"]
+
+silicon-signs-erp:
+  flow:
+    - {kind: user, label: "Sale order"}
+    - {kind: odoo, label: "Client BOM", sub: "client-specific pick"}
+    - {kind: odoo, label: "BOM versions", sub: "versioning & compare"}
+    - {kind: odoo, label: "Manufacturing"}
+    - {kind: out, label: "Inventory & reports"}
+  facts: ["BOM versioning + compare", "Sales → MRP → stock", "Odoo 18"]
+
+ringfree-integration:
+  flow:
+    - {kind: ext, label: "RingFree usage", sub: "REST API"}
+    - {kind: odoo, label: "Metered billing", sub: "usage-based"}
+    - {kind: odoo, label: "Monthly invoices", sub: "automated"}
+    - {kind: out, label: "Payment & bank sync", sub: "+ reports"}
+  facts: ["Usage-based billing", "Automated monthly invoicing", "Odoo 16"]
+
+fell-erp:
+  flow:
+    - {kind: odoo, label: "Historical sales"}
+    - {kind: odoo, label: "Optimized SQL"}
+    - {kind: odoo, label: "Daily reports", sub: "incl. exceptions"}
+    - {kind: out, label: "Email alerts", sub: "automated"}
+  facts: ["SQL report optimization", "Daily exception reporting", "Odoo 16"]
+
+hrms-migration:
+  flow:
+    - {kind: ext, label: "Odoo 16 HRMS", items: ["Employees & payroll", "Loans", "HR tax"]}
+    - {kind: odoo, label: "Code migration", sub: "custom modules"}
+    - {kind: odoo, label: "Data migration", sub: "with validation"}
+    - {kind: odoo, label: "Regression tests"}
+    - {kind: out, label: "Odoo 17"}
+  facts: ["Payroll & loans preserved", "Team project · my modules", "Odoo 16 → 17"]
