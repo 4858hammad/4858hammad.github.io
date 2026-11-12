@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page not found — Hammad Ali</title>
   <meta name="robots" content="noindex, follow">
+  <script>
+    // Links from before the rename (4858hammad.github.io/hammad-ali.github.io/...)
+    // go to the same page at the new address, keeping ?id=... and #anchors.
+    (function () {
+      var old = '/hammad-ali.github.io/';
+      if (location.pathname.indexOf(old) === 0) {
+        location.replace('/' + location.pathname.slice(old.length) + location.search + location.hash);
+      }
+    })();
+  </script>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
