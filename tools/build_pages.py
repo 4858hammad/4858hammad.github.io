@@ -75,7 +75,7 @@ def nav_html(active: str, prefix: str = "") -> str:
             f'<a href="{prefix}index.html" class="nav-logo"><span class="logo-mark">{e(initials)}</span>{e(NAME)}</a>'
             f'<button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">☰</button>'
             f'<div class="nav-links">{links}</div>'
-            f'<div class="pill{"" if avail else " not-avail"}">{"Open to work" if avail else "Unavailable"}</div>'
+            f'<div class="pill{"" if avail else " not-avail"}">{"Open to a remote Odoo Technical Lead role" if avail else "Unavailable"}</div>'
             f'</nav></header>')
 
 

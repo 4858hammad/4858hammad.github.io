@@ -1,7 +1,7 @@
 site:
   name: "Hammad Ali"
   tagline: "Senior Odoo Developer · Odoo Technical Lead"
-  description: "Senior Odoo developer with 3+ years of hands-on experience across Odoo 14–20, building production ERP modules, OWL interfaces, portals, payment and API integrations, migrations, reporting and DevOps."
+  description: "Senior Odoo developer with 3+ years of hands-on experience across Odoo 16–20, building production ERP modules, OWL interfaces, portals, payment and API integrations, migrations, reporting and DevOps."
   url: "https://4858hammad.github.io"
   available_for_work: true
   cv: "assets/Hammad_Ali_Senior_Odoo_Developer_CV.pdf"
@@ -18,18 +18,18 @@ contact:
 hire:
   rate: "USD 30 / hour"
   rate_note: "Negotiable. Depends on scope, hours per week and contract length; happy to discuss for long-term work."
-  availability: "Flexible: 15–40 hours per week, from part-time contracts to full-time remote."
+  availability: "Currently Senior Odoo Developer at TTI and consultant at Big Binary Tech. Open to a full-time remote lead role, or contracts up to 20 h/week."
   timezone: "PKT (UTC+5), Lahore"
   timezone_note: "Comfortable overlapping with EU and Gulf working hours; US overlap by arrangement."
   engagements:
     - "Hourly or monthly contract"
     - "Fixed-price project after a short discovery call"
     - "Full-time remote: Odoo Technical Lead / Senior Developer"
-  response: "I reply within 1–2 hours."
+  response: "I reply within one business day."
 
 stats:
   - label: "Odoo versions"
-    value: "14–20"
+    value: "16–20"
 
   - label: "Users in production"
     value: "250+"
@@ -130,7 +130,7 @@ experience:
 skills:
   - category: "Odoo / ERP"
     items:
-      - "Odoo 14–20"
+      - "Odoo 16–20"
       - "Community & Enterprise"
       - "Odoo ORM"
       - "Custom Modules"
@@ -224,9 +224,6 @@ skills:
 
 projects:
   - id: "tti-employee-portal"
-    nb_app:
-      id: "nb_employee_self_service"
-      name: "Employee Self Service"
     title: "Employee Self-Service Portal"
     category: "odoo"
     featured: true
@@ -267,9 +264,6 @@ projects:
       - "Implemented ACLs, record rules and user-specific visibility"
 
   - id: "tti-attendance-dashboard"
-    nb_app:
-      id: "hr_attendance_board"
-      name: "Attendance Leave Gantt"
     title: "Attendance Dashboard & Leave Gantt"
     category: "odoo"
     featured: true
@@ -310,9 +304,6 @@ projects:
       - "Interactive charts, multi-company filters and Excel export"
 
   - id: "field-sales-person"
-    nb_app:
-      id: "salesperson_portal"
-      name: "Field Sales Booking"
     title: "Field Salesperson Portal"
     category: "odoo"
     featured: true
@@ -353,9 +344,6 @@ projects:
       - "Wrote batch migration/backfill logic for 54,000+ historical records and territory mappings"
 
   - id: "tti-loan-management"
-    nb_app:
-      id: "employee_loan_management_enterprise"
-      name: "Employee Loan Pro"
     title: "Employee Loan Management & Payroll Recovery"
     category: "odoo"
     featured: true
@@ -466,9 +454,6 @@ projects:
       - "Connected lead acquisition with downstream proposal and testing operations"
 
   - id: "tti-ai-connector"
-    nb_app:
-      id: "nb_mcp_server"
-      name: "Claude Connector for Odoo"
     title: "Claude AI Connector for Odoo"
     category: "odoo"
     featured: false

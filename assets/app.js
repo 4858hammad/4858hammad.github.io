@@ -262,7 +262,7 @@
           <a href="experience.html" class="${page === 'experience.html' ? 'active' : ''}">Experience</a>
           <a href="contact.html" class="${page === 'contact.html' ? 'active' : ''}">Contact</a>
         </div>
-        <div class="pill ${isAvail ? '' : 'not-avail'}">${isAvail ? 'Open to work' : 'Unavailable'}</div>
+        <div class="pill ${isAvail ? '' : 'not-avail'}">${isAvail ? 'Open to a remote Odoo Technical Lead role' : 'Unavailable'}</div>
       </div>
     `;
 
@@ -828,12 +828,6 @@
       }
     }
 
-    if (project.nb_app) {
-      const hl = document.getElementById('highlights-list');
-      if (hl) hl.insertAdjacentHTML('afterend', `
-        <div class="sec-lbl">Also available as a NeuralBytea app</div>
-        <div class="detail-text">A marketplace edition of this module is published as <a href="https://neuralbytea.github.io/apps/${esc(project.nb_app.id)}/" target="_blank" rel="noopener">${esc(project.nb_app.name)}</a>.</div>`);
-    }
 
     // Sidebar Blocks
     const clientVal = document.getElementById('client-val');

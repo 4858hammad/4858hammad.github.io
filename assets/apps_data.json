@@ -110,23 +110,7 @@
   "tags": [
    "Sales",
    "Commissions"
-  ],
-  "tti": {
-   "project": "field-sales-person",
-   "title": "Field Salesperson Portal",
-   "tti": [
-    "Field visits and meetings on the calendar with distance and travel cost, including the return trip, and new-client capture from a visit",
-    "CRM leads created from visits, and territory handling by zone, division and manager, with an overseer tier",
-    "Per-user switches to hide portal sections such as orders, leads, visits, collections and invoice status",
-    "Depends on TTI's own sales and CRM customizations; LGPL-3 licence"
-   ],
-   "nb": [
-    "Reps book orders for customers from the portal without taking a user seat, with approve, cancel and reorder options",
-    "Commission plans, rules and lines with a commission view in the portal, plus promotions and a manual-discount cap",
-    "Credit indicator, customer assignment and history, escalation badges, and a support-ticket flow",
-    "Price and tax display modes and category/stock visibility; standalone on portal, sale, account and mail; OPL-1 licence"
-   ]
-  }
+  ]
  },
  {
   "id": "nb_services_billing_pro",
@@ -291,21 +275,7 @@
   "tags": [
    "MCP",
    "Claude"
-  ],
-  "tti": {
-   "project": "tti-ai-connector",
-   "title": "Claude AI Connector for Odoo",
-   "tti": [
-    "Deployed read-only for management on TTI's Odoo 18, with a dedicated AI Connector User group that controls who sees the menu and settings",
-    "Earlier release of the connector (18.0.1.0.0), with personal keys that carry an expiry date",
-    "Runs on Odoo.sh or behind a reverse proxy with a public address"
-   ],
-   "nb": [
-    "Later release (18.0.1.0.3): connections nobody uses end after 30 days, and personal keys are valid for 1 to 365 days",
-    "A server-side-only OAuth code model with no direct access, tightening the sign-in flow",
-    "Works behind a reverse proxy when Odoo runs in proxy mode; listing text, README and screenshots maintained for the store"
-   ]
-  }
+  ]
  },
  {
   "id": "nb_school_management_system",
@@ -981,23 +951,7 @@
   ],
   "tags": [
    "HR & Payroll"
-  ],
-  "tti": {
-   "project": "tti-employee-portal",
-   "title": "Employee Self-Service Portal",
-   "tti": [
-    "Delivered as several modules: portal time off with company-aware limits, employee tasks and an IT helpdesk portal",
-    "Missed-attendance requests with a manager approve and reject flow and an HR view, plus a marketing attendance portal",
-    "A portal login created from the Employee form, with the badge ID as the login and a preset access profile",
-    "Tied to TTI's own HR customizations (grades, office locations, CNIC)"
-   ],
-   "nb": [
-    "One standalone app on portal, hr, hr_holidays and mail",
-    "A check-in and check-out widget with a worked-time timer, and a month attendance timeline with totals and a chart",
-    "Attendance correction requests approved by the manager or the time-off responsible, an approval inbox, overtime and comp-off",
-    "Expenses, payslips with PDF download and timesheets when those apps are installed; OPL-1 licence"
-   ]
-  }
+  ]
  },
  {
   "id": "portal_ext",
@@ -1149,21 +1103,7 @@
   ],
   "tags": [
    "Accounting"
-  ],
-  "tti": {
-   "project": "tti-loan-management",
-   "title": "Employee Loan Management & Payroll Recovery",
-   "tti": [
-    "Built on an open-source (LGPL-3) loan base and extended deep into payroll: contracts, payslips, payslip runs, worked days and work entries",
-    "Absent days and leave days on the payslip, a payslip error status and note, and an option to deduct for leave",
-    "Loan types, accounting configuration and the reschedule wizard shared with the marketplace edition"
-   ],
-   "nb": [
-    "Each loan type provisions its own accounting configuration, sequence, menu, salary rules and structures, with setup checks that show what is not yet configured",
-    "Payslip inputs generated for installments, and a portal dependency for repayment progress",
-    "OPL-1 licence, Odoo 17, 18 and 19"
-   ]
-  }
+  ]
  },
  {
   "id": "hr_attendance_board",
@@ -1220,23 +1160,7 @@
   ],
   "tags": [
    "Dashboards"
-  ],
-  "tti": {
-   "project": "tti-attendance-dashboard",
-   "title": "Attendance Dashboard & Leave Gantt",
-   "tti": [
-    "Reminder emails sent from the board: a wizard builds them for employees or their managers, with Cc, and can include pending leave and remote attendance",
-    "Check-in and check-out device tracking with per-device KPI cards and a device filter, working with TTI's biometric attendance module",
-    "Lateness measured against a configurable grace window, with a back-fill when the grace window changes",
-    "Open-source LGPL-3 licence"
-   ],
-   "nb": [
-    "Lateness frozen at check-in, so a later schedule change never rewrites history, with a recompute action for shift managers",
-    "Upcoming working days and today before shift end are shown as upcoming, never as absent",
-    "Remote and hybrid work from remote periods, a hybrid schedule or a Remote Work location plan",
-    "Attendance and on-time rates, weekday and department comparison, and leaderboards; automated tests; OPL-1 licence"
-   ]
-  }
+  ]
  },
  {
   "id": "nb_payroll_dashboard",
