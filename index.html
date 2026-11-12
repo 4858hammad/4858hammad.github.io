@@ -24,13 +24,18 @@
   <meta name="twitter:image" content="https://4858hammad.github.io/assets/images/og-cover.png">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800&family=Syne:wght@400..800&display=swap">
   <link rel="stylesheet" href="assets/style.css">
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
   <script defer src="assets/app.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <div class="container">
-    <div id="nav-container"></div>
+    <div id="nav-container"><header class="site-header"><nav class="nav" aria-label="Main"><a href="index.html" class="nav-logo"><span class="logo-mark">HA</span>Hammad Ali</a><button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">☰</button><div class="nav-links"><a href="index.html" class="active" aria-current="page">Home</a><a href="odoo.html">Odoo ERP</a><a href="apps.html">Apps</a><a href="android.html">Android</a><a href="experience.html">Experience</a><a href="contact.html">Contact</a></div><div class="pill">Open to work</div></nav></header></div><!-- /nav -->
+    <main id="main">
     <div class="hero">
       <div class="hero-copy">
         <div class="hero-badge"><span class="dot"></span>Open to remote Technical Lead &amp; Senior roles</div>
@@ -123,7 +128,7 @@
         <a href="odoo.html" class="see-all">See all →</a>
       </div>
       <div class="proj-grid" id="featured-grid">
-        <div class="proj-card reveal" onclick="window.location.href='project.html?id=tti-employee-portal'">
+        <a class="proj-card reveal" href="projects/tti-employee-portal/">
           <div class="proj-img">
             <img src="assets/images/tti-employee-portal.svg" alt="Employee Self-Service Portal — odoo project screenshot" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <div style="display:none; width:100%; height:100%;"><div class="cover odoo"><span class="cover-ver">Odoo 18 Enterprise</span><div class="cover-metric">250+</div><div class="cover-label">employees on one portal</div></div></div>
@@ -135,8 +140,8 @@
               <span class="tag blue">Odoo</span><span class="tag blue">Odoo 18</span><span class="tag blue">Python</span>
             </div>
           </div>
-        </div>
-        <div class="proj-card reveal" onclick="window.location.href='project.html?id=tti-attendance-dashboard'">
+        </a>
+        <a class="proj-card reveal" href="projects/tti-attendance-dashboard/">
           <div class="proj-img">
             <img src="assets/images/tti-attendance-dashboard.svg" alt="Attendance Dashboard &amp; Leave Gantt — odoo project screenshot" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <div style="display:none; width:100%; height:100%;"><div class="cover odoo"><span class="cover-ver">Odoo 18</span><div class="cover-metric">1 RPC</div><div class="cover-label">per dashboard load</div></div></div>
@@ -148,8 +153,8 @@
               <span class="tag blue">Odoo</span><span class="tag blue">Odoo 18</span><span class="tag blue">OWL</span>
             </div>
           </div>
-        </div>
-        <div class="proj-card reveal" onclick="window.location.href='project.html?id=field-sales-person'">
+        </a>
+        <a class="proj-card reveal" href="projects/field-sales-person/">
           <div class="proj-img">
             <img src="assets/images/field-sales-person.svg" alt="Field Salesperson Portal — odoo project screenshot" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <div style="display:none; width:100%; height:100%;"><div class="cover odoo"><span class="cover-ver">Odoo 18</span><div class="cover-metric">54k+</div><div class="cover-label">records migrated</div></div></div>
@@ -161,8 +166,8 @@
               <span class="tag blue">Odoo</span><span class="tag blue">Odoo 18</span><span class="tag blue">Portal</span>
             </div>
           </div>
-        </div>
-        <div class="proj-card reveal" onclick="window.location.href='project.html?id=tti-loan-management'">
+        </a>
+        <a class="proj-card reveal" href="projects/tti-loan-management/">
           <div class="proj-img">
             <img src="assets/images/tti-loan-management.svg" alt="Employee Loan Management &amp; Payroll Recovery — odoo project screenshot" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <div style="display:none; width:100%; height:100%;"><div class="cover odoo"><span class="cover-ver">Odoo 18 Enterprise</span><div class="cover-metric">Auto</div><div class="cover-label">payroll loan recovery</div></div></div>
@@ -174,8 +179,8 @@
               <span class="tag blue">Odoo</span><span class="tag blue">Odoo 18</span><span class="tag blue">Payroll</span>
             </div>
           </div>
-        </div>
-        <div class="proj-card reveal" onclick="window.location.href='project.html?id=tti-certification-integration'">
+        </a>
+        <a class="proj-card reveal" href="projects/tti-certification-integration/">
           <div class="proj-img">
             <img src="assets/images/tti-certification-integration.svg" alt="Testing &amp; Certification System Integration — odoo project screenshot" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <div style="display:none; width:100%; height:100%;"><div class="cover odoo"><span class="cover-ver">Odoo 18</span><div class="cover-metric">2-way</div><div class="cover-label">REST integration</div></div></div>
@@ -187,8 +192,8 @@
               <span class="tag blue">Odoo</span><span class="tag blue">Odoo 18</span><span class="tag blue">REST API</span>
             </div>
           </div>
-        </div>
-        <div class="proj-card reveal" onclick="window.location.href='project.html?id=clearpath-orthodontics'">
+        </a>
+        <a class="proj-card reveal" href="projects/clearpath-orthodontics/">
           <div class="proj-img">
             <img src="assets/images/clearpath-orthodontics.svg" alt="ClearPath Orthodontics ERP — odoo project screenshot" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
             <div style="display:none; width:100%; height:100%;"><div class="cover odoo"><span class="cover-ver">Odoo 18</span><div class="cover-metric">250/day</div><div class="cover-label">orders processed (approx.)</div></div></div>
@@ -200,7 +205,7 @@
               <span class="tag blue">Odoo</span><span class="tag blue">Odoo 18</span><span class="tag blue">Portal</span>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -225,10 +230,10 @@
       <p class="sec-sub"><a href="https://apps.odoo.com/apps/browse?repo_maintainer_id=1172096" target="_blank" rel="noopener">Odoo Apps Store ↗</a></p>
     </div>
 
-    <div class="marquee" aria-label="Technologies">
+    <div class="marquee" role="region" aria-label="Technologies">
       <div class="marquee-track">
         <span>Odoo 14–20</span><span>Python</span><span>OWL</span><span>JavaScript</span><span>PostgreSQL</span><span>REST APIs</span><span>Flask</span><span>QWeb</span><span>Odoo.sh</span><span>Docker</span><span>Nginx</span><span>GitHub Actions</span><span>Accounting</span><span>MRP / BOM</span><span>HR &amp; Payroll</span><span>CRM</span>
-        <span>Odoo 14–20</span><span>Python</span><span>OWL</span><span>JavaScript</span><span>PostgreSQL</span><span>REST APIs</span><span>Flask</span><span>QWeb</span><span>Odoo.sh</span><span>Docker</span><span>Nginx</span><span>GitHub Actions</span><span>Accounting</span><span>MRP / BOM</span><span>HR &amp; Payroll</span><span>CRM</span>
+        <span aria-hidden="true">Odoo 14–20</span><span aria-hidden="true">Python</span><span aria-hidden="true">OWL</span><span aria-hidden="true">JavaScript</span><span aria-hidden="true">PostgreSQL</span><span aria-hidden="true">REST APIs</span><span aria-hidden="true">Flask</span><span aria-hidden="true">QWeb</span><span aria-hidden="true">Odoo.sh</span><span aria-hidden="true">Docker</span><span aria-hidden="true">Nginx</span><span aria-hidden="true">GitHub Actions</span><span aria-hidden="true">Accounting</span><span aria-hidden="true">MRP / BOM</span><span aria-hidden="true">HR &amp; Payroll</span><span aria-hidden="true">CRM</span>
       </div>
     </div>
 
@@ -348,7 +353,8 @@
       </div>
     </div>
 
-    <div class="footer" id="footer-container"></div>
+    </main>
+    <footer class="footer" id="footer-container"><span>Hammad Ali · Odoo Developer · Lahore, Pakistan</span><span>© 2026 Hammad Ali</span></footer><!-- /footer -->
   </div>
   <noscript>
     <div class="container">
@@ -365,19 +371,40 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Hammad Ali",
-    "url": "https://4858hammad.github.io/",
-    "jobTitle": "Senior Odoo Developer",
-    "description": "Senior Odoo Developer with 3+ years across Odoo 14-20, specializing in custom modules, OWL, portals, API/payment integrations, Accounting, MRP, PostgreSQL and DevOps.",
-    "email": "mailto:hammadali4858@gmail.com",
-    "telephone": "+92-320-248-5828",
-    "address": {"@type":"PostalAddress","addressLocality":"Lahore","addressRegion":"Punjab","addressCountry":"PK"},
-    "worksFor": {"@type":"Organization","name":"TTI Testing Laboratories"},
-    "founder": {"@type":"Organization","name":"NeuralBytea","url":"https://neuralbytea.github.io/"},
-    "alumniOf": {"@type":"CollegeOrUniversity","name":"Lahore Garrison University"},
-    "knowsAbout": ["Odoo ERP","Odoo 14","Odoo 15","Odoo 16","Odoo 17","Odoo 18","Odoo 19","Odoo 20","Python","PostgreSQL","OWL Framework","JavaScript","QWeb","REST APIs","Odoo Accounting","Odoo MRP","Payment Providers","Odoo.sh","GitHub Actions"],
-    "sameAs": ["https://linkedin.com/in/hammad-ali-62417224b","https://github.com/4858hammad"]
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://4858hammad.github.io/#person",
+        "name": "Hammad Ali",
+        "url": "https://4858hammad.github.io/",
+        "image": "https://4858hammad.github.io/assets/images/og-cover.png",
+        "jobTitle": "Senior Odoo Developer",
+        "description": "Senior Odoo Developer with 3+ years across Odoo 14-20, specializing in custom modules, OWL, portals, API/payment integrations, Accounting, MRP, PostgreSQL and DevOps.",
+        "email": "mailto:hammadali4858@gmail.com",
+        "address": {"@type": "PostalAddress", "addressLocality": "Lahore", "addressRegion": "Punjab", "addressCountry": "PK"},
+        "worksFor": [
+          {"@type": "Organization", "name": "TTI Testing Laboratories"},
+          {"@type": "Organization", "name": "Big Binary Tech"}
+        ],
+        "alumniOf": {"@type": "CollegeOrUniversity", "name": "Lahore Garrison University"},
+        "knowsAbout": ["Odoo ERP", "Odoo 18", "Odoo 19", "Odoo 20", "Python", "PostgreSQL", "OWL Framework", "JavaScript", "QWeb", "REST APIs", "Odoo Accounting", "Odoo MRP", "Payment Providers", "Odoo.sh", "GitHub Actions"],
+        "sameAs": ["https://www.linkedin.com/in/hammad-ali-62417224b", "https://github.com/4858hammad", "https://neuralbytea.github.io/"]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://neuralbytea.github.io/#org",
+        "name": "NeuralBytea",
+        "url": "https://neuralbytea.github.io/",
+        "founder": {"@id": "https://4858hammad.github.io/#person"}
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://4858hammad.github.io/#website",
+        "url": "https://4858hammad.github.io/",
+        "name": "Hammad Ali",
+        "publisher": {"@id": "https://4858hammad.github.io/#person"}
+      }
+    ]
   }
   </script>
 </body>

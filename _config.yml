@@ -1,0 +1,10 @@
+# GitHub Pages / Jekyll settings.
+# Keep build tooling and source files out of the published site.
+exclude:
+  - README.md
+  - build_ats_cv.py
+  - build_covers.py
+  - tools/
+  - assets/images/README.md
+  - assets/cv_source.html
+  - assets/cv_ats_source.html

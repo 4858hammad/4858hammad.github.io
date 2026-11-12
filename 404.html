@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page not found — Hammad Ali</title>
   <meta name="robots" content="noindex, follow">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800&family=Syne:wght@400..800&display=swap">
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
   <div class="container">
+    <main id="main">
     <div class="page-hero">
       <div class="breadcrumb">Home / <em>Not found</em></div>
       <h1>That page doesn't exist</h1>
@@ -17,28 +21,29 @@
     </div>
 
     <div class="cat-strip">
-      <div class="cat-card" onclick="window.location.href='index.html'">
+      <a class="cat-card" href="/index.html">
         <div class="cat-icon b">🏠</div>
         <div class="cat-info"><p>Home</p><span>Start here</span></div>
-      </div>
-      <div class="cat-card" onclick="window.location.href='odoo.html'">
+      </a>
+      <a class="cat-card" href="/odoo.html">
         <div class="cat-icon b">⚙</div>
-        <div class="cat-info"><p>Odoo ERP</p><span>10 client projects</span></div>
-      </div>
-      <div class="cat-card" onclick="window.location.href='experience.html'">
+        <div class="cat-info"><p>Odoo ERP</p><span>Client case studies</span></div>
+      </a>
+      <a class="cat-card" href="/experience.html">
         <div class="cat-icon g">📄</div>
         <div class="cat-info"><p>Experience</p><span>Work history &amp; CV</span></div>
-      </div>
-      <div class="cat-card" onclick="window.location.href='contact.html'">
+      </a>
+      <a class="cat-card" href="/contact.html">
         <div class="cat-icon p">✉</div>
         <div class="cat-info"><p>Contact</p><span>Get in touch</span></div>
-      </div>
+      </a>
     </div>
 
-    <div class="footer">
+    </main>
+    <footer class="footer">
       <span>Hammad Ali — Odoo ERP Developer</span>
       <span><a href="mailto:hammadali4858@gmail.com">hammadali4858@gmail.com</a></span>
-    </div>
+    </footer>
   </div>
 </body>
 </html>

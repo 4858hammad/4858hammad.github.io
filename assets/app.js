@@ -246,6 +246,7 @@
     const navContainer = document.getElementById('nav-container');
     if (!navContainer) return;
 
+    if (navContainer.querySelector('.nav')) { bindNavToggle(navContainer); return; }
     const page = getActivePage();
     const isAvail = data.site.available_for_work;
     
@@ -258,7 +259,6 @@
           <a href="odoo.html" class="${page === 'odoo.html' ? 'active' : ''}">Odoo ERP</a>
           <a href="apps.html" class="${page === 'apps.html' ? 'active' : ''}">Apps</a>
           <a href="android.html" class="${page === 'android.html' ? 'active' : ''}">Android</a>
-          <a href="web.html" class="${page === 'web.html' ? 'active' : ''}">Web</a>
           <a href="experience.html" class="${page === 'experience.html' ? 'active' : ''}">Experience</a>
           <a href="contact.html" class="${page === 'contact.html' ? 'active' : ''}">Contact</a>
         </div>
@@ -266,8 +266,14 @@
       </div>
     `;
 
-    const navEl = navContainer.querySelector('.nav');
-    const toggle = navContainer.querySelector('.nav-toggle');
+    bindNavToggle(navContainer);
+  }
+
+  function bindNavToggle(root) {
+    const navEl = root.querySelector('.nav');
+    const toggle = root.querySelector('.nav-toggle');
+    if (!navEl || !toggle || toggle.dataset.bound) return;
+    toggle.dataset.bound = '1';
     toggle.addEventListener('click', () => {
       const open = navEl.classList.toggle('open');
       toggle.setAttribute('aria-expanded', String(open));
@@ -282,7 +288,7 @@
     const heroLocation = document.getElementById('exp-location');
     const heroAvatar = document.getElementById('exp-avatar');
 
-    if (heroName) heroName.textContent = data.site.name;
+    void heroName; // h1 is static, keyword-bearing HTML: do not overwrite
     // exp-summary is static HTML (job title); do not overwrite it.
     void heroSummary;
     if (heroLocation) {
@@ -339,7 +345,7 @@
         .filter(Boolean);
 
       projectsWrap.innerHTML = selectedProjects.map(project => `
-        <div class="exp-project-card" onclick="window.location.href='project.html?id=${project.id}'">
+        <a class="exp-project-card" href="projects/${esc(project.id)}/">
           <div class="exp-project-head">
             <div>
               <div class="exp-project-title">${project.title}</div>
@@ -351,7 +357,7 @@
           <div class="exp-project-tags">
             ${list(project.tags).slice(0, 4).map(tag => `<span class="skill-pill">${tag}</span>`).join('')}
           </div>
-        </div>
+        </a>
       `).join('');
     }
 
@@ -381,7 +387,7 @@
   // Render Footer
   function renderFooter(data) {
     const footerContainer = document.getElementById('footer-container');
-    if (!footerContainer) return;
+    if (!footerContainer || footerContainer.children.length) return;
 
     const year = new Date().getFullYear();
 
@@ -486,7 +492,7 @@
       featuredGrid.innerHTML = featuredProjects.map(proj => {
         const colorClass = getCategoryColorClass(proj.category);
         return `
-          <div class="proj-card reveal" onclick="window.location.href='project.html?id=${proj.id}'">
+          <a class="proj-card reveal" href="projects/${esc(proj.id)}/">
             <div class="proj-img">
               ${renderProjectImage(proj)}
             </div>
@@ -498,7 +504,7 @@
                 ${list(proj.tags).slice(0, 2).map(tag => `<span class="tag ${colorClass}">${tag}</span>`).join('')}
               </div>
             </div>
-          </div>
+          </a>
         `;
       }).join('');
     }
@@ -552,16 +558,16 @@
     const filterBar = document.getElementById('filter-bar');
     if (filterBar) {
       filterBar.innerHTML = `
-        <button class="filter on" data-tag="all">All</button>
-        ${uniqueTags.map(tag => `<button class="filter" data-tag="${tag}">${tag}</button>`).join('')}
+        <button class="filter on" data-tag="all" aria-pressed="true">All</button>
+        ${uniqueTags.map(tag => `<button class="filter" data-tag="${esc(tag)}" aria-pressed="false">${esc(tag)}</button>`).join('')}
       `;
 
       // Set up click listeners for tag filtering
       const filterButtons = filterBar.querySelectorAll('.filter');
       filterButtons.forEach(btn => {
         btn.addEventListener('click', function() {
-          filterButtons.forEach(b => b.classList.remove('on'));
-          this.classList.add('on');
+          filterButtons.forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed', 'false'); });
+          this.classList.add('on'); this.setAttribute('aria-pressed', 'true');
           const selectedTag = this.getAttribute('data-tag');
           renderList(selectedTag);
         });
@@ -587,7 +593,7 @@
           : `<strong>Tech:</strong> ${esc(list(proj.tech_stack).join(' · '))}`;
 
         return `
-          <div class="pcard" onclick="window.location.href='project.html?id=${proj.id}'">
+          <a class="pcard" href="projects/${esc(proj.id)}/">
             <div class="pcard-img">
               ${renderProjectImage(proj)}
             </div>
@@ -603,7 +609,7 @@
               <div class="pcard-modules">${modulesStr}</div>
               <div class="view-btn">View details →</div>
             </div>
-          </div>
+          </a>
         `;
       }).join('');
     }
@@ -658,7 +664,7 @@
       }
 
       listContainer.innerHTML = filtered.map(proj => `
-        <div class="acard" onclick="window.location.href='project.html?id=${proj.id}'">
+        <a class="acard" href="projects/${esc(proj.id)}/">
           <div class="aimg">
             ${renderProjectImage(proj)}
           </div>
@@ -670,7 +676,7 @@
             </div>
             <span class="view4">View details →</span>
           </div>
-        </div>
+        </a>
       `).join('');
     }
 

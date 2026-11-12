@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap');
+/* Fonts are loaded with <link> tags in each page <head> (faster than @import). */
 
 :root {
   --color-background-primary: #101524;
@@ -1886,7 +1886,7 @@ body::after {
 .code-card .k { color: #C792EA; }
 .code-card .f { color: #82AAFF; }
 .code-card .s { color: #9BE3A5; }
-.code-card .c { color: #5C6B8A; font-style: italic; }
+.code-card .c { color: #8A97B8; font-style: italic; }
 .code-card .cursor {
   display: inline-block;
   width: 7px;
@@ -2421,3 +2421,17 @@ html.js .reveal.in { opacity: 1; transform: none; }
 /* Stats strip with six tiles (index) */
 .stats-row.stats-six { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 600px) { .stats-row.stats-six { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---- Accessibility additions (audit fixes) ---- */
+.skip-link { position: absolute; left: 12px; top: -48px; z-index: 1000; padding: 10px 16px; border-radius: 8px;
+  background: #F0F2F5; color: #0A0E1A; font-weight: 700; transition: top .15s; }
+.skip-link:focus { top: 12px; }
+a:focus-visible, button:focus-visible, .proj-card:focus-visible, .pcard:focus-visible, .acard:focus-visible,
+.exp-project-card:focus-visible, .cat-card:focus-visible, .svc:focus-visible {
+  outline: 2px solid #8B9BFF; outline-offset: 3px; }
+label.field-lbl { display: block; }
+.site-header { display: block; }
+a.pcard, a.acard, a.exp-project-card, a.cat-card, a.proj-card { display: flex; color: inherit; }
+a.exp-project-card, a.cat-card { display: block; }
+.cat-card .cat-info, a.cat-card { text-decoration: none; }
+.nf-btn.disabled { pointer-events: none; }

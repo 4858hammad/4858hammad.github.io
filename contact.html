@@ -27,15 +27,20 @@
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800&family=Syne:wght@400..800&display=swap">
   <link rel="stylesheet" href="assets/style.css">
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
   <script defer src="assets/app.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="container">
     <!-- Dynamic Navigation Header -->
-    <div id="nav-container"></div>
+    <div id="nav-container"><header class="site-header"><nav class="nav" aria-label="Main"><a href="index.html" class="nav-logo"><span class="logo-mark">HA</span>Hammad Ali</a><button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">☰</button><div class="nav-links"><a href="index.html">Home</a><a href="odoo.html">Odoo ERP</a><a href="apps.html">Apps</a><a href="android.html">Android</a><a href="experience.html">Experience</a><a href="contact.html" class="active" aria-current="page">Contact</a></div><div class="pill">Open to work</div></nav></header></div><!-- /nav -->
+    <main id="main">
 
     <!-- Contact Page Header -->
     <div class="cph">
@@ -90,7 +95,7 @@
           <div class="cicon">📞</div>
           <div>
             <div class="clabel">Phone</div>
-            <div class="cval" id="phone-val">+92 320 248 5828</div>
+            <div class="cval" id="phone-val"><a href="tel:+923202485828">+92 320 248 5828</a></div>
           </div>
         </div>
         
@@ -125,17 +130,17 @@
         <div style="font-size:12px; color:var(--color-text-secondary); margin-bottom:14px;">I usually reply within 1–2 hours.</div>
         
         <form id="contact-form" action="https://formspree.io/f/mzdwrpyp" method="POST">
-          <div class="field-lbl">Your name</div>
-          <input type="text" name="name" class="field-input" placeholder="e.g. John Doe" required>
+          <label class="field-lbl" for="cf-name">Your name</label>
+          <input type="text" name="name" id="cf-name" autocomplete="name" class="field-input" placeholder="e.g. John Doe" required>
           
-          <div class="field-lbl">Email address</div>
-          <input type="email" name="_replyto" class="field-input" placeholder="email@example.com" required>
+          <label class="field-lbl" for="cf-email">Email address</label>
+          <input type="email" name="_replyto" id="cf-email" autocomplete="email" class="field-input" placeholder="email@example.com" required>
           
-          <div class="field-lbl">Subject</div>
-          <input type="text" name="subject" class="field-input" placeholder="e.g. Odoo project inquiry" required>
+          <label class="field-lbl" for="cf-subject">Subject</label>
+          <input type="text" name="subject" id="cf-subject" class="field-input" placeholder="e.g. Odoo project inquiry" required>
           
-          <div class="field-lbl">Message</div>
-          <textarea name="message" class="field-input tall" placeholder="Write your message here..." required></textarea>
+          <label class="field-lbl" for="cf-message">Message</label>
+          <textarea name="message" id="cf-message" class="field-input tall" placeholder="Write your message here..." required></textarea>
           
           <!-- Honeypot spam trap: hidden from humans, filled by bots -->
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;">
@@ -144,13 +149,14 @@
           <button type="submit" class="send-btn">Send message →</button>
           
           <!-- Status Feedback Toast Message Container -->
-          <div class="form-status" id="form-status-msg"></div>
+          <div class="form-status" id="form-status-msg" role="status" aria-live="polite"></div>
         </form>
       </div>
     </div>
 
     <!-- Shared Footer -->
-    <div class="footer" id="footer-container"></div>
+    </main>
+    <footer class="footer" id="footer-container"><span>Hammad Ali · Odoo Developer · Lahore, Pakistan</span><span>© 2026 Hammad Ali</span></footer><!-- /footer -->
   </div>
 </body>
 </html>
