@@ -47,7 +47,7 @@ experience:
     meta: "Own Odoo app studio"
     summary: "Independent Odoo app studio. I design, build, publish and support my own apps on the Odoo Apps Store for Odoo 17-20, on both Community and Enterprise."
     highlights:
-      - "32 published apps across 7 product lines: portals, payments, HR and payroll, dashboards, AI assistant, education and backend UI"
+      - "37 published apps across 8 product lines: portals, payments, integrations, HR and payroll, dashboards, AI assistant, education and backend UI"
       - "School and course management suite: 12 apps covering students, admissions, family fee invoicing, parent portal, teachers, timetable, dashboards, training batches with seats and waiting lists, and fee installments"
       - "Claude Connector for Odoo: an on-premises MCP server that gives Claude read-only access to Odoo under each user's own access rights; plus an in-app AI chat that works with ChatGPT, Claude or Gemini"
       - "Portal apps (vendor, customer, field sales) that let external users self-serve without extra user seats"
