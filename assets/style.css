@@ -532,3 +532,22 @@ abbr[title]{text-decoration:underline dotted;text-underline-offset:3px;cursor:he
 .card.pc.pop{animation:cardpop .45s cubic-bezier(.2,.8,.2,1) both}
 @media(max-width:760px){.pstats{grid-template-columns:repeat(2,1fr)}}
 @media(prefers-reduced-motion:reduce){.card.app.pop{animation:none}.pj-peek{transition:none}}
+
+/* hero refinement */
+h1{font-size:clamp(34px,4vw,56px);line-height:1.06;letter-spacing:-.03em}
+.hero-art--one{display:grid;place-items:center;height:auto;min-height:340px;padding:10px 0}
+.hero-frame{position:relative;width:100%;border-radius:18px;overflow:hidden;background:#fff;border:1px solid rgba(11,22,48,.14);box-shadow:0 40px 80px -30px rgba(23,45,120,.6);animation:bob 8s ease-in-out infinite;z-index:2}
+.hf-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#f1f4fb;border-bottom:1px solid var(--line)}
+.hf-bar i{width:10px;height:10px;border-radius:50%;background:#d3dbee}.hf-bar i:nth-child(1){background:#ff6b6b}.hf-bar i:nth-child(2){background:#ffc14d}.hf-bar i:nth-child(3){background:#4cd38a}
+.hf-bar span{margin-left:10px;font-size:12px;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hero-frame img{width:100%;height:auto;display:block;object-fit:cover}
+.hf-chip{position:absolute;z-index:3;padding:9px 15px;border-radius:99px;background:#fff;border:1px solid var(--line2);box-shadow:0 18px 34px -16px rgba(47,91,255,.6);font:600 13px Sora;color:#0f9d58;animation:bob 6s ease-in-out infinite}
+.hf-chip.c1{left:-14px;bottom:18%}.hf-chip.c2{right:-10px;top:4%;animation-delay:-3s;color:var(--a)}
+.clients{margin:26px 0 0;font-size:14px;color:var(--mut);line-height:1.7;max-width:60ch}.clients span{display:block;font:600 11.5px Sora;letter-spacing:.1em;text-transform:uppercase;color:var(--tx);margin-bottom:4px}
+.ask-ai{background:transparent;color:var(--a);box-shadow:none;padding:8px 10px;border-radius:10px;margin-left:2px}.ask-ai:hover{background:#eef2ff;transform:none}
+@media(max-width:960px){.hf-chip.c1{left:6px}.hf-chip.c2{right:6px}.hero-art--one{min-height:0;padding:20px 0 6px}}
+@media(prefers-reduced-motion:reduce){.hero-frame,.hf-chip{animation:none}}
+
+h1{font-size:clamp(32px,3.5vw,50px)}
+.clients{max-width:none}
+@media(max-width:960px){.hf-chip.c1{display:none}.hf-chip.c2{top:-14px}}

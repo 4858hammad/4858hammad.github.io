@@ -268,7 +268,7 @@ def cta(title_html: str, text: str, root: str) -> str:
 # ------------------------------------------------------------------ pages
 FEATURED = sorted([p for p in PROJECTS if p.get("featured")], key=lambda p: -int(p.get("year") or 0))[:6]
 STATS = [(str(N_APPS), "Apps published on the Odoo Apps Store"),
-         ("250+", "Employees use the HR and attendance systems I built"),
+         (str(len(PROJECTS)), "Client and company projects delivered"),
          ("~200", "Card payments a day through a payment system I built"),
          ("54,000+", "Old records moved safely into a new system")]
 SERVICES = [("🧩", "Custom modules & OWL", "Odoo 16–20, Community and Enterprise. ORM logic, QWeb, and OWL/JavaScript dashboards that ship to production."),
@@ -337,7 +337,10 @@ def journey() -> str:
 
 def home() -> str:
     root = ""
-    stack = "".join(f'<div class="float f{i + 1}"><img src="{p["image"]}" alt="{e(p["title"])}: solution diagram" width="1800" height="600"></div>' for i, p in enumerate(FEATURED[:3]))
+    hp = next((x for x in PROJECTS if x["id"] == "tti-employee-portal"), FEATURED[0])
+    stack = (f'<div class="hero-frame"><div class="hf-bar"><i></i><i></i><i></i><span>{e(hp["title"])}</span></div>'
+             f'<img src="{hp["image"]}" alt="{e(hp["title"])}: solution diagram" width="1800" height="600"></div>'
+             f'<span class="hf-chip c1">✓ Live across 4 branches</span><span class="hf-chip c2">✓ Odoo 18 Enterprise, in production</span>')
     stats = "".join(f'<div class="stat reveal"><b>{e(v)}</b><span>{e(l)}</span></div>' for v, l in STATS)
     fams = "".join(f'<div class="card fam reveal"><div class="ico">{i}</div><h3>{e(t)}</h3><p>{e(d)}</p></div>' for i, t, d in SERVICES)
     for k, tip in (("OWL", "Odoo's front-end framework for dashboards and screens"), ("QWeb", "Odoo's templating for web pages and PDF reports"), ("MRP", "Manufacturing planning: bills of materials and production orders")):
@@ -363,11 +366,11 @@ def home() -> str:
  <div class="hero-copy">
   <span class="pill"><i class="dot"></i>Open to a remote Odoo Technical Lead role</span>
   <h1>I build production Odoo systems from workflow to <em>deployment.</em></h1>
-  <p class="lead">I build the business software companies run on every day: HR and payroll, sales, payments and manufacturing, all inside Odoo. My systems serve 250+ employees in production, and I have published {N_APPS} apps through my own studio, NeuralBytea.</p>
-  <div class="btn-row"><a class="btn btn-primary" href="odoo.html">View projects</a><a class="btn btn-ghost" href="{CV_PDF}">Download CV ↓</a><a class="btn btn-ghost" href="contact.html">Let’s talk →</a></div>
-  <ul class="trust"><li>Odoo 16–20 · {N_APPS} published apps</li><li>Enterprise &amp; Odoo.sh</li><li>Led a team of 4</li><li>Remote-ready</li></ul>
+  <p class="lead">I build the business software companies run on every day: HR and payroll, sales, payments and manufacturing, all inside Odoo. Production systems for real teams, plus my own app studio, NeuralBytea.</p>
+  <div class="btn-row"><a class="btn btn-primary" href="odoo.html">View projects</a><a class="btn btn-ghost" href="{CV_PDF}">Download CV ↓</a></div>
+  <p class="clients"><span>Systems delivered for</span> TTI Testing Laboratories · Aetos Technologies · ClearPath Orthodontics · Axiom World</p>
  </div>
- <div class="hero-art" aria-hidden="true"><div class="glow"></div>{stack}</div>
+ <div class="hero-art hero-art--one"><div class="glow" aria-hidden="true"></div>{stack}</div>
 </section>
 <section class="wrap stats">{stats}</section>
 {askai}<section class="wrap"><div class="marquee" aria-hidden="true"><div class="track">{tech}{tech}</div></div></section>

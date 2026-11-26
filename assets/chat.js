@@ -66,7 +66,7 @@
   // ---- DOM
   var root = d.createElement('div'); root.className = 'hac';
   root.innerHTML =
-    '<button class="hac-fab" type="button" aria-label="Open chat assistant" aria-expanded="false"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg><span>Ask us</span></button>' +
+    '<button class="hac-fab" type="button" aria-label="Open chat assistant" aria-expanded="false"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg><span>Ask AI</span></button>' +
     '<section class="hac-panel" role="dialog" aria-label="Portfolio assistant" hidden>' +
     '<header><img src="' + esc(rootPath) + 'assets/images/mark-512.png" alt="" width="34" height="34"><div><b>Hammad\'s Assistant</b><small>Ask about projects, skills or hiring</small></div>' +
     '<button type="button" class="hac-new" title="Start a new chat" aria-label="Start a new chat">↺</button><button type="button" class="hac-x" aria-label="Close chat">×</button></header>' +
@@ -187,7 +187,13 @@
   teaser.querySelector('.hac-tx').addEventListener('click', function (e) { e.stopPropagation(); hideTeaser(true); });
   teaser.querySelector('p').addEventListener('click', function () { window.HAChat.open(''); });
   var seen = false; try { seen = sessionStorage.getItem('ha_chat_teaser') === '1'; } catch (e) {}
-  if (!seen && !history.length) setTimeout(function () { if (panel.hidden) teaser.hidden = false; }, reduce ? 800 : 3500);
+  if (!seen && !history.length) {
+    var shown = false;
+    var showTeaser = function () { if (shown) return; shown = true; window.removeEventListener('scroll', onScroll); if (panel.hidden) teaser.hidden = false; };
+    var onScroll = function () { if (window.scrollY > (d.body.scrollHeight - window.innerHeight) * 0.5) showTeaser(); };
+    setTimeout(showTeaser, 20000);
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
   fab.addEventListener('click', function () { hideTeaser(true); });
   form.addEventListener('submit', function (e) { e.preventDefault(); var t = ta.value; ta.value = ''; ta.style.height = ''; send(t); });
   ta.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); form.requestSubmit(); } });
