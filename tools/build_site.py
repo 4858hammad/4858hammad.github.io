@@ -303,6 +303,7 @@ def tech_route() -> str:
     ai = [("C", "Claude", "My main coding assistant. I also built a read-only Claude connector for Odoo (MCP).", "Daily driver"),
           ("Cx", "Codex", "Code generation and refactoring.", "Terminal agent"),
           ("Cp", "GitHub Copilot", "Inline suggestions while I write in VS Code.", "In the editor"),
+          ("Ge", "Gemini", "Quick answers and small everyday tasks.", "Daily helper"),
           ("G", "Groq", "Runs the Ask AI assistant on this site.", "Powers this site")]
     ai_html = "".join(f'<li class="tr-ai"><span class="tr-mono">{m}</span><div><h4>{e(nm)}</h4><span class="tr-tag"><i></i>{e(tag)}</span><p>{e(d)}</p></div></li>' for m, nm, d, tag in ai)
     return f"""<section class="band tr" id="tech-route" aria-labelledby="tr-title"><div class="wrap">
