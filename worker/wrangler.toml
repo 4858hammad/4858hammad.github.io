@@ -1,0 +1,8 @@
+name = "hammad-portfolio-chat"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://4858hammad.github.io"
+MODEL = "openai/gpt-oss-20b"
+# The Groq key is NOT stored here. Set it as a secret:  npx wrangler secret put GROQ_API_KEY

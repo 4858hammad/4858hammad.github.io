@@ -1,0 +1,523 @@
+[
+ {
+  "id": "nb_vendor_portal_pro",
+  "line": "portals",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "99",
+  "image": "nb_vendor_portal_pro.jpg",
+  "name": "Vendor Portal Pro",
+  "desc": "Vendor self service portal: onboarding, RFQ quoting, PO acknowledgment, vendor bills and payments",
+  "new": false
+ },
+ {
+  "id": "salesperson_portal",
+  "line": "portals",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "99",
+  "image": "salesperson_portal.jpg",
+  "name": "Salesperson Portal",
+  "desc": "Salesperson portal for field sales reps to book a portal sale order for customers, no user seat",
+  "new": false
+ },
+ {
+  "id": "nb_services_billing_pro",
+  "line": "portals",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "99",
+  "image": "nb_services_billing_pro.jpg",
+  "name": "Services Billing Pro",
+  "desc": "Timesheet portal with billing rate cards, margin per line, portal timer, sales orders from tasks",
+  "new": false
+ },
+ {
+  "id": "nb_customer_portal_pro",
+  "line": "portals",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "99",
+  "image": "nb_customer_portal_pro.jpg",
+  "name": "Customer Portal Pro",
+  "desc": "Customer portal dashboard with B2B portal, order to cash, portal invoices, tickets and payments",
+  "new": false
+ },
+ {
+  "id": "nb_employee_portal_dashboard",
+  "line": "portals",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "99",
+  "image": "nb_employee_portal_dashboard.jpg",
+  "name": "Employee Dashboard",
+  "desc": "Employee dashboard: check in, time off, payslips, expenses, team calendar and manager approvals",
+  "new": true
+ },
+ {
+  "id": "nb_salesperson_customer_access",
+  "line": "portals",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "29",
+  "image": "nb_salesperson_customer_access.jpg",
+  "name": "Salesperson Own Customers",
+  "desc": "Each salesperson sees only their assigned customers, quotations, invoices and payments",
+  "new": true
+ },
+ {
+  "id": "nb_mcp_server",
+  "line": "ai",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "31",
+  "image": "nb_mcp_server.jpg",
+  "name": "Odoo Claude Connector",
+  "desc": "On premise Claude connector: MCP server for Odoo, read only by default, each user's own rights",
+  "new": true
+ },
+ {
+  "id": "nb_mcp_code_mode",
+  "line": "ai",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "39",
+  "image": "nb_mcp_code_mode.jpg",
+  "name": "Odoo MCP Code Mode",
+  "desc": "MCP Code Mode for Odoo: the AI runs one safe script instead of dozens of tool calls",
+  "new": true
+ },
+ {
+  "id": "nb_shopify_connector",
+  "line": "int",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "180",
+  "image": "nb_shopify_connector.jpg",
+  "name": "Odoo Shopify Connector",
+  "desc": "Odoo Shopify connector and integration: sync products, orders, stock, returns and payouts",
+  "new": true
+ },
+ {
+  "id": "nb_school_management_system",
+  "line": "edu",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "0",
+  "image": "nb_school_management_system.jpg",
+  "name": "School Management System for Odoo",
+  "desc": "School suite for Odoo: student management system, admissions, family fees, parent portal, teachers",
+  "new": false
+ },
+ {
+  "id": "nb_school_core",
+  "line": "edu",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "29",
+  "image": "nb_school_core.jpg",
+  "name": "Student Information System",
+  "desc": "Student records, families, guardians, classes, sections, academic years and enrollment roll numbers",
+  "new": false
+ },
+ {
+  "id": "nb_school_admission",
+  "line": "edu",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "25",
+  "image": "nb_school_admission.jpg",
+  "name": "School Admission Management System",
+  "desc": "School enquiry to admission pipeline: entrance test, offers, seats and admission waiting list",
+  "new": false
+ },
+ {
+  "id": "nb_school_fees",
+  "line": "edu",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "39",
+  "image": "nb_school_fees.jpg",
+  "name": "School Fee Management",
+  "desc": "Monthly fee slips, one family invoice, fee concession and late fees for school billing in Odoo",
+  "new": false
+ },
+ {
+  "id": "nb_school_portal",
+  "line": "edu",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "39",
+  "image": "nb_school_portal.jpg",
+  "name": "School Parent Portal",
+  "desc": "Parents see each child's class, fee statement and invoices, and upload admission documents online",
+  "new": false
+ },
+ {
+  "id": "payment_Mastercard_website",
+  "line": "payments",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "29",
+  "image": "payment_Mastercard_website.jpg",
+  "name": "Mastercard Website",
+  "desc": "Card payment website for shop orders and sales order links; connects to Mastercard MPGS",
+  "new": true
+ },
+ {
+  "id": "nb_school_hr",
+  "line": "edu",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "15",
+  "image": "nb_school_hr.jpg",
+  "name": "School Teacher Management",
+  "desc": "Teacher workload limits, subject allocation and class teachers on HR employee profiles",
+  "new": false
+ },
+ {
+  "id": "nb_school_timetable",
+  "line": "edu",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "25",
+  "image": "nb_school_timetable.jpg",
+  "name": "School Timetable",
+  "desc": "Automatic timetable with daily periods, clash check, teacher schedule and one-click generation",
+  "new": false
+ },
+ {
+  "id": "nb_school_dashboard",
+  "line": "edu",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "0",
+  "image": "nb_school_dashboard.jpg",
+  "name": "School Dashboard",
+  "desc": "School dashboard: admissions dashboard, fees dashboard, student dashboard and student analytics",
+  "new": false
+ },
+ {
+  "id": "nb_course_core",
+  "line": "edu",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "25",
+  "image": "nb_course_core.jpg",
+  "name": "Course Management",
+  "desc": "Course batches and course seats for a coaching center or training institute, trainers, waiting list",
+  "new": false
+ },
+ {
+  "id": "nb_course_admission",
+  "line": "edu",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "15",
+  "image": "nb_course_admission.jpg",
+  "name": "Course Enrollment Management",
+  "desc": "Training enrollment and student registration for course batches: seat limit, waiting list, offers",
+  "new": false
+ },
+ {
+  "id": "nb_elearning_video",
+  "line": "edu",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "20",
+  "image": "nb_elearning_video.jpg",
+  "name": "eLearning Video Upload",
+  "desc": "MP4 eLearning with local video lessons in Odoo: upload video file, WebM, video player, no download",
+  "new": true
+ },
+ {
+  "id": "nb_course_fees",
+  "line": "edu",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "15",
+  "image": "nb_course_fees.jpg",
+  "name": "Course Fee Installments",
+  "desc": "Course payment plan and course billing: installment fee slips for enrollments, family or company",
+  "new": false
+ },
+ {
+  "id": "nb_employee_self_service",
+  "line": "portals",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "119",
+  "image": "nb_employee_self_service.jpg",
+  "name": "Employee Self Service Portal",
+  "desc": "Employee payslips, attendance correction, time off and expense portal for internal self-service",
+  "new": false
+ },
+ {
+  "id": "portal_ext",
+  "line": "portals",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "49",
+  "image": "portal_ext.jpg",
+  "name": "Portal Sidebar Pro",
+  "desc": "Collapsible sidebar, live dashboard tiles and card-styled My Account for the Odoo customer portal",
+  "new": false
+ },
+ {
+  "id": "payment_Mastercard",
+  "line": "payments",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "49",
+  "image": "payment_Mastercard.jpg",
+  "name": "Mastercard MPGS Payment",
+  "desc": "Mastercard gateway for invoices: MPGS Hosted Checkout, 3D Secure, auto posting and reconciliation",
+  "new": false
+ },
+ {
+  "id": "employee_loan_management_enterprise",
+  "line": "hr",
+  "versions": [
+   17,
+   18,
+   19,
+   20
+  ],
+  "price": "49",
+  "image": "employee_loan_management_enterprise.jpg",
+  "name": "Employee Loan Management",
+  "desc": "Staff loan and salary advances with loan portal, automatic payroll deduction and analytics",
+  "new": false
+ },
+ {
+  "id": "hr_attendance_board",
+  "line": "hr",
+  "versions": [
+   17,
+   18,
+   19,
+   20
+  ],
+  "price": "24.99",
+  "image": "hr_attendance_board.jpg",
+  "name": "Attendance Leave Gantt",
+  "desc": "Employee attendance with late arrivals, remote work and hybrid work, click-to-edit, KPIs",
+  "new": false
+ },
+ {
+  "id": "nb_payroll_dashboard",
+  "line": "dash",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "29",
+  "image": "nb_payroll_dashboard.jpg",
+  "name": "Payroll Dashboard Pro",
+  "desc": "HR dashboard for payroll: month vs month, payslip analytics, salary rule and Excel report",
+  "new": false
+ },
+ {
+  "id": "sale_payment_dashboard",
+  "line": "dash",
+  "versions": [
+   17,
+   18,
+   19,
+   20
+  ],
+  "price": "49",
+  "image": "sale_payment_dashboard.jpg",
+  "name": "Sales Analytics Dashboard",
+  "desc": "Invoice payment dashboard for sales: customer churn, customer retention and payment collection",
+  "new": false
+ },
+ {
+  "id": "nb_smart_list_search_pro",
+  "line": "ui",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "59",
+  "image": "nb_smart_list_search_pro.jpg",
+  "name": "Smart List Search Pro",
+  "desc": "Column wise search, filter row and AI filter for list view search, saved filters, sticky filter",
+  "new": false
+ },
+ {
+  "id": "mail_ext",
+  "line": "ui",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "29",
+  "image": "mail_ext.jpg",
+  "name": "Chatter Workspace Pro",
+  "desc": "Chatter width, chatter memory and chatter toggle per user, plus admin layout rules",
+  "new": false
+ },
+ {
+  "id": "pane_split_view",
+  "line": "ui",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "24.99",
+  "image": "pane_split_view.jpg",
+  "name": "Split View Pro",
+  "desc": "Side by side view of list and form in Odoo: form preview and list view preview, resizable",
+  "new": false
+ },
+ {
+  "id": "web_home_menu",
+  "line": "ui",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "20",
+  "image": "web_home_menu.jpg",
+  "name": "Home Menu Enterprise UI",
+  "desc": "Enterprise home menu for Community: full screen app grid with clock, opened from the navbar button",
+  "new": false
+ },
+ {
+  "id": "web_appbar",
+  "line": "ui",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "15",
+  "image": "web_appbar.jpg",
+  "name": "Sidebar Menu",
+  "desc": "Responsive sidebar menu and app sidebar navigation for Odoo: icon rail, left sidebar, mobile menu",
+  "new": false
+ },
+ {
+  "id": "web_ext",
+  "line": "ui",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "5",
+  "image": "web_ext.jpg",
+  "name": "Web UI Extensions",
+  "desc": "Web extensions for Odoo: rounded search bar, kanban style, list view style and a dark navy theme",
+  "new": false
+ },
+ {
+  "id": "nb_ai_chatbot",
+  "line": "ai",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "19",
+  "image": "nb_ai_chatbot.jpg",
+  "name": "Odoo AI Chatbot",
+  "desc": "AI chat assistant for Odoo data: ChatGPT, Claude, Gemini or Ollama; records change on confirm",
+  "new": false
+ },
+ {
+  "id": "payment_ngenius",
+  "line": "payments",
+  "versions": [
+   18,
+   19,
+   20
+  ],
+  "price": "0",
+  "image": "payment_ngenius.jpg",
+  "name": "N-Genius Payment Provider",
+  "desc": "NGenius refund, hosted checkout and webhooks: card payments UAE and KSA with Network International",
+  "new": false
+ }
+]

@@ -34,10 +34,15 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Build static project pages, nav and sitemap from portfolio_data.yaml
+      - name: Build the site from portfolio_data.yaml
+        env:
+          # Preferred: URL of the Cloudflare Worker proxy (repo variable). The Groq key then stays on the Worker.
+          CHAT_ENDPOINT: ${{ vars.CHAT_ENDPOINT }}
+          # Optional direct mode: used only when CHAT_ENDPOINT is empty. The key becomes readable in the browser.
+          CHAT_KEY: ${{ secrets.GROQ_API_KEY || secrets.CHAT_KEY }}
         run: |
           pip install pyyaml
-          python tools/build_pages.py
+          python tools/build_site.py
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:

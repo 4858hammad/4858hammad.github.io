@@ -1,412 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hammad Ali — Senior Odoo Developer & Technical Lead | Odoo 16–20</title>
-  <meta name="description" content="Senior Odoo Developer, 3+ years across Odoo 16–20. Founder of NeuralBytea (37 published Odoo apps). ERP modules, OWL, portals, payments, integrations.">
-  <link rel="canonical" href="https://4858hammad.github.io/">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="author" content="Hammad Ali">
-  <meta property="og:type" content="profile">
-  <meta property="og:site_name" content="Hammad Ali">
-  <meta property="og:title" content="Hammad Ali — Senior Odoo Developer & Technical Lead">
-  <meta property="og:description" content="Founder of NeuralBytea (37 published Odoo apps) · Odoo 16–20 · Python · PostgreSQL · OWL · APIs · Portals">
-  <meta property="og:url" content="https://4858hammad.github.io/">
-  <meta property="og:image" content="https://4858hammad.github.io/assets/images/og-cover.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="profile:first_name" content="Hammad">
-  <meta property="profile:last_name" content="Ali">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hammad Ali — Senior Odoo Developer & Technical Lead">
-  <meta name="twitter:description" content="Founder of NeuralBytea (37 published Odoo apps). Production Odoo engineering across Odoo 16–20: integrations, OWL, portals.">
-  <meta name="twitter:image" content="https://4858hammad.github.io/assets/images/og-cover.png">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..800&family=Syne:wght@400..800&display=swap">
-  <link rel="stylesheet" href="assets/style.css">
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
-  <script defer src="assets/app.js"></script>
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="container">
-    <div id="nav-container"><header class="site-header"><nav class="nav" aria-label="Main"><a href="index.html" class="nav-logo"><span class="logo-mark">HA</span>Hammad Ali</a><button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">☰</button><div class="nav-links"><a href="index.html" class="active" aria-current="page">Home</a><a href="odoo.html">Odoo ERP</a><a href="apps.html">Apps</a><a href="android.html">Android</a><a href="experience.html">Experience</a><a href="contact.html">Contact</a></div><div class="pill">Open to a remote Odoo Technical Lead role</div></nav></header></div><!-- /nav -->
-    <main id="main">
-    <div class="hero">
-      <div class="hero-copy">
-        <div class="hero-badge"><span class="dot"></span>Open to a remote Odoo Technical Lead role</div>
-        <div class="hero-tag" id="hero-tag">Senior Odoo Developer · Technical Leadership · Integrations</div>
-        <h1 id="hero-title">I build production Odoo systems<br/>from workflow to <em>deployment.</em></h1>
-        <p id="hero-desc">Founder of a 37-app Odoo studio. Led a team of four. Production Odoo <span style="white-space:nowrap">16–20</span> systems for 250+ users: custom modules, OWL portals, payment and REST integrations, MRP, HR and payroll.</p>
-        <div class="btn-row" id="btn-row">
-          <a href="odoo.html" class="btn-primary">View Odoo Projects</a>
-          <a href="assets/Hammad_Ali_Senior_Odoo_Developer_CV.pdf" data-cv download="Hammad_Ali_Senior_Odoo_Developer_CV.pdf" class="btn-outline">Download CV ↓</a>
-          <a href="contact.html" class="btn-outline">Let’s talk →</a>
-        </div>
-        <div class="hero-trust">
-          <span>Odoo 16–20 · 37 published apps</span>
-          <span>Enterprise &amp; Odoo.sh</span>
-          <span>Led a team of 4</span>
-          <span>Remote-ready</span>
-        </div>
-      </div>
-      <div class="code-card" aria-hidden="true">
-        <div class="code-bar"><i></i><i></i><i></i><span>payment_transaction.py — illustrative</span></div>
-<pre><span class="c"># Hosted-checkout callback → payment state → invoice</span>
-<span class="k">class</span> <span class="f">PaymentTransaction</span>(models.Model):
-    _inherit = <span class="s">'payment.transaction'</span>
-
-    <span class="k">def</span> <span class="f">_process_notification_data</span>(self, data):
-        super()._process_notification_data(data)
-        <span class="k">if</span> self.provider_code != <span class="s">'mastercard'</span>:
-            <span class="k">return</span>
-        status = self._verify_with_gateway(data)
-        <span class="k">if</span> status == <span class="s">'CAPTURED'</span>:
-            self._set_done()
-            self._reconcile_invoices()
-        <span class="k">else</span>:
-            self._set_error(status)<span class="cursor"></span></pre>
-      </div>
-    </div>
-
-    <div class="stats-row stats-six" id="stats-container">
-      <div class="stat reveal">
-        <div class="stat-n" data-count="37" data-suffix="">37</div>
-        <div class="stat-l">apps published on the Odoo Apps Store under my own studio, NeuralBytea</div>
-      </div>
-      <div class="stat reveal">
-        <div class="stat-n" data-count="250" data-suffix="+">250+</div>
-        <div class="stat-l">employees supported by Odoo HR self-service across 4 branches</div>
-      </div>
-      <div class="stat reveal">
-        <div class="stat-n">54,000+</div>
-        <div class="stat-l">historical records processed through migration/backfill logic</div>
-      </div>
-      <div class="stat reveal">
-        <div class="stat-n">~200</div>
-        <div class="stat-l">online Mastercard payments per day</div>
-      </div>
-      <div class="stat reveal">
-        <div class="stat-n" style="font-size:20px; line-height:1.55;">~200 · ~250</div>
-        <div class="stat-l">doctor/clinic portal users · daily orders on ClearPath Orthodontics</div>
-      </div>
-      <div class="stat reveal">
-        <div class="stat-n">~15–20</div>
-        <div class="stat-l">field salespeople and 5–7 managers on the Field Sales Portal</div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="sec-header reveal">
-        <div>
-          <span class="eyebrow">What I do</span>
-          <h2 class="sec-title">End-to-end Odoo engineering</h2>
-          <p class="sec-sub">From the first requirements call to production support, one developer who can own the whole path.</p>
-        </div>
-      </div>
-      <div class="svc-grid">
-        <div class="svc reveal"><div class="svc-ico">🧩</div><h3>Custom modules &amp; OWL</h3><p>Odoo 16–20, Community and Enterprise. ORM logic, QWeb, and OWL/JavaScript dashboards that ship to production.</p></div>
-        <div class="svc reveal"><div class="svc-ico">🔌</div><h3>Integrations &amp; payments</h3><p>Mastercard Hosted Checkout, Sage, Meta, GoHighLevel and bidirectional REST APIs with callbacks and reconciliation.</p></div>
-        <div class="svc reveal"><div class="svc-ico">🚚</div><h3>Migrations &amp; data</h3><p>Odoo 16→17 HRMS migration and a 54,000+ record backfill in controlled batches, with validation and regression testing.</p></div>
-        <div class="svc reveal"><div class="svc-ico">🔐</div><h3>Portals &amp; security</h3><p>Employee, doctor, customer and field-sales portals with ACLs, record rules and territory-aware visibility.</p></div>
-        <div class="svc reveal"><div class="svc-ico">📊</div><h3>Accounting, MRP &amp; HR</h3><p>Accounting, Sales, Purchase, Inventory, MRP/BOM, CRM and Payroll. Functional depth, not just code.</p></div>
-        <div class="svc reveal"><div class="svc-ico">🚀</div><h3>DevOps &amp; leadership</h3><p>Odoo.sh, Ubuntu, Nginx, PostgreSQL, GitHub Actions CI/CD, plus code review and mentoring for a team of four.</p></div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="sec-header reveal">
-        <div>
-          <span class="eyebrow">Selected work</span>
-          <h2 class="sec-title">Featured projects</h2>
-          <p class="sec-sub">Real systems with real numbers: users, orders, payments and records.</p>
-        </div>
-        <a href="odoo.html" class="see-all">See all →</a>
-      </div>
-      <div class="proj-grid" id="featured-grid">
-        <a class="proj-card reveal" href="projects/tti-employee-portal/">
-          <div class="proj-img">
-            <img src="assets/images/projects/tti-employee-portal.png" alt="Employee Self-Service Portal — solution diagram" width="1200" height="400" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style="display:none; width:100%; height:100%;"><div class="cover odoo"><span class="cover-ver">Odoo 18 Enterprise</span><div class="cover-metric">250+</div><div class="cover-label">employees on one portal</div></div></div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-name">Employee Self-Service Portal</div>
-            <div class="proj-desc">Production employee portal serving 250+ employees across four branches</div>
-            <div class="proj-tags">
-              <span class="tag blue">Odoo</span><span class="tag blue">Odoo 18</span><span class="tag blue">Python</span>
-            </div>
-          </div>
-        </a>
-        <a class="proj-card reveal" href="projects/tti-attendance-dashboard/">
-          <div class="proj-img">
-            <img src="assets/images/projects/tti-attendance-dashboard.png" alt="Attendance Dashboard &amp; Leave Gantt — solution diagram" width="1200" height="400" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style="display:none; width:100%; height:100%;"><div class="cover odoo"><span class="cover-ver">Odoo 18</span><div class="cover-metric">1 RPC</div><div class="cover-label">per dashboard load</div></div></div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-name">Attendance Dashboard &amp; Leave Gantt</div>
-            <div class="proj-desc">Full-stack OWL attendance and leave analytics for 250+ employees across four branches</div>
-            <div class="proj-tags">
-              <span class="tag blue">Odoo</span><span class="tag blue">Odoo 18</span><span class="tag blue">OWL</span>
-            </div>
-          </div>
-        </a>
-        <a class="proj-card reveal" href="projects/field-sales-person/">
-          <div class="proj-img">
-            <img src="assets/images/projects/field-sales-person.png" alt="Field Salesperson Portal — solution diagram" width="1200" height="400" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style="display:none; width:100%; height:100%;"><div class="cover odoo"><span class="cover-ver">Odoo 18</span><div class="cover-metric">54k+</div><div class="cover-label">records migrated</div></div></div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-name">Field Salesperson Portal</div>
-            <div class="proj-desc">Portal-based field sales operations for ~15–20 reps and 5–7 managers without internal-user seats</div>
-            <div class="proj-tags">
-              <span class="tag blue">Odoo</span><span class="tag blue">Odoo 18</span><span class="tag blue">Portal</span>
-            </div>
-          </div>
-        </a>
-        <a class="proj-card reveal" href="projects/tti-loan-management/">
-          <div class="proj-img">
-            <img src="assets/images/projects/tti-loan-management.png" alt="Employee Loan Management &amp; Payroll Recovery — solution diagram" width="1200" height="400" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style="display:none; width:100%; height:100%;"><div class="cover odoo"><span class="cover-ver">Odoo 18 Enterprise</span><div class="cover-metric">Auto</div><div class="cover-label">payroll loan recovery</div></div></div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-name">Employee Loan Management &amp; Payroll Recovery</div>
-            <div class="proj-desc">End-to-end employee loans, accounting, payroll deductions, OWL analytics and self-service</div>
-            <div class="proj-tags">
-              <span class="tag blue">Odoo</span><span class="tag blue">Odoo 18</span><span class="tag blue">Payroll</span>
-            </div>
-          </div>
-        </a>
-        <a class="proj-card reveal" href="projects/tti-certification-integration/">
-          <div class="proj-img">
-            <img src="assets/images/projects/tti-certification-integration.png" alt="Testing &amp; Certification System Integration — solution diagram" width="1200" height="400" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style="display:none; width:100%; height:100%;"><div class="cover odoo"><span class="cover-ver">Odoo 18</span><div class="cover-metric">2-way</div><div class="cover-label">REST integration</div></div></div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-name">Testing &amp; Certification System Integration</div>
-            <div class="proj-desc">Bidirectional Odoo integration connecting parcel intake, testing proposals, sales orders, reports and certification</div>
-            <div class="proj-tags">
-              <span class="tag blue">Odoo</span><span class="tag blue">Odoo 18</span><span class="tag blue">REST API</span>
-            </div>
-          </div>
-        </a>
-        <a class="proj-card reveal" href="projects/clearpath-orthodontics/">
-          <div class="proj-img">
-            <img src="assets/images/projects/clearpath-orthodontics.png" alt="ClearPath Orthodontics ERP — solution diagram" width="1200" height="400" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style="display:none; width:100%; height:100%;"><div class="cover odoo"><span class="cover-ver">Odoo 18</span><div class="cover-metric">250/day</div><div class="cover-label">orders processed (approx.)</div></div></div>
-          </div>
-          <div class="proj-body">
-            <div class="proj-name">ClearPath Orthodontics ERP</div>
-            <div class="proj-desc">Doctor portal, advance payments, MRP and Inventory processing ~250 daily orders</div>
-            <div class="proj-tags">
-              <span class="tag blue">Odoo</span><span class="tag blue">Odoo 18</span><span class="tag blue">Portal</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <div class="section" id="products" aria-labelledby="products-title">
-      <div class="sec-header reveal">
-        <div>
-          <span class="eyebrow">My products</span>
-          <h2 class="sec-title" id="products-title">NeuralBytea: Odoo apps I build and sell</h2>
-          <p class="sec-sub">37 apps for Odoo 17–20: portals, payments, integrations, HR, dashboards, an AI assistant, school and course management, and backend UI.</p>
-        </div>
-        <a href="apps.html" class="see-all">All 37 apps →</a>
-      </div>
-      <div class="svc-grid">
-        <a class="svc reveal" href="https://neuralbytea.github.io/apps/?line=edu" target="_blank" rel="noopener"><h3>Education suite ↗</h3><p>12 apps: students, admissions, fees, parent portal, timetable, courses and installments.</p></a>
-        <a class="svc reveal" href="https://neuralbytea.github.io/apps/?line=ai" target="_blank" rel="noopener"><h3>AI &amp; Claude Connector ↗</h3><p>On-premises MCP server for Claude, MCP Code Mode and an in-app AI chat.</p></a>
-        <a class="svc reveal" href="https://neuralbytea.github.io/apps/?line=portals" target="_blank" rel="noopener"><h3>Portals ↗</h3><p>Vendor, customer, field sales and employee portals with no extra user seats.</p></a>
-        <a class="svc reveal" href="https://neuralbytea.github.io/apps/?line=payments" target="_blank" rel="noopener"><h3>Payments ↗</h3><p>Mastercard MPGS Hosted Checkout and N-Genius payment providers.</p></a>
-        <a class="svc reveal" href="https://neuralbytea.github.io/apps/?line=int" target="_blank" rel="noopener"><h3>Integrations ↗</h3><p>Shopify connector: products, orders, stock, returns and payouts.</p></a>
-        <a class="svc reveal" href="https://neuralbytea.github.io/apps/?line=hr" target="_blank" rel="noopener"><h3>HR &amp; Payroll ↗</h3><p>Employee loans and attendance/leave Gantt.</p></a>
-        <a class="svc reveal" href="https://neuralbytea.github.io/apps/?line=dash" target="_blank" rel="noopener"><h3>Dashboards ↗</h3><p>Payroll and sales analytics dashboards with Excel/PDF export.</p></a>
-        <a class="svc reveal" href="https://neuralbytea.github.io/apps/?line=ui" target="_blank" rel="noopener"><h3>Backend UI ↗</h3><p>Split view, sidebar navigation, chatter workspace and AI list search.</p></a>
-      </div>
-      <p class="sec-sub"><a href="https://apps.odoo.com/apps/browse?repo_maintainer_id=1172096" target="_blank" rel="noopener">Odoo Apps Store ↗</a></p>
-    </div>
-
-    <div class="marquee" role="region" aria-label="Technologies">
-      <div class="marquee-track">
-        <span>Odoo 16–20</span><span>Python</span><span>OWL</span><span>JavaScript</span><span>PostgreSQL</span><span>REST APIs</span><span>Flask</span><span>QWeb</span><span>Odoo.sh</span><span>Docker</span><span>Nginx</span><span>GitHub Actions</span><span>Accounting</span><span>MRP / BOM</span><span>HR &amp; Payroll</span><span>CRM</span>
-        <span aria-hidden="true">Odoo 16–20</span><span aria-hidden="true">Python</span><span aria-hidden="true">OWL</span><span aria-hidden="true">JavaScript</span><span aria-hidden="true">PostgreSQL</span><span aria-hidden="true">REST APIs</span><span aria-hidden="true">Flask</span><span aria-hidden="true">QWeb</span><span aria-hidden="true">Odoo.sh</span><span aria-hidden="true">Docker</span><span aria-hidden="true">Nginx</span><span aria-hidden="true">GitHub Actions</span><span aria-hidden="true">Accounting</span><span aria-hidden="true">MRP / BOM</span><span aria-hidden="true">HR &amp; Payroll</span><span aria-hidden="true">CRM</span>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="sec-header reveal">
-        <div>
-          <span class="eyebrow">Journey</span>
-          <h2 class="sec-title">From developer to technical lead</h2>
-        </div>
-        <a href="experience.html" class="see-all">Full experience →</a>
-      </div>
-      <div class="timeline" id="timeline-container">
-        <div class="tl-item reveal">
-          <div class="tl-top">
-            <div>
-              <div class="tl-role">Founder &amp; Lead Developer</div>
-              <div class="tl-co">NeuralBytea</div>
-            </div>
-            <div class="tl-when">2026 - Present</div>
-          </div>
-          <p>Independent Odoo app studio. I design, build, publish and support my own apps on the Odoo Apps Store for Odoo 17-20, on both Community and Enterprise.</p>
-        </div>
-        <div class="tl-item reveal">
-          <div class="tl-top">
-            <div>
-              <div class="tl-role">Odoo Techno-Functional Consultant</div>
-              <div class="tl-co">Big Binary Tech</div>
-            </div>
-            <div class="tl-when">Aug 2026 - Present</div>
-          </div>
-          <p>Bridge business requirements and technical delivery on Odoo: project ownership, requirement analysis, implementation and scalable solution design.</p>
-        </div>
-        <div class="tl-item reveal">
-          <div class="tl-top">
-            <div>
-              <div class="tl-role">Senior Odoo Developer</div>
-              <div class="tl-co">TTI Testing Laboratories</div>
-            </div>
-            <div class="tl-when">May 2026 - Present</div>
-          </div>
-          <p>Independently own Odoo 18 development and production support while coordinating directly with business teams across four branches.</p>
-        </div>
-        <div class="tl-item reveal">
-          <div class="tl-top">
-            <div>
-              <div class="tl-role">Odoo Team Lead</div>
-              <div class="tl-co">Aetos Technologies</div>
-            </div>
-            <div class="tl-when">Jan 2026 - Apr 2026</div>
-          </div>
-          <p>Led 3 Odoo developers and 1 functional consultant while remaining hands-on in architecture and delivery.</p>
-        </div>
-        <div class="tl-item reveal">
-          <div class="tl-top">
-            <div>
-              <div class="tl-role">Odoo Developer</div>
-              <div class="tl-co">Aetos Technologies</div>
-            </div>
-            <div class="tl-when">Jan 2025 - Dec 2025</div>
-          </div>
-          <p>Delivered custom Odoo modules, payment integrations, ERP automation and production workflows across client projects.</p>
-        </div>
-        <div class="tl-item reveal">
-          <div class="tl-top">
-            <div>
-              <div class="tl-role">Python / Odoo Developer</div>
-              <div class="tl-co">Axiom World</div>
-            </div>
-            <div class="tl-when">Aug 2023 - Jan 2025</div>
-          </div>
-          <p>Contributed across manufacturing, billing, reporting and HR migration projects while taking lead ownership on selected work.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section" id="hire">
-      <div class="sec-header reveal">
-        <div>
-          <span class="eyebrow">Work with me</span>
-          <h2 class="sec-title">Hire me: rates &amp; availability</h2>
-          <p class="sec-sub">Clear terms up front. Rates are a starting point and negotiable.</p>
-        </div>
-      </div>
-      <div class="hire-mount">
-        <div class="hire-grid">
-          <div class="hire-card reveal">
-            <div class="hire-k">Rate</div>
-            <div class="hire-v grad-text">USD 30 / hour</div>
-            <div class="hire-n">Negotiable. Depends on scope, hours per week and contract length; happy to discuss for long-term work.</div>
-          </div>
-          <div class="hire-card reveal">
-            <div class="hire-k">Availability</div>
-            <div class="hire-v">Open to work</div>
-            <div class="hire-n">Currently Senior Odoo Developer at TTI and consultant at Big Binary Tech. Open to a full-time remote lead role, or contracts up to 20 h/week.</div>
-          </div>
-          <div class="hire-card reveal">
-            <div class="hire-k">Time zone</div>
-            <div class="hire-v">PKT (UTC+5), Lahore</div>
-            <div class="hire-n">Comfortable overlapping with EU and Gulf working hours; US overlap by arrangement.</div>
-          </div>
-          <div class="hire-card reveal">
-            <div class="hire-k">How we can work</div>
-            <ul class="hire-list"><li>Hourly or monthly contract</li><li>Fixed-price project after a short discovery call</li><li>Full-time remote: Odoo Technical Lead / Senior Developer</li></ul>
-            <div class="hire-n">I reply within one business day.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cta-band reveal">
-      <h2>Need an Odoo developer who <span class="grad-text">owns the outcome?</span></h2>
-      <p>Open to remote Technical Lead and Senior Odoo roles, and to contract work. Send a short note about your project and I will reply with how I would approach it.</p>
-      <div class="btn-row">
-        <a href="mailto:hammadali4858@gmail.com" class="btn-primary">Email me</a>
-        <a href="https://linkedin.com/in/hammad-ali-62417224b" target="_blank" rel="noopener" class="btn-outline">LinkedIn</a>
-        <a href="assets/Hammad_Ali_Senior_Odoo_Developer_CV.pdf" data-cv download="Hammad_Ali_Senior_Odoo_Developer_CV.pdf" class="btn-outline">Download CV ↓</a>
-      </div>
-    </div>
-
-    </main>
-    <footer class="footer" id="footer-container"><span>Hammad Ali · Odoo Developer · Lahore, Pakistan</span><span>© 2026 Hammad Ali</span></footer><!-- /footer -->
-  </div>
-  <noscript>
-    <div class="container">
-      <h2>Hammad Ali — Senior Odoo Developer & Technical Lead</h2>
-      <p>Senior Odoo Developer with 3+ years of hands-on experience across Odoo 16–20 in Community and Enterprise environments. I build custom modules, OWL/JavaScript interfaces, portals, REST integrations, payment providers, Accounting and MRP workflows, reporting, migrations and production infrastructure.</p>
-      <h3>Current roles</h3>
-      <p>Odoo Techno-Functional Consultant at Big Binary Tech (since Aug 2026), owning project delivery, requirement analysis, implementation, scalable solution design and technical oversight. Alongside that, Senior Odoo Developer at TTI Testing Laboratories, independently owning Odoo 18 development while coordinating with business teams. Current production work includes employee self-service for 250+ employees across four branches, attendance analytics, field-sales operations, payroll-linked employee loans, CRM integrations and a bidirectional testing/certification integration.</p>
-      <h3>Leadership</h3>
-      <p>Previously Odoo Team Lead at Aetos Technologies, leading 3 Odoo developers and 1 functional consultant across task assignment, code reviews, technical architecture, requirement discussions, mentoring and delivery planning.</p>
-      <h3>Contact</h3>
-      <p>Email: <a href="mailto:hammadali4858@gmail.com">hammadali4858@gmail.com</a> · Phone: +92 320 248 5828 · <a href="https://linkedin.com/in/hammad-ali-62417224b">LinkedIn</a> · <a href="https://github.com/4858hammad">GitHub</a></p>
-    </div>
-  </noscript>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "@id": "https://4858hammad.github.io/#person",
-        "name": "Hammad Ali",
-        "url": "https://4858hammad.github.io/",
-        "image": "https://4858hammad.github.io/assets/images/og-cover.png",
-        "jobTitle": "Senior Odoo Developer",
-        "description": "Senior Odoo Developer with 3+ years across Odoo 16-20, specializing in custom modules, OWL, portals, API/payment integrations, Accounting, MRP, PostgreSQL and DevOps.",
-        "email": "mailto:hammadali4858@gmail.com",
-        "address": {"@type": "PostalAddress", "addressLocality": "Lahore", "addressRegion": "Punjab", "addressCountry": "PK"},
-        "worksFor": [
-          {"@type": "Organization", "name": "TTI Testing Laboratories"},
-          {"@type": "Organization", "name": "Big Binary Tech"}
-        ],
-        "alumniOf": {"@type": "CollegeOrUniversity", "name": "Lahore Garrison University"},
-        "knowsAbout": ["Odoo ERP", "Odoo 18", "Odoo 19", "Odoo 20", "Python", "PostgreSQL", "OWL Framework", "JavaScript", "QWeb", "REST APIs", "Odoo Accounting", "Odoo MRP", "Payment Providers", "Odoo.sh", "GitHub Actions"],
-        "sameAs": ["https://www.linkedin.com/in/hammad-ali-62417224b", "https://github.com/4858hammad", "https://neuralbytea.github.io/"]
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://neuralbytea.github.io/#org",
-        "name": "NeuralBytea",
-        "url": "https://neuralbytea.github.io/",
-        "founder": {"@id": "https://4858hammad.github.io/#person"}
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://4858hammad.github.io/#website",
-        "url": "https://4858hammad.github.io/",
-        "name": "Hammad Ali",
-        "publisher": {"@id": "https://4858hammad.github.io/#person"}
-      }
-    ]
-  }
-  </script>
-</body>
-</html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hammad Ali — Senior Odoo Developer &amp; Technical Lead | Odoo 16–20</title>
+<meta name="description" content="Senior Odoo Developer, 3+ years across Odoo 16–20. Founder of NeuralBytea (37 published Odoo apps). ERP modules, OWL, portals, payments, integrations.">
+<link rel="canonical" href="https://4858hammad.github.io/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Hammad Ali"><meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Hammad Ali">
+<meta property="og:title" content="Hammad Ali — Senior Odoo Developer &amp; Technical Lead | Odoo 16–20"><meta property="og:description" content="Senior Odoo Developer, 3+ years across Odoo 16–20. Founder of NeuralBytea (37 published Odoo apps). ERP modules, OWL, portals, payments, integrations.">
+<meta property="og:url" content="https://4858hammad.github.io/"><meta property="og:image" content="https://4858hammad.github.io/assets/images/og-cover.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Hammad Ali — Senior Odoo Developer &amp; Technical Lead | Odoo 16–20">
+<meta name="twitter:description" content="Senior Odoo Developer, 3+ years across Odoo 16–20. Founder of NeuralBytea (37 published Odoo apps). ERP modules, OWL, portals, payments, integrations."><meta name="twitter:image" content="https://4858hammad.github.io/assets/images/og-cover.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon.ico" sizes="any"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script defer src="assets/site.js"></script>
+<script defer src="assets/chat.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://4858hammad.github.io/#person", "name": "Hammad Ali", "url": "https://4858hammad.github.io/", "image": "https://4858hammad.github.io/assets/images/og-cover.png", "jobTitle": "Senior Odoo Developer", "description": "Senior Odoo developer with 3+ years of hands-on experience across Odoo 16–20, building production ERP modules, OWL interfaces, portals, payment and API integrations, migrations, reporting and DevOps.", "email": "mailto:hammadali4858@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Lahore", "addressRegion": "Punjab", "addressCountry": "PK"}, "worksFor": [{"@type": "Organization", "name": "TTI Testing Laboratories"}, {"@type": "Organization", "name": "Big Binary Tech"}], "alumniOf": {"@type": "CollegeOrUniversity", "name": "Lahore Garrison University"}, "knowsAbout": ["Odoo ERP", "Odoo 18", "Odoo 19", "Odoo 20", "Python", "PostgreSQL", "OWL Framework", "JavaScript", "QWeb", "REST APIs", "Odoo Accounting", "Odoo MRP", "Payment Providers", "Odoo.sh", "GitHub Actions"], "sameAs": ["https://linkedin.com/in/hammad-ali-62417224b", "https://github.com/4858hammad", "https://neuralbytea.github.io/"]}, {"@type": "Organization", "@id": "https://neuralbytea.github.io/#org", "name": "NeuralBytea", "url": "https://neuralbytea.github.io/", "founder": {"@id": "https://4858hammad.github.io/#person"}}, {"@type": "WebSite", "@id": "https://4858hammad.github.io/#website", "url": "https://4858hammad.github.io/", "name": "Hammad Ali", "publisher": {"@id": "https://4858hammad.github.io/#person"}}]}</script>
+</head><body>
+<div class="aurora"></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><div class="wrap nav-in">
+<a class="brand" href="index.html" aria-label="Hammad Ali home"><img class="brand-mark" src="assets/images/ha-mark.svg" width="46" height="46" alt=""><span class="brand-txt"><b>Hammad <i>Ali</i></b><small>Odoo Technical Lead</small></span></a>
+<nav id="menu" aria-label="Main"><a href="index.html" class=on>Home</a><a href="odoo.html">Projects</a><a href="apps.html">Apps</a><a href="experience.html">Experience</a><a href="contact.html">Contact</a></nav>
+<a class="btn btn-sm btn-primary nav-cta" href="contact.html">Hire me</a>
+<button class="burger" aria-label="Menu" aria-controls="menu"><i></i><i></i></button>
+</div></header>
+<main id="main">
+<section class="hero wrap">
+ <div class="hero-copy">
+  <span class="pill"><i class="dot"></i>Open to a remote Odoo Technical Lead role</span>
+  <h1>I build production Odoo systems from workflow to <em>deployment.</em></h1>
+  <p class="lead">Founder of a 37-app Odoo studio. Led a team of four. Production Odoo <span class="nw">16–20</span> systems for 250+ users: custom modules, OWL portals, payment and REST integrations, MRP, HR and payroll.</p>
+  <div class="btn-row"><a class="btn btn-primary" href="odoo.html">View projects</a><a class="btn btn-ghost" href="assets/Hammad_Ali_Senior_Odoo_Developer_CV.pdf">Download CV ↓</a><a class="btn btn-ghost" href="contact.html">Let’s talk →</a></div>
+  <ul class="trust"><li>Odoo 16–20 · 37 published apps</li><li>Enterprise &amp; Odoo.sh</li><li>Led a team of 4</li><li>Remote-ready</li></ul>
+ </div>
+ <div class="hero-art" aria-hidden="true"><div class="glow"></div><div class="float f1"><img src="assets/images/projects/tti-employee-portal.png" alt="" width="1800" height="600"></div><div class="float f2"><img src="assets/images/projects/tti-attendance-dashboard.png" alt="" width="1800" height="600"></div><div class="float f3"><img src="assets/images/projects/field-sales-person.png" alt="" width="1800" height="600"></div></div>
+</section>
+<section class="wrap stats six"><div class="stat reveal"><b>37</b><span>Apps published on the Odoo Apps Store under my studio, NeuralBytea</span></div><div class="stat reveal"><b>250+</b><span>Employees supported by Odoo HR self-service across 4 branches</span></div><div class="stat reveal"><b>54,000+</b><span>Historical records processed through migration and backfill logic</span></div><div class="stat reveal"><b>~200</b><span>Online Mastercard payments per day</span></div><div class="stat reveal"><b>~250</b><span>Daily orders on ClearPath Orthodontics, with ~200 doctor and clinic portal users</span></div><div class="stat reveal"><b>~15–20</b><span>Field salespeople and 5–7 managers on the Field Sales Portal</span></div></section>
+<section class="wrap"><div class="marquee" aria-hidden="true"><div class="track"><span>Odoo 16–20</span><span>Python</span><span>OWL</span><span>JavaScript</span><span>PostgreSQL</span><span>QWeb</span><span>REST APIs</span><span>Odoo.sh</span><span>Docker</span><span>Nginx</span><span>GitHub Actions</span><span>Accounting</span><span>MRP / BOM</span><span>HR & Payroll</span><span>CRM</span><span>Portals</span><span>Payments</span><span>Odoo 16–20</span><span>Python</span><span>OWL</span><span>JavaScript</span><span>PostgreSQL</span><span>QWeb</span><span>REST APIs</span><span>Odoo.sh</span><span>Docker</span><span>Nginx</span><span>GitHub Actions</span><span>Accounting</span><span>MRP / BOM</span><span>HR & Payroll</span><span>CRM</span><span>Portals</span><span>Payments</span></div></div></section>
+<section class="wrap sec"><div class="sec-head reveal"><span class="eyebrow">Selected work</span><h2>Featured projects</h2><p>Real systems with real numbers: users, orders, payments and records.</p><a class="see" href="odoo.html">All 24 projects →</a></div>
+ <div class="carousel reveal" data-carousel><div class="car-track"><div class="car-item"><a class="card app" href="projects/tti-employee-portal/" data-tags="portals hr" data-q="employee self-service portal production employee portal serving 250+ employees across four branches tti testing laboratories odoo 18 python portal hr payroll security 250+ users">
+<div class="shot pj"><img src="assets/images/projects/tti-employee-portal.png" alt="Employee Self-Service Portal: solution diagram" width="1800" height="600"></div>
+<div class="app-body"><div class="app-top"><span class="chip">TTI Testing Laboratories</span><span class="price">2026</span></div>
+<h3>Employee Self-Service Portal</h3><p>Production employee portal serving 250+ employees across four branches</p>
+<div class="app-foot"><span class="more">View case study <i>→</i></span><span class="vbs" title="Odoo version"><i class="vb">18</i></span></div></div></a></div><div class="car-item"><a class="card app" href="projects/tti-attendance-dashboard/" data-tags="hr owl" data-q="attendance dashboard &amp; leave gantt full-stack owl attendance and leave analytics for 250+ employees across four branches tti testing laboratories odoo 18 owl javascript python attendance analytics excel">
+<div class="shot pj"><img src="assets/images/projects/tti-attendance-dashboard.png" alt="Attendance Dashboard &amp; Leave Gantt: solution diagram" width="1800" height="600"></div>
+<div class="app-body"><div class="app-top"><span class="chip">TTI Testing Laboratories</span><span class="price">2026</span></div>
+<h3>Attendance Dashboard &amp; Leave Gantt</h3><p>Full-stack OWL attendance and leave analytics for 250+ employees across four branches</p>
+<div class="app-foot"><span class="more">View case study <i>→</i></span><span class="vbs" title="Odoo version"><i class="vb">18</i></span></div></div></a></div><div class="car-item"><a class="card app" href="projects/field-sales-person/" data-tags="portals accounting migration" data-q="field salesperson portal portal-based field sales operations for ~15–20 reps and 5–7 managers without internal-user seats tti testing laboratories odoo 18 portal crm sales accounting security migration">
+<div class="shot pj"><img src="assets/images/projects/field-sales-person.png" alt="Field Salesperson Portal: solution diagram" width="1800" height="600"></div>
+<div class="app-body"><div class="app-top"><span class="chip">TTI Testing Laboratories</span><span class="price">2026</span></div>
+<h3>Field Salesperson Portal</h3><p>Portal-based field sales operations for ~15–20 reps and 5–7 managers without internal-user seats</p>
+<div class="app-foot"><span class="more">View case study <i>→</i></span><span class="vbs" title="Odoo version"><i class="vb">18</i></span></div></div></a></div><div class="car-item"><a class="card app" href="projects/tti-loan-management/" data-tags="portals hr accounting owl" data-q="employee loan management &amp; payroll recovery end-to-end employee loans, accounting, payroll deductions, owl analytics and self-service tti testing laboratories odoo 18 payroll accounting owl portal loans">
+<div class="shot pj"><img src="assets/images/projects/tti-loan-management.png" alt="Employee Loan Management &amp; Payroll Recovery: solution diagram" width="1800" height="600"></div>
+<div class="app-body"><div class="app-top"><span class="chip">TTI Testing Laboratories</span><span class="price">2026</span></div>
+<h3>Employee Loan Management &amp; Payroll Recovery</h3><p>End-to-end employee loans, accounting, payroll deductions, OWL analytics and self-service</p>
+<div class="app-foot"><span class="more">View case study <i>→</i></span><span class="vbs" title="Odoo version"><i class="vb">18</i></span></div></div></a></div><div class="car-item"><a class="card app" href="projects/tti-certification-integration/" data-tags="integrations" data-q="testing &amp; certification system integration bidirectional odoo integration connecting parcel intake, testing proposals, sales orders, reports and certification tti testing laboratories odoo 18 rest api integration sales certification workflow">
+<div class="shot pj"><img src="assets/images/projects/tti-certification-integration.png" alt="Testing &amp; Certification System Integration: solution diagram" width="1800" height="600"></div>
+<div class="app-body"><div class="app-top"><span class="chip">TTI Testing Laboratories</span><span class="price">2026</span></div>
+<h3>Testing &amp; Certification System Integration</h3><p>Bidirectional Odoo integration connecting parcel intake, testing proposals, sales orders, reports and certification</p>
+<div class="app-foot"><span class="more">View case study <i>→</i></span><span class="vbs" title="Odoo version"><i class="vb">18</i></span></div></div></a></div><div class="car-item"><a class="card app" href="projects/clearpath-orthodontics/" data-tags="portals payments hr manufacturing accounting" data-q="clearpath orthodontics erp doctor portal, advance payments, mrp and inventory processing ~250 daily orders aetos technologies odoo 18 portal payments mrp bom inventory zk attendance">
+<div class="shot pj"><img src="assets/images/projects/clearpath-orthodontics.png" alt="ClearPath Orthodontics ERP: solution diagram" width="1800" height="600"></div>
+<div class="app-body"><div class="app-top"><span class="chip">Aetos Technologies</span><span class="price">2026</span></div>
+<h3>ClearPath Orthodontics ERP</h3><p>Doctor portal, advance payments, MRP and Inventory processing ~250 daily orders</p>
+<div class="app-foot"><span class="more">View case study <i>→</i></span><span class="vbs" title="Odoo version"><i class="vb">18</i></span></div></div></a></div></div><button class="car-btn prev" aria-label="Previous">‹</button><button class="car-btn next" aria-label="Next">›</button><div class="car-dots"></div></div></section>
+<section class="wrap sec"><div class="sec-head reveal"><span class="eyebrow">What I do</span><h2>End-to-end Odoo engineering</h2><p>From the first requirements call to production support, one developer who can own the whole path.</p></div>
+ <div class="grid fam-grid"><div class="card fam reveal"><div class="ico">🧩</div><h3>Custom modules &amp; OWL</h3><p>Odoo 16–20, Community and Enterprise. ORM logic, QWeb, and OWL/JavaScript dashboards that ship to production.</p></div><div class="card fam reveal"><div class="ico">🔌</div><h3>Integrations &amp; payments</h3><p>Mastercard Hosted Checkout, Sage, Meta, GoHighLevel and bidirectional REST APIs with callbacks and reconciliation.</p></div><div class="card fam reveal"><div class="ico">🚚</div><h3>Migrations &amp; data</h3><p>Odoo 16→17 HRMS migration and a 54,000+ record backfill in controlled batches, with validation and regression testing.</p></div><div class="card fam reveal"><div class="ico">🔐</div><h3>Portals &amp; security</h3><p>Employee, doctor, customer and field-sales portals with ACLs, record rules and territory-aware visibility.</p></div><div class="card fam reveal"><div class="ico">📊</div><h3>Accounting, MRP &amp; HR</h3><p>Accounting, Sales, Purchase, Inventory, MRP/BOM, CRM and Payroll. Functional depth, not just code.</p></div><div class="card fam reveal"><div class="ico">🚀</div><h3>DevOps &amp; leadership</h3><p>Odoo.sh, Ubuntu, Nginx, PostgreSQL, GitHub Actions CI/CD, plus code review and mentoring for a team of four.</p></div></div></section>
+<section class="wrap sec"><div class="edu reveal"><div class="edu-copy"><span class="eyebrow">My studio · NeuralBytea</span>
+ <h2>37 Odoo apps on the Odoo Apps Store</h2>
+ <p>Portals, payment providers, integrations, HR and payroll tools, dashboards, an AI assistant, school management and backend UI. I design, build, publish and support every app, for Odoo 17 to 20.</p>
+ <div class="edu-chips"><a href="apps.html?line=portals">Portals · 8</a><a href="apps.html?line=payments">Payments · 3</a><a href="apps.html?line=int">Integrations · 1</a><a href="apps.html?line=hr">HR & Payroll · 2</a><a href="apps.html?line=dash">Dashboards · 2</a><a href="apps.html?line=ai">AI Assistant · 3</a><a href="apps.html?line=edu">Education · 12</a><a href="apps.html?line=ui">Backend UI · 6</a></div>
+ <div class="btn-row"><a class="btn btn-primary" href="apps.html">Browse the apps</a><a class="btn btn-ghost" href="https://apps.odoo.com/apps/browse?repo_maintainer_id=1172096" target="_blank" rel="noopener">Odoo Apps Store ↗</a></div></div>
+ <a class="edu-shot" href="apps.html"><img src="https://neuralbytea.github.io/images/apps/nb_employee_portal_dashboard.jpg" alt="Employee Dashboard for Odoo" loading="lazy" width="1000" height="500"></a></div></section>
+<section class="band"><div class="wrap"><div class="sec-head reveal light"><span class="eyebrow">How I work</span><h2>From a business need to a working system</h2></div>
+ <div class="steps"><div class="step glass reveal"><h3>Understand the workflow</h3><p>I start from how the business actually works: the people, the documents and the numbers that must add up.</p></div><div class="step glass reveal"><h3>Design it for Odoo</h3><p>Standard Odoo where it fits, custom modules where it pays off, with access rights and upgrades in mind.</p></div><div class="step glass reveal"><h3>Build and test</h3><p>Python, OWL and QWeb written to Odoo standards, tested with real data and user acceptance before go-live.</p></div><div class="step glass reveal"><h3>Deploy and support</h3><p>Odoo.sh or Linux deployment, backups, training and day-to-day production support.</p></div></div></div></section>
+<section class="wrap sec"><div class="sec-head reveal"><span class="eyebrow">Journey</span><h2>From developer to technical lead</h2><a class="see" href="experience.html">Full experience →</a></div>
+ <div class="tl"><div class="card tl-item reveal"><div class="tl-top"><div><div class="tl-role">Founder &amp; Lead Developer</div><div class="tl-co">NeuralBytea</div></div><div class="tl-when">2026 - Present</div></div>
+<span class="tl-meta">Own Odoo app studio</span><p class="muted">Independent Odoo app studio. I design, build, publish and support my own apps on the Odoo Apps Store for Odoo 17-20, on both Community and Enterprise.</p></div><div class="card tl-item reveal"><div class="tl-top"><div><div class="tl-role">Odoo Techno-Functional Consultant</div><div class="tl-co">Big Binary Tech</div></div><div class="tl-when">Aug 2026 - Present</div></div>
+<span class="tl-meta">Techno-functional · Current, alongside TTI</span><p class="muted">Bridge business requirements and technical delivery on Odoo: project ownership, requirement analysis, implementation and scalable solution design.</p></div><div class="card tl-item reveal"><div class="tl-top"><div><div class="tl-role">Senior Odoo Developer</div><div class="tl-co">TTI Testing Laboratories</div></div><div class="tl-when">May 2026 - Present</div></div>
+<span class="tl-meta">Full-time · Hybrid</span><p class="muted">Independently own Odoo 18 development and production support while coordinating directly with business teams across four branches.</p></div><div class="card tl-item reveal"><div class="tl-top"><div><div class="tl-role">Odoo Team Lead</div><div class="tl-co">Aetos Technologies</div></div><div class="tl-when">Jan 2026 - Apr 2026</div></div>
+<span class="tl-meta">Full-time · Hybrid</span><p class="muted">Led 3 Odoo developers and 1 functional consultant while remaining hands-on in architecture and delivery.</p></div><div class="card tl-item reveal"><div class="tl-top"><div><div class="tl-role">Odoo Developer</div><div class="tl-co">Aetos Technologies</div></div><div class="tl-when">Jan 2025 - Dec 2025</div></div>
+<span class="tl-meta">Full-time · Lahore, Pakistan</span><p class="muted">Delivered custom Odoo modules, payment integrations, ERP automation and production workflows across client projects.</p></div><div class="card tl-item reveal"><div class="tl-top"><div><div class="tl-role">Python / Odoo Developer</div><div class="tl-co">Axiom World</div></div><div class="tl-when">Aug 2023 - Jan 2025</div></div>
+<span class="tl-meta">Full-time · On-site</span><p class="muted">Contributed across manufacturing, billing, reporting and HR migration projects while taking lead ownership on selected work.</p></div></div></section>
+<section class="wrap sec" id="hire"><div class="sec-head reveal"><span class="eyebrow">Work with me</span><h2>Hire me: rates &amp; availability</h2><p>Clear terms up front. Rates are a starting point and negotiable.</p></div>
+ <div class="grid hire-grid"><div class="card hire reveal"><small>Rate</small><b>USD 30 / hour</b><p>Negotiable. Depends on scope, hours per week and contract length; happy to discuss for long-term work.</p></div><div class="card hire reveal"><small>Availability</small><b>Open to work</b><p>Currently Senior Odoo Developer at TTI and consultant at Big Binary Tech. Open to a full-time remote lead role, or contracts up to 20 h/week.</p></div><div class="card hire reveal"><small>Time zone</small><b>PKT (UTC+5), Lahore</b><p>Comfortable overlapping with EU and Gulf working hours; US overlap by arrangement.</p></div><div class="card hire reveal"><small>How we can work</small><b>Contract or full-time</b><p>Hourly or monthly contract · Fixed-price project after a short discovery call · Full-time remote: Odoo Technical Lead / Senior Developer. I reply within one business day.</p></div></div></section>
+<section class="wrap"><div class="cta reveal"><h2>Have an Odoo project <span class="grad">or a role in mind?</span></h2><p>Send a short note and I will reply within one business day.</p>
+<div class="btn-row center"><a class="btn btn-primary" href="contact.html">Contact me</a><a class="btn btn-ghost" href="assets/Hammad_Ali_Senior_Odoo_Developer_CV.pdf">Download CV ↓</a></div></div></section></main>
+<footer class="foot"><div class="wrap foot-grid">
+<div><a class="brand brand-lg" href="index.html" aria-label="Hammad Ali home"><img class="brand-mark" src="assets/images/ha-mark.svg" width="64" height="64" alt=""><span class="brand-txt"><b>Hammad <i>Ali</i></b><small>Odoo Technical Lead</small></span></a>
+<p class="muted">Production Odoo systems from workflow to deployment. Founder of NeuralBytea, 37 apps on the Odoo Apps Store.</p>
+<a href="mailto:hammadali4858@gmail.com">hammadali4858@gmail.com</a><span class="muted">Lahore, Pakistan, working remotely</span></div>
+<div><h4>Explore</h4><a href="index.html">Home</a><a href="odoo.html">Projects</a><a href="apps.html">Apps</a><a href="experience.html">Experience</a><a href="contact.html">Contact</a></div>
+<div><h4>Work with me</h4><a href="contact.html">Hire me</a><a href="assets/Hammad_Ali_Senior_Odoo_Developer_CV.pdf">Download CV</a><a href="assets/Hammad-Ali-CV-ATS.pdf">ATS-friendly CV</a><a href="https://linkedin.com/in/hammad-ali-62417224b" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/4858hammad" target="_blank" rel="noopener">GitHub ↗</a></div>
+<div><h4>My apps</h4><a href="apps.html">All 37 apps</a><a href="https://neuralbytea.github.io/" target="_blank" rel="noopener">NeuralBytea ↗</a><a href="https://apps.odoo.com/apps/browse?repo_maintainer_id=1172096" target="_blank" rel="noopener">Odoo Apps Store ↗</a><h4 style="margin-top:22px">Legal</h4><a href="privacy.html">Privacy Policy</a></div>
+</div><div class="wrap foot-bar"><span>© 2026 Hammad Ali. All rights reserved.</span><span>Odoo is a trademark of Odoo S.A.</span></div></footer>
+</body></html>

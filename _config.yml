@@ -7,3 +7,6 @@ exclude:
   - assets/images/README.md
   - assets/cv_source.html
   - assets/cv_ats_source.html
+  - worker/
+  - data/
+  - portfolio_data.yaml
