@@ -434,3 +434,32 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .by{font-size:13px;color:var(--mut);margin-top:10px}
 .stack{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 14px}
 .stk{font-size:11.5px;padding:3px 9px;border-radius:6px;background:#f3f6ff;border:1px solid var(--line);color:#3b4866}
+
+/* clickable cards with a single title link */
+.card.pc{position:relative;transition:.3s}
+.card.pc:hover{transform:translateY(-6px);border-color:#9db4ff;box-shadow:0 26px 50px -24px rgba(47,91,255,.55)}
+.pc:hover .shot img{transform:scale(1.05)}.pc:hover .more i{transform:translateX(5px)}
+.card-link{color:inherit}.card-link::after{content:"";position:absolute;inset:0;border-radius:var(--r);z-index:1}
+.card-link:focus-visible{outline:none}.card.pc:focus-within{outline:3px solid #9db4ff;outline-offset:2px}
+abbr[title]{text-decoration:underline dotted;text-underline-offset:3px;cursor:help}
+.sec-head p b{color:var(--tx)}
+
+/* tech route */
+.tr-route{--c:var(--a);margin-bottom:44px}.tr-route--ai{--c:#0f9d8a}
+.tr-line-head{display:flex;align-items:center;gap:10px;margin-bottom:20px}.tr-line-head h3{font-size:18px;margin:0}
+.tr-badge{font:600 12px Sora;color:#fff;background:var(--c);padding:3px 11px;border-radius:99px}
+.tr-stops{list-style:none;margin:0;padding:0;position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px}
+.tr-stops::before,.tr-stops::after{content:"";position:absolute;left:0;top:17px;height:4px;border-radius:2px}
+.tr-stops::before{right:0;background:var(--line)}
+.tr-stops::after{width:100%;background:var(--c);transition:width 1.6s cubic-bezier(.2,.7,.2,1),height 1.6s cubic-bezier(.2,.7,.2,1)}
+.tr-stop{position:relative;display:flex;flex-direction:column;gap:4px}.tr-pin{height:38px;display:flex;align-items:center}
+.tr-dot{--s:calc(14px + var(--v,50)*.2px);width:var(--s);height:var(--s);box-sizing:border-box;border-radius:50%;background:#fff;border:3px solid var(--c);position:relative;z-index:1;transition:transform .5s cubic-bezier(.3,1.6,.5,1) calc(var(--i,0)*.25s + .3s)}
+.tr-name{font:600 17px Sora;margin-top:6px}.tr-val{font-size:14px;color:var(--mut)}.tr-val strong{color:var(--c);font:700 20px Sora;margin-right:4px}
+.tr-bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-top:4px}
+.tr-bar span{display:block;height:100%;width:calc(var(--v)*1%);background:var(--c);border-radius:3px;transition:width 1s ease calc(var(--i,0)*.25s + .5s)}
+.tr-note{font-size:13.5px;color:var(--mut);line-height:1.45}.tr-foot{font-size:13px}
+.tr.js:not(.is-in) .tr-stops::after{width:0}.tr.js:not(.is-in) .tr-dot{transform:scale(0)}.tr.js:not(.is-in) .tr-bar span{width:0}
+@media(max-width:720px){.tr-stops{grid-template-columns:1fr;gap:22px;padding-left:52px}.tr-stops::before,.tr-stops::after{top:0;left:17px;width:4px;height:100%}
+.tr.js:not(.is-in) .tr-stops::after{width:4px;height:0}.tr-pin{position:absolute;left:-52px;top:0;width:38px;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.tr *,.tr *::before,.tr *::after{transition:none!important}}
+.stats .stat span{text-transform:none;letter-spacing:0;font-size:14px;line-height:1.45}

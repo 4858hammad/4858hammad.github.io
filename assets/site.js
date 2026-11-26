@@ -88,3 +88,13 @@
     });
   }
 })();
+
+// tech route: draw the line when it scrolls into view
+(function () {
+  var s = document.getElementById('tech-route'); if (!s) return;
+  [].forEach.call(s.querySelectorAll('.tr-stops'), function (ol) { [].forEach.call(ol.children, function (li, i) { li.style.setProperty('--i', i); }); });
+  if (!('IntersectionObserver' in window)) return;
+  s.classList.add('js');
+  var io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { s.classList.add('is-in'); io.disconnect(); } }, { threshold: 0.2 });
+  io.observe(s);
+})();

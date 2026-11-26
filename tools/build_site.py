@@ -145,15 +145,15 @@ def head(title: str, desc: str, path: str, root: str, og: str, extra: str = "") 
 </head>"""
 
 
-NAV = [("home", "index.html", "Home"), ("projects", "odoo.html", "Projects"), ("apps", "apps.html", "Apps"),
+NAV = [("home", "/", "Home"), ("projects", "odoo.html", "Projects"), ("apps", "apps.html", "Apps"),
        ("experience", "experience.html", "Experience"), ("contact", "contact.html", "Contact")]
 
 
 def nav(root: str, active: str) -> str:
-    links = "".join(f'<a href="{root}{h}"{" class=on" if k == active else ""}>{l}</a>' for k, h, l in NAV)
+    links = "".join(f'<a href="{h if h.startswith("/") else root + h}"{" class=on" if k == active else ""}>{l}</a>' for k, h, l in NAV)
     ask = '<button type="button" class="ask-ai" data-hac-open>✦ Ask AI</button>' if CHAT_ON else ""
     return f"""<header class="nav"><div class="wrap nav-in">
-<a class="brand" href="{root}index.html" aria-label="{NAME} home"><img class="brand-mark" src="{root}assets/images/ha-mark.svg" width="46" height="46" alt=""><span class="brand-txt"><b>Hammad <i>Ali</i></b><small>Odoo Technical Lead</small></span></a>
+<a class="brand" href="/" aria-label="{NAME} home"><img class="brand-mark" src="{root}assets/images/ha-mark.svg" width="46" height="46" alt=""><span class="brand-txt"><b>Hammad <i>Ali</i></b><small>Odoo Technical Lead</small></span></a>
 <nav id="menu" aria-label="Main">{links}{ask}</nav>
 <a class="btn btn-sm btn-primary nav-cta" href="{root}contact.html">Hire me</a>
 <button class="burger" aria-label="Menu" aria-controls="menu"><i></i><i></i></button>
@@ -162,10 +162,10 @@ def nav(root: str, active: str) -> str:
 
 def footer(root: str) -> str:
     return f"""<footer class="foot"><div class="wrap foot-grid">
-<div><a class="brand brand-lg" href="{root}index.html" aria-label="{NAME} home"><img class="brand-mark" src="{root}assets/images/ha-mark.svg" width="64" height="64" alt=""><span class="brand-txt"><b>Hammad <i>Ali</i></b><small>Odoo Technical Lead</small></span></a>
+<div><a class="brand brand-lg" href="/" aria-label="{NAME} home"><img class="brand-mark" src="{root}assets/images/ha-mark.svg" width="64" height="64" alt=""><span class="brand-txt"><b>Hammad <i>Ali</i></b><small>Odoo Technical Lead</small></span></a>
 <p class="muted">Production Odoo systems from workflow to deployment. Founder of NeuralBytea, {N_APPS} apps on the Odoo Apps Store.</p>
 <a href="mailto:{CONTACT['email']}">{CONTACT['email']}</a><span class="muted">{CONTACT['location']}, working remotely</span></div>
-<div><h4>Explore</h4>{"".join(f'<a href="{root}{h}">{l}</a>' for _, h, l in NAV)}</div>
+<div><h4>Explore</h4>{"".join(f'<a href="{h if h.startswith("/") else root + h}">{l}</a>' for _, h, l in NAV)}</div>
 <div><h4>Work with me</h4><a href="{root}contact.html">Hire me</a><a href="{root}{CV_PDF}">Download CV</a><a href="{root}{ATS_PDF}">ATS-friendly CV</a><a href="{CONTACT['linkedin']}" target="_blank" rel="noopener">LinkedIn ↗</a><a href="{CONTACT['github']}" target="_blank" rel="noopener">GitHub ↗</a></div>
 <div><h4>My apps</h4><a href="{root}apps.html">All {N_APPS} apps</a><a href="{NBSITE}/" target="_blank" rel="noopener">NeuralBytea ↗</a><a href="{STORE}" target="_blank" rel="noopener">Odoo Apps Store ↗</a><h4 style="margin-top:22px">Legal</h4><a href="{root}privacy.html">Privacy Policy</a></div>
 </div><div class="wrap foot-bar"><span>© {dt.date.today().year} {NAME}. All rights reserved.</span><span>Odoo is a trademark of Odoo S.A.</span></div></footer>"""
@@ -209,13 +209,13 @@ def project_card(p: dict, root: str, reveal: bool = True, lazy: bool = True) -> 
     types = [lbl for k, lbl in TYPE_LABEL if k in tg][:2]
     type_html = "".join(f'<span class="chip">{e(t)}</span>' for t in types)
     stack = "".join(f'<span class="stk">{e(t)}</span>' for t in (p.get("tech_stack") or [])[:4])
-    return f"""<a class="card app{' reveal' if reveal else ''}" href="{root}{project_url(p)}" data-tags="{' '.join(tg)}" data-q="{e(q)}">
+    return f"""<article class="card app pc{' reveal' if reveal else ''}" data-tags="{' '.join(tg)}" data-q="{e(q)}">
 <div class="shot pj"><img src="{root}{p['image']}" alt="{e(p['title'])}: solution diagram" width="1800" height="600"{' loading="lazy"' if lazy else ''}></div>
 <div class="app-body"><div class="app-top"><span class="pf {pcls}">{e(pl)}</span>{type_html}</div>
-<h3>{e(p['title'])}</h3><p>{e(p.get('short_desc', ''))}</p>
+<h3><a class="card-link" href="{root}{project_url(p)}">{e(p['title'])}</a></h3><p>{e(p.get('short_desc', ''))}</p>
 <div class="by">{e(p.get('client', ''))} · {e(p.get('year', ''))}</div>
 <div class="stack">{stack}</div>
-<div class="app-foot"><span class="more">View case study <i>→</i></span><span class="vbs" title="Odoo version">{vb}</span></div></div></a>"""
+<div class="app-foot"><span class="more">View case study <i>→</i></span><span class="vbs" title="Odoo version">{vb}</span></div></div></article>"""
 
 
 def app_card(a: dict) -> str:
@@ -265,12 +265,10 @@ def cta(title_html: str, text: str, root: str) -> str:
 
 # ------------------------------------------------------------------ pages
 FEATURED = sorted([p for p in PROJECTS if p.get("featured")], key=lambda p: -int(p.get("year") or 0))[:6]
-STATS = [(str(N_APPS), "Apps published on the Odoo Apps Store under my studio, NeuralBytea"),
-         ("250+", "Employees supported by Odoo HR self-service across 4 branches"),
-         ("54,000+", "Historical records processed through migration and backfill logic"),
-         ("~200", "Online Mastercard payments per day"),
-         ("~250", "Daily orders on ClearPath Orthodontics, with ~200 doctor and clinic portal users"),
-         ("~15–20", "Field salespeople and 5–7 managers on the Field Sales Portal")]
+STATS = [(str(N_APPS), "Apps published on the Odoo Apps Store"),
+         ("250+", "Employees use the HR and attendance systems I built"),
+         ("~200", "Card payments a day through a payment system I built"),
+         ("54,000+", "Old records moved safely into a new system")]
 SERVICES = [("🧩", "Custom modules & OWL", "Odoo 16–20, Community and Enterprise. ORM logic, QWeb, and OWL/JavaScript dashboards that ship to production."),
             ("🔌", "Integrations & payments", "Mastercard Hosted Checkout, Sage, Meta, GoHighLevel and bidirectional REST APIs with callbacks and reconciliation."),
             ("🚚", "Migrations & data", "Odoo 16→17 HRMS migration and a 54,000+ record backfill in controlled batches, with validation and regression testing."),
@@ -283,11 +281,41 @@ STEPS = [("Understand the workflow", "I start from how the business actually wor
          ("Deploy and support", "Odoo.sh or Linux deployment, backups, training and day-to-day production support.")]
 
 
+def tech_route() -> str:
+    def has(p, *keys):
+        t = " ".join(p.get("tech_stack") or []).lower()
+        return any(k in t for k in keys)
+    n = len(PROJECTS)
+    rows = [("Python", "Odoo ORM, Django, Flask, REST APIs", ("python", "django", "flask", "odoo orm")),
+            ("SQL / PostgreSQL", "Reporting, migrations, query tuning", ("postgres", "sql")),
+            ("JavaScript", "OWL dashboards, portals, React Native", ("javascript", "owl", "react", "chart.js")),
+            ("XML / QWeb", "Views, portal pages, PDF reports", ("qweb", "xml")),
+            ("Kotlin", "Android app", ("kotlin",))]
+    stops = []
+    counted = sorted([(name, note, sum(1 for p in PROJECTS if has(p, *keys))) for name, note, keys in rows], key=lambda x: -x[2])
+    for name, note, c in counted:
+        pct = round(100 * c / n)
+        stops.append(f'<li class="tr-stop" style="--v:{pct}"><span class="tr-pin"><span class="tr-dot" aria-hidden="true"></span></span><span class="tr-name">{e(name)}</span>'
+                     f'<span class="tr-val"><strong>{pct}%</strong> {c} of {n} projects</span><span class="tr-bar" aria-hidden="true"><span></span></span><span class="tr-note">{e(note)}</span></li>')
+    ai = [("Claude", "Built a read-only Claude connector for Odoo (MCP); my coding assistant"),
+          ("Groq", "Powers the Ask AI assistant on this site"),
+          ("ChatGPT", "Supported provider in my NeuralBytea in-app AI chat"),
+          ("Gemini", "Supported provider in my NeuralBytea in-app AI chat")]
+    ai_html = "".join(f'<li class="tr-stop" style="--v:60"><span class="tr-pin"><span class="tr-dot" aria-hidden="true"></span></span><span class="tr-name">{e(a)}</span><span class="tr-note">{e(t)}</span></li>' for a, t in ai)
+    return f"""<section class="wrap sec tr" id="tech-route" aria-labelledby="tr-title"><div class="sec-head reveal"><span class="eyebrow">My tech route</span><h2 id="tr-title">The languages and AI tools behind my work</h2>
+<p>Each stop is a language I have shipped production work in. The number shows how many of my {n} case studies used it.</p></div>
+<div class="tr-route"><div class="tr-line-head"><span class="tr-badge">Line 1</span><h3>Languages</h3></div><ol class="tr-stops">{"".join(stops)}</ol></div>
+<div class="tr-route tr-route--ai"><div class="tr-line-head"><span class="tr-badge">Line 2</span><h3>AI tools</h3></div><ol class="tr-stops">{ai_html}</ol></div>
+<p class="tr-foot muted">Source: tech stacks listed on my case studies.</p></section>"""
+
+
 def home() -> str:
     root = ""
-    stack = "".join(f'<div class="float f{i + 1}"><img src="{p["image"]}" alt="" width="1800" height="600"></div>' for i, p in enumerate(FEATURED[:3]))
+    stack = "".join(f'<div class="float f{i + 1}"><img src="{p["image"]}" alt="{e(p["title"])}: solution diagram" width="1800" height="600"></div>' for i, p in enumerate(FEATURED[:3]))
     stats = "".join(f'<div class="stat reveal"><b>{e(v)}</b><span>{e(l)}</span></div>' for v, l in STATS)
     fams = "".join(f'<div class="card fam reveal"><div class="ico">{i}</div><h3>{e(t)}</h3><p>{e(d)}</p></div>' for i, t, d in SERVICES)
+    for k, tip in (("OWL", "Odoo's front-end framework for dashboards and screens"), ("QWeb", "Odoo's templating for web pages and PDF reports"), ("MRP", "Manufacturing planning: bills of materials and production orders")):
+        fams = fams.replace(k, f'<abbr title="{tip}">{k}</abbr>', 1)
     tech = "".join(f"<span>{t}</span>" for t in ["Odoo 16–20", "Python", "OWL", "JavaScript", "PostgreSQL", "QWeb", "REST APIs", "Odoo.sh", "Docker", "Nginx",
                                                  "GitHub Actions", "Accounting", "MRP / BOM", "HR & Payroll", "CRM", "Portals", "Payments"])
     counts = {k: sum(1 for a in APPS if a["line"] == k) for k, _ in LINES}
@@ -309,18 +337,19 @@ def home() -> str:
  <div class="hero-copy">
   <span class="pill"><i class="dot"></i>Open to a remote Odoo Technical Lead role</span>
   <h1>I build production Odoo systems from workflow to <em>deployment.</em></h1>
-  <p class="lead">Founder of a {N_APPS}-app Odoo studio. Led a team of four. Production Odoo <span class="nw">16–20</span> systems for 250+ users: custom modules, OWL portals, payment and REST integrations, MRP, HR and payroll.</p>
+  <p class="lead">I build the business software companies run on every day: HR and payroll, sales, payments and manufacturing, all inside Odoo. My systems serve 250+ employees in production, and I have published {N_APPS} apps through my own studio, NeuralBytea.</p>
   <div class="btn-row"><a class="btn btn-primary" href="odoo.html">View projects</a><a class="btn btn-ghost" href="{CV_PDF}">Download CV ↓</a><a class="btn btn-ghost" href="contact.html">Let’s talk →</a></div>
   <ul class="trust"><li>Odoo 16–20 · {N_APPS} published apps</li><li>Enterprise &amp; Odoo.sh</li><li>Led a team of 4</li><li>Remote-ready</li></ul>
  </div>
  <div class="hero-art" aria-hidden="true"><div class="glow"></div>{stack}</div>
 </section>
-<section class="wrap stats six">{stats}</section>
+<section class="wrap stats">{stats}</section>
 {askai}<section class="wrap"><div class="marquee" aria-hidden="true"><div class="track">{tech}{tech}</div></div></section>
 <section class="wrap sec"><div class="sec-head reveal"><span class="eyebrow">Selected work</span><h2>Featured projects</h2><p>Real systems with real numbers: users, orders, payments and records.</p><a class="see" href="odoo.html">All {len(PROJECTS)} projects →</a></div>
  {car([project_card(p, root, reveal=False, lazy=False) for p in FEATURED])}</section>
 <section class="wrap sec"><div class="sec-head reveal"><span class="eyebrow">What I do</span><h2>End-to-end Odoo engineering</h2><p>From the first requirements call to production support, one developer who can own the whole path.</p></div>
  <div class="grid fam-grid">{fams}</div></section>
+{tech_route()}
 <section class="wrap sec"><div class="edu reveal"><div class="edu-copy"><span class="eyebrow">My studio · NeuralBytea</span>
  <h2>{N_APPS} Odoo apps on the Odoo Apps Store</h2>
  <p>Portals, payment providers, integrations, HR and payroll tools, dashboards, an AI assistant, school management and backend UI. I design, build, publish and support every app, for Odoo 17 to 20.</p>
@@ -355,7 +384,7 @@ def projects_page() -> str:
     counts = {k: sum(1 for p in PROJECTS if k in tags_for(p)) for k, _ in FILTERS}
     cards = "".join(project_card(p, root, reveal=False) for p in ordered)
     body = f"""
-<section class="wrap page-hero"><div class="crumb"><a href="index.html">Home</a> / Projects</div>
+<section class="wrap page-hero"><div class="crumb"><a href="/">Home</a> / Projects</div>
  <span class="eyebrow" style="display:block;margin-top:14px">Case studies</span><h1>Odoo projects: modules, integrations &amp; migrations</h1>
  <p class="lead">{len(PROJECTS)} delivered projects: custom modules, OWL front-ends, payment gateways, Sage and REST API integrations, BOM versioning, HR automation and version migrations. Each one has scope, modules, stack and outcomes.</p></section>
 <section class="wrap">
@@ -390,7 +419,7 @@ def project_page(p: dict, i: int, ordered: list[dict]) -> str:
          "dateCreated": str(p.get("year", "")), "author": {"@type": "Person", "@id": f"{SITE_URL}/#person", "name": NAME},
          "keywords": ", ".join(p.get("tags") or [])}]}
     body = f"""
-<section class="wrap page-hero slim"><div class="crumb"><a href="{root}index.html">Home</a> / <a href="{root}odoo.html">Projects</a> / {e(p['title'])}</div></section>
+<section class="wrap page-hero slim"><div class="crumb"><a href="/">Home</a> / <a href="{root}odoo.html">Projects</a> / {e(p['title'])}</div></section>
 <section class="wrap detail"><article class="detail-main">
  <div class="shot big pj"><img src="{root}{p['image']}" alt="{e(p['title'])}: solution diagram" width="1800" height="600"></div>
  <div class="chips-row" style="margin-top:20px">{tags}</div>
@@ -411,7 +440,7 @@ def apps_page() -> str:
     root = ""
     counts = {k: sum(1 for a in APPS if a["line"] == k) for k, _ in LINES}
     body = f"""
-<section class="wrap page-hero"><div class="crumb"><a href="index.html">Home</a> / Apps</div>
+<section class="wrap page-hero"><div class="crumb"><a href="/">Home</a> / Apps</div>
  <span class="eyebrow" style="display:block;margin-top:14px">My studio · NeuralBytea</span><h1>{N_APPS} Odoo apps I design, build and publish</h1>
  <p class="lead">Portals, payments, integrations, HR, dashboards, an AI assistant, school management and backend UI for Odoo 17 to 20. Every app is on the Odoo Apps Store.</p>
  <div class="btn-row"><a class="btn btn-primary" href="{NBSITE}/" target="_blank" rel="noopener">Visit NeuralBytea ↗</a><a class="btn btn-ghost" href="{STORE}" target="_blank" rel="noopener">Odoo Apps Store ↗</a></div></section>
@@ -430,11 +459,11 @@ def experience_page() -> str:
     root = ""
     skills = "".join(f'<div class="card info reveal"><h3>{e(g["category"])}</h3><div class="tags">{"".join(f"<span class=tag>{e(i)}</span>" for i in g["items"])}</div></div>' for g in D["skills"])
     body = f"""
-<section class="wrap page-hero"><div class="crumb"><a href="index.html">Home</a> / Experience</div>
+<section class="wrap page-hero"><div class="crumb"><a href="/">Home</a> / Experience</div>
  <span class="eyebrow" style="display:block;margin-top:14px">{e(NAME)}</span><h1>Senior Odoo Developer &amp; Technical Lead</h1>
  <p class="lead">{e(SITE['description'])}</p>
  <div class="btn-row"><a class="btn btn-primary" href="{CV_PDF}">Download CV ↓</a><a class="btn btn-ghost" href="{ATS_PDF}">ATS-friendly CV</a><a class="btn btn-ghost" href="contact.html">Contact →</a></div></section>
-<section class="wrap sec"><div class="sec-head"><span class="eyebrow">Work experience</span><h2>Where I have worked</h2></div>{timeline(D['experience'], full=True)}</section>
+<section class="wrap sec"><div class="sec-head"><span class="eyebrow">Work experience</span><h2>Where I have worked</h2><p><b>Right now:</b> full-time Senior Odoo Developer at TTI, Odoo techno-functional consultant at Big Binary Tech, and founder of my own app studio, NeuralBytea.</p></div>{timeline(D['experience'], full=True)}</section>
 <section class="wrap sec"><div class="sec-head"><span class="eyebrow">Skills</span><h2>Tools and technologies</h2></div><div class="grid fam-grid">{skills}</div></section>
 <section class="wrap sec"><div class="sec-head"><span class="eyebrow">Education</span><h2>Education and certification</h2></div>
  <div class="grid fam-grid"><div class="card info"><h3>Education</h3><p><b>Bachelor of Science in Computer Science</b><br>Lahore Garrison University<br><span class="muted">Jul 2019 – Jul 2023</span></p></div>
@@ -449,7 +478,7 @@ def contact_page() -> str:
     root = ""
     body = f"""
 <section class="wrap"><div class="split reveal">
- <div class="split-l"><div class="crumb"><a href="index.html">Home</a> / Contact</div><span class="eyebrow" style="color:#8fd8ff">Hire me</span>
+ <div class="split-l"><div class="crumb"><a href="/">Home</a> / Contact</div><span class="eyebrow" style="color:#8fd8ff">Hire me</span>
   <h1>Let’s talk about your Odoo project</h1><p class="lead">Open to a remote Odoo Technical Lead role, and to contracts. {e(HIRE['response'])}</p>
   <dl class="cinfo"><dt>Email</dt><dd><a href="mailto:{CONTACT['email']}">{CONTACT['email']}</a></dd><dt>Phone</dt><dd><a href="tel:{re.sub('[^+0-9]', '', CONTACT['phone'])}">{e(CONTACT['phone'])}</a></dd>
    <dt>LinkedIn</dt><dd><a href="{CONTACT['linkedin']}" target="_blank" rel="noopener">hammad-ali</a></dd><dt>GitHub</dt><dd><a href="{CONTACT['github']}" target="_blank" rel="noopener">4858hammad</a></dd>
@@ -473,7 +502,7 @@ def privacy_page() -> str:
     proc = ("<li><b>Groq</b> generates the chat answers from the questions you type" + (", through a <b>Cloudflare</b> Worker that holds the access key" if CHAT_ENDPOINT else ", directly from your browser") +
             ". Do not type passwords or private data into the chat. Conversations are not stored by this site.</li>") if CHAT_ON else ""
     body = f"""
-<section class="wrap doc-head"><div class="crumb"><a href="index.html">Home</a> / Privacy</div><h1>Privacy Policy</h1><p class="muted">Last updated {dt.date.today().strftime('%d %B %Y')}</p></section>
+<section class="wrap doc-head"><div class="crumb"><a href="/">Home</a> / Privacy</div><h1>Privacy Policy</h1><p class="muted">Last updated {dt.date.today().strftime('%d %B %Y')}</p></section>
 <section class="wrap doc"><nav class="toc" aria-label="On this page"><b>On this page</b><a href="#collect">What is collected</a><a href="#who">Who processes it</a><a href="#contact">Contact</a></nav>
 <article><section id="collect"><h2>What is collected</h2><p>Only what you choose to send, plus the technical data any website receives:</p>
 <ul><li><b>Contact form:</b> your name, email address, subject and message.</li>{chat}<li><b>Technical data:</b> your IP address and browser details, which the hosting provider receives when you load a page.</li></ul>
