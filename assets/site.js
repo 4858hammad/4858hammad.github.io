@@ -110,3 +110,16 @@
   var io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { run(); io.disconnect(); } }, { threshold: 0.2 });
   io.observe(s);
 })();
+
+// career roadmap: grow the line upward and reveal steps from the bottom
+(function () {
+  var j = document.getElementById('journey'); if (!j) return;
+  var steps = [].slice.call(j.querySelectorAll('.jr-step')).reverse();
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || reduce) { j.classList.add('is-in'); return; }
+  j.classList.add('js');
+  var io = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }); }, { threshold: 0.25 });
+  steps.forEach(function (s) { io.observe(s); });
+  var io2 = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { j.classList.add('is-in'); io2.disconnect(); } }, { threshold: 0.15 });
+  io2.observe(j);
+})();

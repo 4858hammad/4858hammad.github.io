@@ -316,6 +316,23 @@ def tech_route() -> str:
 <p class="tr-foot">Source: tech stacks listed on my case studies. <a href="odoo.html">See all projects →</a></p></div></section>"""
 
 
+def journey() -> str:
+    caps = {"Python / Odoo Developer": ("Step 1", "Started in Odoo", "🌱"), "Odoo Developer": ("Step 2", "Shipped client projects", "🛠️"),
+            "Odoo Team Lead": ("Step 3", "Stepped up to lead", "🧭"), "Senior Odoo Developer": ("Step 4", "Went senior", "🚀"),
+            "Odoo Techno-Functional Consultant": ("Step 5", "Added consulting", "🤝"), "Founder & Lead Developer": ("Step 6", "Built my own studio", "🏁")}
+    items = [x for x in D["experience"] if not re.search("intern", x["role"], re.I)]
+    steps = []
+    for x in reversed(items):  # oldest first, we reverse again for display (newest on top)
+        cap = caps.get(x["role"], ("", "", "⭐"))
+        steps.append(f'<li class="jr-step"><span class="jr-node" aria-hidden="true">{cap[2]}</span><div class="card jr-card"><div class="jr-top"><span class="jr-cap">{cap[0]} · {cap[1]}</span>'
+                     f'<span class="jr-when">{e(x["period"])}</span></div><h3>{e(x["role"])}</h3><div class="jr-co">{e(x["company"])}</div><p>{e(x.get("summary", ""))}</p></div></li>')
+    nxt = ('<li class="jr-step jr-next"><span class="jr-node" aria-hidden="true">🎯</span><div class="card jr-card"><div class="jr-top"><span class="jr-cap">Next step · More to come</span>'
+           '<span class="jr-when">Coming up</span></div><h3>Remote Odoo Technical Lead</h3><div class="jr-co">Open to the right team</div>'
+           '<p>Leading developers and architecture on bigger Odoo systems, while still building hands-on. Let us talk if that sounds like your team.</p>'
+           '<a class="btn btn-primary btn-sm" href="contact.html">Let’s talk →</a></div></li>')
+    return f'<ol class="jr" id="journey" aria-label="Career journey, newest at the top"><li class="jr-top-arrow" aria-hidden="true">▲</li>{nxt}{"".join(reversed(steps))}<li class="jr-start" aria-hidden="true">Start · Aug 2023</li></ol>'
+
+
 def home() -> str:
     root = ""
     stack = "".join(f'<div class="float f{i + 1}"><img src="{p["image"]}" alt="{e(p["title"])}: solution diagram" width="1800" height="600"></div>' for i, p in enumerate(FEATURED[:3]))
@@ -365,8 +382,8 @@ def home() -> str:
  <a class="edu-shot" href="apps.html"><img src="{NBSITE}/images/apps/{shot['image']}" alt="{e(shot['name'])} for Odoo" loading="lazy" width="1000" height="500"></a></div></section>
 <section class="band"><div class="wrap"><div class="sec-head reveal light"><span class="eyebrow">How I work</span><h2>From a business need to a working system</h2></div>
  <div class="steps">{steps}</div></div></section>
-<section class="wrap sec"><div class="sec-head reveal"><span class="eyebrow">Journey</span><h2>From developer to technical lead</h2><a class="see" href="experience.html">Full experience →</a></div>
- {timeline([x for x in D['experience'] if not re.search('intern', x['role'], re.I)], full=False)}</section>
+<section class="wrap sec"><div class="sec-head reveal"><span class="eyebrow">Journey</span><h2>My road from developer to technical lead</h2><p>Every step up, from my first Odoo project to running my own studio. Read from the bottom up.</p><a class="see" href="experience.html">Full experience →</a></div>
+ {journey()}</section>
 <section class="wrap sec" id="hire"><div class="sec-head reveal"><span class="eyebrow">Work with me</span><h2>Hire me: rates &amp; availability</h2><p>Clear terms up front. Rates are a starting point and negotiable.</p></div>
  {hire_cards()}</section>
 {cta('Have an Odoo project <span class="grad">or a role in mind?</span>', "Send a short note and I will reply within one business day.", root)}"""
