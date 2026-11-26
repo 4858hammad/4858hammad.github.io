@@ -36,12 +36,12 @@ background:radial-gradient(55% 45% at 12% -8%,rgba(47,91,255,.20),transparent 62
 .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-top:84px;padding-bottom:56px}
 .pill{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border:1px solid var(--line2);border-radius:99px;font-size:13px;color:var(--mut);background:#fff;box-shadow:var(--sh)}
 .dot{width:8px;height:8px;border-radius:50%;background:#10b981;box-shadow:0 0 0 4px rgba(16,185,129,.18)}
-h1{font-size:clamp(34px,4.6vw,80px);line-height:1.04;letter-spacing:-.035em;margin:22px 0;font-weight:700}
+h1{font-size:clamp(34px,4.6vw,64px);line-height:1.04;letter-spacing:-.035em;margin:22px 0;font-weight:700}
 h1 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{font-size:clamp(17px,1.15vw,21px);color:var(--mut);max-width:clamp(520px,42vw,680px)}
+.lead{font-size:clamp(17px,1.15vw,19px);color:var(--mut);max-width:clamp(520px,42vw,680px)}
 .trust{list-style:none;padding:0;display:flex;gap:10px 22px;flex-wrap:wrap;margin-top:22px;font-size:13.5px;color:var(--mut)}
 .trust li:before{content:"✓";color:var(--a);font-weight:700;margin-right:7px}
-.hero-art{position:relative;height:clamp(340px,29vw,580px)}
+.hero-art{position:relative;height:clamp(340px,29vw,470px)}
 .glow{position:absolute;inset:8% 6%;background:var(--grad);filter:blur(90px);opacity:.30;border-radius:50%}
 .float{position:absolute;width:78%;border-radius:16px;overflow:hidden;border:1px solid rgba(11,22,48,.12);box-shadow:0 30px 60px -24px rgba(23,45,120,.55);animation:bob 7s ease-in-out infinite}
 .float img{width:100%;height:auto}
@@ -319,17 +319,8 @@ textarea{resize:vertical;min-height:140px;height:100%}
 
 /* ---- fluid width system: the layout grows with the screen instead of sitting in a narrow column ---- */
 html{-webkit-text-size-adjust:100%}
-body{font-size:clamp(16px,.28vw + 12.4px,18px)}
-@media(min-width:1500px){
- :root{--max:1560px}
- .app-grid{grid-template-columns:repeat(4,1fr)}
- .car-item{flex-basis:calc((100% - 60px)/4)}
- .detail{grid-template-columns:1fr 400px}
- .float{width:80%}
- .sec{padding-top:96px}
-}
-@media(min-width:1900px){:root{--max:1720px}.sec{padding-top:104px}h2{font-size:clamp(28px,2.3vw,50px)}}
-@media(min-width:2400px){:root{--max:1980px}}
+body{font-size:16px}
+@media(min-width:1500px){.sec{padding-top:96px}}
 @media(max-width:1100px) and (min-width:961px){.app-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:620px){:root{--gut:18px}.hero{padding-top:36px}}
 /* very small phones */
