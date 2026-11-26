@@ -189,13 +189,32 @@ def car(items: list[str]) -> str:
             + '</div><button class="car-btn prev" aria-label="Previous">‹</button><button class="car-btn next" aria-label="Next">›</button><div class="car-dots"></div></div>')
 
 
+TYPE_LABEL = [("portals", "Portal"), ("payments", "Payments"), ("integrations", "Integration"), ("hr", "HR & Payroll"), ("manufacturing", "Manufacturing"),
+              ("accounting", "Accounting"), ("migration", "Migration"), ("ai", "AI"), ("owl", "OWL dashboard"), ("mobile", "Mobile app")]
+
+
+def platform_of(p: dict) -> tuple[str, str]:
+    """(label, css class) saying which technology the project is built on."""
+    if p.get("category") == "android":
+        return "Mobile app", "pf-mobile"
+    v = versions(p)
+    return ("Odoo " + "/".join(v) if v else "Odoo"), "pf-odoo"
+
+
 def project_card(p: dict, root: str, reveal: bool = True, lazy: bool = True) -> str:
-    q = " ".join([p["title"], p.get("short_desc", ""), p.get("client", ""), " ".join(p.get("tags") or [])]).lower()
+    q = " ".join([p["title"], p.get("short_desc", ""), p.get("client", ""), " ".join(p.get("tags") or []), " ".join(p.get("tech_stack") or [])]).lower()
     vb = "".join(f'<i class="vb">{v}</i>' for v in versions(p)) or f'<i class="vb">{e((p.get("tags") or ["App"])[0])}</i>'
-    return f"""<a class="card app{' reveal' if reveal else ''}" href="{root}{project_url(p)}" data-tags="{' '.join(tags_for(p))}" data-q="{e(q)}">
+    pl, pcls = platform_of(p)
+    tg = tags_for(p)
+    types = [lbl for k, lbl in TYPE_LABEL if k in tg][:2]
+    type_html = "".join(f'<span class="chip">{e(t)}</span>' for t in types)
+    stack = "".join(f'<span class="stk">{e(t)}</span>' for t in (p.get("tech_stack") or [])[:4])
+    return f"""<a class="card app{' reveal' if reveal else ''}" href="{root}{project_url(p)}" data-tags="{' '.join(tg)}" data-q="{e(q)}">
 <div class="shot pj"><img src="{root}{p['image']}" alt="{e(p['title'])}: solution diagram" width="1800" height="600"{' loading="lazy"' if lazy else ''}></div>
-<div class="app-body"><div class="app-top"><span class="chip">{e(p.get('client', ''))}</span><span class="price">{e(p.get('year', ''))}</span></div>
+<div class="app-body"><div class="app-top"><span class="pf {pcls}">{e(pl)}</span>{type_html}</div>
 <h3>{e(p['title'])}</h3><p>{e(p.get('short_desc', ''))}</p>
+<div class="by">{e(p.get('client', ''))} · {e(p.get('year', ''))}</div>
+<div class="stack">{stack}</div>
 <div class="app-foot"><span class="more">View case study <i>→</i></span><span class="vbs" title="Odoo version">{vb}</span></div></div></a>"""
 
 

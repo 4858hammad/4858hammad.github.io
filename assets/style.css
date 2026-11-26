@@ -425,3 +425,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .doc-head .muted{margin-top:4px}
 @media(max-width:960px){.stats.six{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.stats.six{grid-template-columns:repeat(2,1fr)}.tl{padding-left:22px}.tl-item:before{left:-21px}}
+
+/* project cards: platform badge, type chips, tech stack */
+.app-top{flex-wrap:wrap;justify-content:flex-start;gap:6px}
+.pf{font:700 11.5px Sora;letter-spacing:.02em;padding:4px 10px;border-radius:7px;color:#fff;white-space:nowrap}
+.pf-odoo{background:linear-gradient(120deg,#714b67,#a24689)}
+.pf-mobile{background:linear-gradient(120deg,#0f9d58,#34c27a)}
+.by{font-size:13px;color:var(--mut);margin-top:10px}
+.stack{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 14px}
+.stk{font-size:11.5px;padding:3px 9px;border-radius:6px;background:#f3f6ff;border:1px solid var(--line);color:#3b4866}
