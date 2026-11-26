@@ -282,31 +282,37 @@ STEPS = [("Understand the workflow", "I start from how the business actually wor
 
 
 def tech_route() -> str:
-    def has(p, *keys):
+    def has(p, keys):
         t = " ".join(p.get("tech_stack") or []).lower()
         return any(k in t for k in keys)
     n = len(PROJECTS)
-    rows = [("Python", "Odoo ORM, Django, Flask, REST APIs", ("python", "django", "flask", "odoo orm")),
-            ("SQL / PostgreSQL", "Reporting, migrations, query tuning", ("postgres", "sql")),
-            ("JavaScript", "OWL dashboards, portals, React Native", ("javascript", "owl", "react", "chart.js")),
-            ("XML / QWeb", "Views, portal pages, PDF reports", ("qweb", "xml")),
-            ("Kotlin", "Android app", ("kotlin",))]
-    stops = []
-    counted = sorted([(name, note, sum(1 for p in PROJECTS if has(p, *keys))) for name, note, keys in rows], key=lambda x: -x[2])
-    for name, note, c in counted:
-        pct = round(100 * c / n)
-        stops.append(f'<li class="tr-stop" style="--v:{pct}"><span class="tr-pin"><span class="tr-dot" aria-hidden="true"></span></span><span class="tr-name">{e(name)}</span>'
-                     f'<span class="tr-val"><strong>{pct}%</strong> {c} of {n} projects</span><span class="tr-bar" aria-hidden="true"><span></span></span><span class="tr-note">{e(note)}</span></li>')
-    ai = [("Claude", "Built a read-only Claude connector for Odoo (MCP); my main coding assistant"),
-          ("Codex", "Code generation and refactoring"),
-          ("GitHub Copilot", "Inline suggestions in VS Code"),
-          ("Groq", "Powers the Ask AI assistant on this site")]
-    ai_html = "".join(f'<li class="tr-stop" style="--v:60"><span class="tr-pin"><span class="tr-dot" aria-hidden="true"></span></span><span class="tr-name">{e(a)}</span><span class="tr-note">{e(t)}</span></li>' for a, t in ai)
-    return f"""<section class="wrap sec tr" id="tech-route" aria-labelledby="tr-title"><div class="sec-head reveal"><span class="eyebrow">My tech route</span><h2 id="tr-title">The languages and AI tools behind my work</h2>
-<p>Each stop is a language I have shipped production work in. The number shows how many of my {n} case studies used it.</p></div>
-<div class="tr-route"><div class="tr-line-head"><span class="tr-badge">Line 1</span><h3>Languages</h3></div><ol class="tr-stops">{"".join(stops)}</ol></div>
-<div class="tr-route tr-route--ai"><div class="tr-line-head"><span class="tr-badge">Line 2</span><h3>AI tools</h3></div><ol class="tr-stops">{ai_html}</ol></div>
-<p class="tr-foot muted">Source: tech stacks listed on my case studies.</p></section>"""
+    rows = [("Python", "🐍", "Odoo ORM, Django, Flask, REST APIs", ("python", "django", "flask", "odoo orm")),
+            ("SQL / PostgreSQL", "🗄️", "Reporting, migrations, query tuning", ("postgres", "sql")),
+            ("JavaScript", "⚡", "OWL dashboards, portals, React Native", ("javascript", "owl", "react", "chart.js")),
+            ("XML / QWeb", "🧱", "Views, portal pages, PDF reports", ("qweb", "xml")),
+            ("Kotlin", "📱", "Android app", ("kotlin",))]
+    cards = []
+    for name, ico, note, keys in sorted(rows, key=lambda r: -sum(1 for p in PROJECTS if has(p, r[3]))):
+        used = [p for p in PROJECTS if has(p, keys)]
+        pct = round(100 * len(used) / n)
+        ex = "".join(f"<li>{e(p['title'])}</li>" for p in used[:3])
+        more = f'<li class="tr-more">+ {len(used) - 3} more</li>' if len(used) > 3 else ""
+        cards.append(f'<li class="tr-card" style="--v:{pct}"><div class="tr-ring" aria-hidden="true"><span><b data-count="{pct}">0</b><i>%</i></span></div>'
+                     f'<div class="tr-ico" aria-hidden="true">{ico}</div><h4>{e(name)}</h4><p class="tr-note">{e(note)}</p>'
+                     f'<p class="tr-used"><strong data-count="{len(used)}">0</strong> of {n} projects</p><ul class="tr-ex">{ex}{more}</ul></li>')
+    ai = [("C", "Claude", "My main coding assistant. I also built a read-only Claude connector for Odoo (MCP).", "Daily driver"),
+          ("Cx", "Codex", "Code generation and refactoring.", "Terminal agent"),
+          ("Cp", "GitHub Copilot", "Inline suggestions while I write in VS Code.", "In the editor"),
+          ("G", "Groq", "Runs the Ask AI assistant on this site.", "Powers this site")]
+    ai_html = "".join(f'<li class="tr-ai"><span class="tr-mono">{m}</span><div><h4>{e(nm)}</h4><span class="tr-tag"><i></i>{e(tag)}</span><p>{e(d)}</p></div></li>' for m, nm, d, tag in ai)
+    return f"""<section class="band tr" id="tech-route" aria-labelledby="tr-title"><div class="wrap">
+<div class="sec-head light reveal"><span class="eyebrow">My tech route</span><h2 id="tr-title">What I build with, and what builds with me</h2>
+<p>Real numbers from my {n} case studies: the share of projects that used each language, and the AI tools in my daily workflow.</p></div>
+<h3 class="tr-h"><span>Line 1</span> Languages I ship production code in</h3>
+<ol class="tr-grid">{"".join(cards)}</ol>
+<h3 class="tr-h tr-h2"><span>Line 2</span> AI tools in my workflow</h3>
+<ol class="tr-ais">{ai_html}</ol>
+<p class="tr-foot">Source: tech stacks listed on my case studies. <a href="odoo.html">See all projects →</a></p></div></section>"""
 
 
 def home() -> str:

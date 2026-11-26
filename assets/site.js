@@ -89,12 +89,24 @@
   }
 })();
 
-// tech route: draw the line when it scrolls into view
+// tech route: stagger cards, then fill rings and count numbers up when scrolled into view
 (function () {
   var s = document.getElementById('tech-route'); if (!s) return;
-  [].forEach.call(s.querySelectorAll('.tr-stops'), function (ol) { [].forEach.call(ol.children, function (li, i) { li.style.setProperty('--i', i); }); });
-  if (!('IntersectionObserver' in window)) return;
+  var cards = [].slice.call(s.querySelectorAll('.tr-card,.tr-ai'));
+  cards.forEach(function (c, i) { c.style.setProperty('--i', i % 5); });
+  var nums = [].slice.call(s.querySelectorAll('[data-count]'));
+  function setAll() { nums.forEach(function (n) { n.textContent = n.getAttribute('data-count'); }); }
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || reduce) { setAll(); s.classList.add('is-in'); return; }
   s.classList.add('js');
-  var io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { s.classList.add('is-in'); io.disconnect(); } }, { threshold: 0.2 });
+  function run() {
+    s.classList.add('is-in');
+    var t0 = null, dur = 1500;
+    function tick(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / dur), ease = 1 - Math.pow(1 - k, 3);
+      nums.forEach(function (n) { n.textContent = Math.round(ease * +n.getAttribute('data-count')); });
+      if (k < 1) requestAnimationFrame(tick); }
+    requestAnimationFrame(tick);
+  }
+  var io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { run(); io.disconnect(); } }, { threshold: 0.2 });
   io.observe(s);
 })();
