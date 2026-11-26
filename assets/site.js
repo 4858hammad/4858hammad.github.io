@@ -54,13 +54,13 @@
     var grid = d.getElementById(bar.getAttribute('data-for'));
     if (!grid) return;
     var cards = [].slice.call(grid.children), q = d.getElementById(bar.getAttribute('data-search') || ''), none = d.getElementById(grid.id + '-none');
-    var count = d.getElementById(grid.id + '-count'), cur = 'all';
+    var count = d.getElementById(grid.id + '-count'), cur = 'all', first = true;
     var apply = function () {
       var term = q ? q.value.trim().toLowerCase() : '', n = 0;
       cards.forEach(function (c) {
         var okTag = cur === 'all' || (' ' + (c.getAttribute('data-tags') || '') + ' ').indexOf(' ' + cur + ' ') > -1;
         var okQ = !term || (c.getAttribute('data-q') || '').indexOf(term) > -1;
-        var show = okTag && okQ; c.hidden = !show; if (show) n++;
+        var show = okTag && okQ, was = c.hidden; c.hidden = !show; if (show) { if (was && !first) { c.classList.remove('pop'); void c.offsetWidth; c.style.animationDelay = (n * 40) + 'ms'; c.classList.add('pop'); } n++; }
       });
       if (count) count.textContent = n + ' shown';
       if (none) none.hidden = n > 0;
@@ -70,7 +70,7 @@
     if (q) q.addEventListener('input', apply);
     var want = (new URLSearchParams(location.search).get('line') || location.hash.replace('#', '')).toLowerCase();
     if (want && bar.querySelector('button[data-f="' + want + '"]')) cur = want;
-    apply();
+    apply(); first = false;
   });
 
   // contact form: prefill subject, send via fetch (Formspree)
@@ -122,4 +122,17 @@
   steps.forEach(function (s) { io.observe(s); });
   var io2 = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { j.classList.add('is-in'); io2.disconnect(); } }, { threshold: 0.15 });
   io2.observe(j);
+})();
+
+// stat count-up (projects page)
+(function () {
+  var bar = document.querySelector('.pstats'); if (!bar) return;
+  var nums = [].slice.call(bar.querySelectorAll('[data-count]'));
+  function setAll() { nums.forEach(function (n) { n.textContent = n.getAttribute('data-count'); }); }
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || reduce) { setAll(); return; }
+  var io = new IntersectionObserver(function (en) { if (!en[0].isIntersecting) return; io.disconnect(); var t0 = null;
+    (function tick(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 1200), e = 1 - Math.pow(1 - k, 3);
+      nums.forEach(function (n) { n.textContent = Math.round(e * +n.getAttribute('data-count')); }); if (k < 1) requestAnimationFrame(tick); })(performance.now()); }, { threshold: 0.3 });
+  io.observe(bar);
 })();

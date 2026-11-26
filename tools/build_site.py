@@ -209,8 +209,10 @@ def project_card(p: dict, root: str, reveal: bool = True, lazy: bool = True) -> 
     types = [lbl for k, lbl in TYPE_LABEL if k in tg][:2]
     type_html = "".join(f'<span class="chip">{e(t)}</span>' for t in types)
     stack = "".join(f'<span class="stk">{e(t)}</span>' for t in (p.get("tech_stack") or [])[:4])
+    hls = p.get("highlights") or []
+    peek = f'<div class="pj-peek" aria-hidden="true"><span>Key result</span><p>{e(hls[0])}</p></div>' if hls else ""
     return f"""<article class="card app pc{' reveal' if reveal else ''}" data-tags="{' '.join(tg)}" data-q="{e(q)}">
-<div class="shot pj"><img src="{root}{p['image']}" alt="{e(p['title'])}: solution diagram" width="1800" height="600"{' loading="lazy"' if lazy else ''}></div>
+<div class="shot pj"><img src="{root}{p['image']}" alt="{e(p['title'])}: solution diagram" width="1800" height="600"{' loading="lazy"' if lazy else ''}>{peek}</div>
 <div class="app-body"><div class="app-top"><span class="pf {pcls}">{e(pl)}</span>{type_html}</div>
 <h3><a class="card-link" href="{root}{project_url(p)}">{e(p['title'])}</a></h3><p>{e(p.get('short_desc', ''))}</p>
 <div class="by">{e(p.get('client', ''))} · {e(p.get('year', ''))}</div>
@@ -407,10 +409,17 @@ def projects_page() -> str:
     ordered = sorted(PROJECTS, key=lambda p: (-int(p.get("year") or 0), 0 if p.get("featured") else 1))
     counts = {k: sum(1 for p in PROJECTS if k in tags_for(p)) for k, _ in FILTERS}
     cards = "".join(project_card(p, root, reveal=False) for p in ordered)
+    vers = sorted({int(v) for p in PROJECTS for v in versions(p)})
+    nclients = len({p.get("client") for p in PROJECTS if p.get("client") and "project" not in p["client"].lower()})
+    nint = sum(1 for p in PROJECTS if "integrations" in tags_for(p))
+    stat_rows = [(str(len(PROJECTS)), None, "Projects delivered"), (str(nclients), None, "Companies and clients"), (str(nint), None, "Integrations and APIs"),
+                 (f"{vers[0]}–{vers[-1]}" if vers else "", "Odoo", "Versions worked on")]
+    pstats = "".join(f'<div class="pstat"><b{" data-count=" + chr(34) + v + chr(34) if v.isdigit() else ""}>{"0" if v.isdigit() else v}</b><span>{l}</span></div>' for v, _, l in stat_rows)
     body = f"""
 <section class="wrap page-hero"><div class="crumb"><a href="/">Home</a> / Projects</div>
  <span class="eyebrow" style="display:block;margin-top:14px">Case studies</span><h1>Odoo projects: modules, integrations &amp; migrations</h1>
  <p class="lead">{len(PROJECTS)} delivered projects: custom modules, OWL front-ends, payment gateways, Sage and REST API integrations, BOM versioning, HR automation and version migrations. Each one has scope, modules, stack and outcomes.</p></section>
+<section class="wrap"><div class="pstats">{pstats}</div></section>
 <section class="wrap">
  <div class="filters"><input id="pq" type="search" placeholder="Search projects, clients or tech…" aria-label="Search projects"><span class="muted" id="pgrid-count">{len(PROJECTS)} shown</span></div>
  {chips_bar("pgrid", [(k, l, counts[k]) for k, l in FILTERS], "pq")}
