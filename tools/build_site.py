@@ -368,7 +368,7 @@ def home() -> str:
   <h1>I build production Odoo systems from workflow to <em>deployment.</em></h1>
   <p class="lead">I build the business software companies run on every day: HR and payroll, sales, payments and manufacturing, all inside Odoo. Production systems for real teams, plus my own app studio, NeuralBytea.</p>
   <div class="btn-row"><a class="btn btn-primary" href="odoo.html">View projects</a><a class="btn btn-ghost" href="{CV_PDF}">Download CV ↓</a></div>
-  <p class="clients"><span>Systems delivered for</span> TTI Testing Laboratories · Aetos Technologies · ClearPath Orthodontics · Axiom World</p>
+  <p class="clients"><span class="cl-h">Systems delivered for</span><b>TTI Testing Laboratories</b> · <b>Aetos Technologies</b> · <b>ClearPath Orthodontics</b> · <b>Axiom World</b></p>
  </div>
  <div class="hero-art hero-art--one"><div class="glow" aria-hidden="true"></div>{stack}</div>
 </section>

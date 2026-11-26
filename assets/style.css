@@ -551,3 +551,6 @@ h1{font-size:clamp(34px,4vw,56px);line-height:1.06;letter-spacing:-.03em}
 h1{font-size:clamp(32px,3.5vw,50px)}
 .clients{max-width:none}
 @media(max-width:960px){.hf-chip.c1{display:none}.hf-chip.c2{top:-14px}}
+
+.stats{align-items:stretch}.stat{display:flex;flex-direction:column;justify-content:flex-start}.stat span{min-height:2.9em}
+.clients b{font-weight:500;white-space:nowrap}.clients .cl-h{display:block}
