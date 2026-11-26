@@ -297,10 +297,10 @@ def tech_route() -> str:
         pct = round(100 * c / n)
         stops.append(f'<li class="tr-stop" style="--v:{pct}"><span class="tr-pin"><span class="tr-dot" aria-hidden="true"></span></span><span class="tr-name">{e(name)}</span>'
                      f'<span class="tr-val"><strong>{pct}%</strong> {c} of {n} projects</span><span class="tr-bar" aria-hidden="true"><span></span></span><span class="tr-note">{e(note)}</span></li>')
-    ai = [("Claude", "Built a read-only Claude connector for Odoo (MCP); my coding assistant"),
-          ("Groq", "Powers the Ask AI assistant on this site"),
-          ("ChatGPT", "Supported provider in my NeuralBytea in-app AI chat"),
-          ("Gemini", "Supported provider in my NeuralBytea in-app AI chat")]
+    ai = [("Claude", "Built a read-only Claude connector for Odoo (MCP); my main coding assistant"),
+          ("Codex", "Code generation and refactoring"),
+          ("GitHub Copilot", "Inline suggestions in VS Code"),
+          ("Groq", "Powers the Ask AI assistant on this site")]
     ai_html = "".join(f'<li class="tr-stop" style="--v:60"><span class="tr-pin"><span class="tr-dot" aria-hidden="true"></span></span><span class="tr-name">{e(a)}</span><span class="tr-note">{e(t)}</span></li>' for a, t in ai)
     return f"""<section class="wrap sec tr" id="tech-route" aria-labelledby="tr-title"><div class="sec-head reveal"><span class="eyebrow">My tech route</span><h2 id="tr-title">The languages and AI tools behind my work</h2>
 <p>Each stop is a language I have shipped production work in. The number shows how many of my {n} case studies used it.</p></div>
