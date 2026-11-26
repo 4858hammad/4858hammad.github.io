@@ -123,3 +123,36 @@
   var io2 = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { j.classList.add('is-in'); io2.disconnect(); } }, { threshold: 0.15 });
   io2.observe(j);
 })();
+
+// projects showcase: tabs, autoplay with progress bar, pause on hover/focus, arrow-key support
+(function () {
+  [].forEach.call(document.querySelectorAll('[data-showcase]'), function (root) {
+    var tabs = [].slice.call(root.querySelectorAll('.sc-tab')), panels = [].slice.call(root.querySelectorAll('.sc-panel'));
+    if (!tabs.length) return;
+    var cur = 0, timer = null, MS = 6500;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    root.style.setProperty('--sc-ms', MS + 'ms');
+    function show(i, focus) {
+      cur = (i + tabs.length) % tabs.length;
+      tabs.forEach(function (t, k) { var on = k === cur; t.classList.toggle('on', on); t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
+      panels.forEach(function (p, k) { var on = k === cur; p.classList.toggle('on', on); p.hidden = !on; });
+      root.classList.remove('playing'); void root.offsetWidth; if (timer !== false && !reduce) root.classList.add('playing');
+      if (focus) tabs[cur].focus();
+      if (tabs[cur].scrollIntoView && window.innerWidth <= 980) tabs[cur].scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+    }
+    function start() { if (reduce) return; stop(); timer = setTimeout(function () { show(cur + 1); start(); }, MS); root.classList.remove('paused'); }
+    function stop() { if (timer) clearTimeout(timer); timer = null; }
+    tabs.forEach(function (t, k) {
+      t.addEventListener('click', function () { show(k); start(); });
+      t.addEventListener('keydown', function (ev) {
+        if (ev.key === 'ArrowDown' || ev.key === 'ArrowRight') { ev.preventDefault(); show(cur + 1, true); start(); }
+        if (ev.key === 'ArrowUp' || ev.key === 'ArrowLeft') { ev.preventDefault(); show(cur - 1, true); start(); }
+      });
+    });
+    root.addEventListener('mouseenter', function () { stop(); root.classList.add('paused'); });
+    root.addEventListener('mouseleave', function () { root.classList.remove('paused'); show(cur); start(); });
+    root.addEventListener('focusin', function () { stop(); root.classList.add('paused'); });
+    var vis = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { show(cur); start(); } else { stop(); } }, { threshold: 0.3 });
+    vis.observe(root);
+  });
+})();

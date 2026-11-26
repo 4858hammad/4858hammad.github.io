@@ -316,6 +316,26 @@ def tech_route() -> str:
 <p class="tr-foot">Source: tech stacks listed on my case studies. <a href="odoo.html">See all projects →</a></p></div></section>"""
 
 
+def showcase() -> str:
+    tabs, panels = [], []
+    for i, p in enumerate(FEATURED):
+        on = i == 0
+        lazy = "" if on else ' loading="lazy"'
+        pl, pcls = platform_of(p)
+        tabs.append(f'<button type="button" role="tab" id="sc-t{i}" aria-controls="sc-p{i}" aria-selected="{str(on).lower()}" tabindex="{0 if on else -1}" class="sc-tab{" on" if on else ""}">'
+                    f'<span class="sc-n">{i + 1:02d}</span><span class="sc-tt"><b>{e(p["title"])}</b><small>{e(p.get("metric", ""))} {e(p.get("metric_label", ""))}</small></span><i class="sc-bar"><u></u></i></button>')
+        hl = "".join(f"<li>{e(h)}</li>" for h in (p.get("highlights") or [])[:3])
+        stack = "".join(f'<span class="stk">{e(t)}</span>' for t in (p.get("tech_stack") or [])[:6])
+        panels.append(f'<article class="sc-panel{" on" if on else ""}" role="tabpanel" id="sc-p{i}" aria-labelledby="sc-t{i}"{"" if on else " hidden"}>'
+                      f'<div class="sc-shot"><img src="{p["image"]}" alt="{e(p["title"])}: solution diagram" width="1800" height="600"{lazy}></div>'
+                      f'<div class="sc-body"><div class="sc-meta"><span class="pf {pcls}">{e(pl)}</span><span class="chip">{e(p.get("client", ""))}</span><span class="sc-yr">{e(p.get("year", ""))}</span></div>'
+                      f'<div class="sc-head"><h3>{e(p["title"])}</h3><div class="sc-big"><b>{e(p.get("metric", ""))}</b><em>{e(p.get("metric_label", ""))}</em></div></div><p>{e(p.get("short_desc", ""))}</p><ul class="sc-hl">{hl}</ul><div class="stack">{stack}</div>'
+                      f'<a class="btn btn-primary" href="{project_url(p)}">Read the case study →</a></div></article>')
+    return (f'<section class="wrap sec" id="showcase"><div class="sec-head reveal"><span class="eyebrow">Selected work</span><h2>Projects that run in production</h2>'
+            f'<p>Pick a project to see what it does, the numbers behind it and what it was built with.</p><a class="see" href="odoo.html">All {len(PROJECTS)} projects →</a></div>'
+            f'<div class="sc reveal" data-showcase><div class="sc-tabs" role="tablist" aria-label="Featured projects">{"".join(tabs)}</div><div class="sc-stage">{"".join(panels)}</div></div></section>')
+
+
 def journey() -> str:
     caps = {"Python / Odoo Developer": ("Step 1", "Started in Odoo", "🌱"), "Odoo Developer": ("Step 2", "Shipped client projects", "🛠️"),
             "Odoo Team Lead": ("Step 3", "Stepped up to lead", "🧭"), "Senior Odoo Developer": ("Step 4", "Went senior", "🚀"),
@@ -369,8 +389,7 @@ def home() -> str:
 </section>
 <section class="wrap stats">{stats}</section>
 {askai}<section class="wrap"><div class="marquee" aria-hidden="true"><div class="track">{tech}{tech}</div></div></section>
-<section class="wrap sec"><div class="sec-head reveal"><span class="eyebrow">Selected work</span><h2>Featured projects</h2><p>Real systems with real numbers: users, orders, payments and records.</p><a class="see" href="odoo.html">All {len(PROJECTS)} projects →</a></div>
- {car([project_card(p, root, reveal=False, lazy=False) for p in FEATURED])}</section>
+{showcase()}
 <section class="wrap sec"><div class="sec-head reveal"><span class="eyebrow">What I do</span><h2>End-to-end Odoo engineering</h2><p>From the first requirements call to production support, one developer who can own the whole path.</p></div>
  <div class="grid fam-grid">{fams}</div></section>
 {tech_route()}
